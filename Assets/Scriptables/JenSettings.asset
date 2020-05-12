@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4861eddf6c47cb4698444d198d3121b, type: 3}
-  m_Name: playerSettings
+  m_Name: JenSettings
   m_EditorClassIdentifier: 
   walkSpeed: 4.5
   runSpeed: 6

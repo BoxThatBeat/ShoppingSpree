@@ -5,9 +5,9 @@ public class PlayerInput : MonoBehaviour
     private PlayerController player;
     private string horizontalAxis;
     private string verticalAxis;
-    private string jumpButton;
-    private string attackButton;
-    private int controllerNum;  //not used presently
+    private string useButton;
+ 
+    //private int controllerNum;  //not used presently
 
     private bool usingControllers = false;
     private float hAxis;
@@ -23,28 +23,22 @@ public class PlayerInput : MonoBehaviour
 
     public void SetupInput(string type, int id)
     {
-        controllerNum = id;
 
         if (type == "C")
             usingControllers = true;
 
         horizontalAxis = type + "Horizontal" + id;
         verticalAxis = type + "Vertical" + id;
-        jumpButton = type + "Jump" + id;
-        attackButton = type + "Attack" + id;
+        useButton = type + "Use" + id;
 
     }
 
 
     private void FixedUpdate()
     {
-        Debug.Log("it's here");
-        if (Input.GetButton(jumpButton))
-            player.OnJump();
-        if (Input.GetButton(attackButton))
-            player.OnAttack();
-        if (Input.GetAxis(verticalAxis) < -0.1f)
-            player.OnCrouch();
+
+        if (Input.GetButton(useButton))
+            player.OnUse();
 
         //always send axis info
         hAxis = Input.GetAxis(horizontalAxis);

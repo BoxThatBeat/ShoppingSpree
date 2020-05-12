@@ -13,36 +13,39 @@ public class PlayerController : MonoBehaviour{
     public float moneySaved; //score
 
     private Rigidbody2D rb;
-    private float InputX;
-    private float InputY;
+    private float vAxis;
+    private float hAxis;
 
-    
-
+   
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-    // Update is called once per frame
-    void FixedUpdate(){
-
+    public void OnMove(float HAxis, float VAxis)
+    {
+        hAxis = HAxis;
+        vAxis = VAxis;
         if (!stopped)
         {
-
-            InputX = Input.GetAxisRaw("Horizontal_1");
-            InputY = Input.GetAxisRaw("Vertical_1");
-
-            currentMovement = new Vector2(InputX, InputY); //creates new vector object
-            
-            rb.MovePosition(new Vector2(transform.position.x + InputX * settings.walkSpeed * Time.deltaTime , transform.position.y + InputY * settings.walkSpeed * Time.deltaTime));
+            currentMovement = new Vector2(HAxis, VAxis);
         }
         else
         {
-            InputX = 0f;//block movement
-            InputY = 0f;
-
+            currentMovement.x = 0f;//block movement
+            currentMovement.y = 0f;//block movement
         }
+    }
 
+    public void OnUse()
+    {
+        Debug.Log("useButtonPressed");
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.walkSpeed * Time.deltaTime 
+                                    , transform.position.y + currentMovement.y * settings.walkSpeed * Time.deltaTime));
     }
 }

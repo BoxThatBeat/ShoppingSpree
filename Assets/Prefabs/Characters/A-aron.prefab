@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4250201621292746831}
   - component: {fileID: 4250201621292746824}
   - component: {fileID: -5874697976231868763}
+  - component: {fileID: 5900825673635475909}
   - component: {fileID: 4250201621292746829}
   - component: {fileID: 4250201621292746828}
   - component: {fileID: 4250201621292746819}
@@ -98,10 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da6609190a2dcc47ab588aeeb7958ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 5eba884d0ae9e814097b10817bc228ba, type: 2}
+  settings: {fileID: 11400000, guid: 2b18e41afc6aa4446a5c803247935b10, type: 2}
   playerId: 0
   currentMovement: {x: 0, y: 0}
   stopped: 0
+  money: 0
+  moneySaved: 0
 --- !u!114 &-5874697976231868763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +115,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 094e259849268da46828358f624cd21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5900825673635475909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250201621292746825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2371d47d0fc79084cb213ffcadd10a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &4250201621292746829
