@@ -13,11 +13,11 @@ public class DoorController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             doorAnim.SetBool("Open", true);//open door
-            GameManager.Instance.StopPlayer = true; //make player unmovable while animation of door plays
 
-            StartCoroutine("LoadStore");
+            //StartCoroutine("LoadStore");
         }
     }
+    
     IEnumerator LoadStore()
     {
         float fadeTime = GameManager.Instance.GetComponent<FadeEffect>().BeginFade(1);

@@ -11,8 +11,6 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.Instance.StopPlayer = true; //make player unmovable while animation of door plays
-
             StartCoroutine("LoadStore");
         }
     }

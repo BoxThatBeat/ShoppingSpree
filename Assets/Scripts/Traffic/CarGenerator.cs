@@ -3,11 +3,8 @@ using UnityEngine;
 
 public class CarGenerator : MonoBehaviour
 {
-
-    public List<Transform> CarsN;
-    public List<Transform> CarsE;
-    public List<Transform> CarsS;
-    public List<Transform> CarsW;
+    /*
+    public List<GameObject> Cars;
 
     public Transform restartpos;
     public string direction;
@@ -115,4 +112,5 @@ public class CarGenerator : MonoBehaviour
         }
 
     }
+    */
 }
