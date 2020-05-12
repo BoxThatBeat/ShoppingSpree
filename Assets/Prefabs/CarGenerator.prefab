@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1844436094262999354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1844436094262999357}
+  - component: {fileID: 8800934562303605210}
+  m_Layer: 0
+  m_Name: CarGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844436094262999357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844436094262999354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.04, y: -10.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8800934562303605210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844436094262999354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac0693ba347b254b872c9c23b551a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarsN:
+  - {fileID: 5091906535819172135, guid: 99ff5eead26660a48927297904f34b18, type: 3}
+  - {fileID: 5091906535819172135, guid: 70df39020159a2e45b4de1c8f514e7d6, type: 3}
+  - {fileID: 5091906535819172135, guid: 058317210b2fd6b41b0239cf5df0435d, type: 3}
+  - {fileID: 5091906535819172135, guid: 9596dfd311bcf024abb48c2dcf63bca6, type: 3}
+  CarsE:
+  - {fileID: 5091906535819172135, guid: b60b894c3dfdd134195fa7b2a1d8745a, type: 3}
+  - {fileID: 5091906535819172135, guid: 9e2f6ab90ad64ab4a8fa5a89ad9da525, type: 3}
+  - {fileID: 5091906535819172135, guid: 02bed1ab57a690143850ec2d154a3c01, type: 3}
+  - {fileID: 5091906535819172135, guid: 0fe62ab845659104d8651ce807d4c789, type: 3}
+  CarsS:
+  - {fileID: 5091906535819172135, guid: 32a06fa3be4091746b0f1d36bbffede5, type: 3}
+  - {fileID: 5091906535819172135, guid: d3dfe0c80ad7f7d4eba5eb89e0298401, type: 3}
+  - {fileID: 5091906535819172135, guid: c8826b0d93fc91f40aa3eb2bf2b97945, type: 3}
+  - {fileID: 5091906535819172135, guid: f4ccf6e461ea36645b2cf35cab3e4bce, type: 3}
+  CarsW:
+  - {fileID: 5091906535819172135, guid: 3268c5c740bd9ad4da45c688eebdd221, type: 3}
+  - {fileID: 5091906535819172135, guid: 74912c66df82e4e43ade0de616188909, type: 3}
+  - {fileID: 5091906535819172135, guid: 00342d2a4b5a5444dae5b829b003766c, type: 3}
+  - {fileID: 5091906535819172135, guid: f46ba9fee435ffb4692325d2ee74a727, type: 3}
+  restartpos: {fileID: 0}
+  direction: 
