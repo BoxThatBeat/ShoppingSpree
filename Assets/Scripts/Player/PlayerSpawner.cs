@@ -9,6 +9,7 @@ public class PlayerSpawner : MonoBehaviour
 {
     public Settings gameSettings;
     public CameraController camOne;
+    public CameraController camTwo;
 
     public Transform playerOneSpawnPos;
     public Transform playerTwoSpawnPos;
@@ -24,6 +25,11 @@ public class PlayerSpawner : MonoBehaviour
     private GameObject PlayerTwo;
 
     private string controlType;
+
+    public void Start()
+    {
+        SpawnPlayers();
+    }
 
     public void SpawnPlayers()
     {
@@ -73,7 +79,7 @@ public class PlayerSpawner : MonoBehaviour
         }
 
         camOne.lockTarget(PlayerOne.transform);
-        //camTwo.lockTarget(PlayerTwo.transform);
+        camTwo.lockTarget(PlayerTwo.transform);
     }
 
 }

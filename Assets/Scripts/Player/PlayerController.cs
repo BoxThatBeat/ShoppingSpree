@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour{
     private Rigidbody2D rb;
     private float vAxis;
     private float hAxis;
+    private bool running;
 
    
     private void Start()
@@ -42,10 +43,30 @@ public class PlayerController : MonoBehaviour{
         Debug.Log("useButtonPressed");
     }
 
+    public void OnRunning()
+    {
+        running = true;
+    }
+
+    public void OnWalking()
+    {
+        running = false;
+    }
+    
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.walkSpeed * Time.deltaTime 
+        if (running)
+        {
+            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.runSpeed * Time.deltaTime
+                                    , transform.position.y + currentMovement.y * settings.runSpeed * Time.deltaTime));
+        }
+        else
+        {
+            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.walkSpeed * Time.deltaTime
                                     , transform.position.y + currentMovement.y * settings.walkSpeed * Time.deltaTime));
+        }
+            
     }
 }

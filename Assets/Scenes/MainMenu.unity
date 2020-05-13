@@ -234,16 +234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d3cabd11cd2ac4d833803b47a33f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 5635358888095784866, guid: f95adcfbe4b9990469d7cb1a724535fd, type: 3}
-  playerOne: {fileID: 0}
-  Camera: {fileID: 0}
-  gameTimer: 0
-  money: 600
-  value: 0
+  playerSpawner: {fileID: 0}
+  gameTimer: 5
   moneyText: {fileID: 0}
   timeText: {fileID: 0}
   loseMoneyText: {fileID: 0}
-  StopPlayer: 0
 --- !u!4 &187006877
 Transform:
   m_ObjectHideFlags: 0

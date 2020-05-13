@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     public IEnumerator LoadCity() //load city with the fade effect
     {
         float fadeTime = gameObject.GetComponent<FadeEffect>().BeginFade(1);

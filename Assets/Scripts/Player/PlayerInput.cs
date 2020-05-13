@@ -6,7 +6,8 @@ public class PlayerInput : MonoBehaviour
     private string horizontalAxis;
     private string verticalAxis;
     private string useButton;
- 
+    private string runButton;
+
     //private int controllerNum;  //not used presently
 
     private bool usingControllers = false;
@@ -29,6 +30,7 @@ public class PlayerInput : MonoBehaviour
 
         horizontalAxis = type + "Horizontal" + id;
         verticalAxis = type + "Vertical" + id;
+        runButton = type + "Run" + id;
         useButton = type + "Use" + id;
 
     }
@@ -39,6 +41,11 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButton(useButton))
             player.OnUse();
+
+        if (Input.GetButton(runButton))
+            player.OnRunning();
+        else
+            player.OnWalking();
 
         //always send axis info
         hAxis = Input.GetAxis(horizontalAxis);

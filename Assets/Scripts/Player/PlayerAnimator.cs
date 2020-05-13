@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        player = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame

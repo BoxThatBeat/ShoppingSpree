@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: Run_down-Aaron
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,6 +21,12 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 619155705007297848, guid: 9b301f8bc6d1fdb4ab389bc40ac9c956,
+        type: 3}
+    - time: 0.083333336
+      value: {fileID: 1067641448767443310, guid: 9b301f8bc6d1fdb4ab389bc40ac9c956,
+        type: 3}
+    - time: 0.16666667
+      value: {fileID: -8101301961181817977, guid: 9b301f8bc6d1fdb4ab389bc40ac9c956,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -42,12 +48,14 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 619155705007297848, guid: 9b301f8bc6d1fdb4ab389bc40ac9c956, type: 3}
+    - {fileID: 1067641448767443310, guid: 9b301f8bc6d1fdb4ab389bc40ac9c956, type: 3}
+    - {fileID: -8101301961181817977, guid: 9b301f8bc6d1fdb4ab389bc40ac9c956, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.083333336
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
