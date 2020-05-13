@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -7360277806844784638}
   m_Layer: 0
   m_Name: JJ
-  m_TagString: Door
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 5cc5a55f5440158469e881c25085b18c, type: 2}
+  HospitalSpawn: {fileID: 7951699453510569583, guid: 8b30d67f2bc5f2e4bbd9c2efae7c6128,
+    type: 3}
   playerId: 0
   currentMovement: {x: 0, y: 0}
   stopped: 0

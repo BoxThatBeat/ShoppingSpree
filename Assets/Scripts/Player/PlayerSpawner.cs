@@ -17,9 +17,9 @@ public class PlayerSpawner : MonoBehaviour
     public characters playerOneChoice;
     public characters playerTwoChoice;
 
-    [SerializeField] private GameObject characterAaron;
-    [SerializeField] private GameObject characterPdanny;
-    [SerializeField] private GameObject characterJen;
+    [SerializeField] private GameObject characterAaron = null;
+    [SerializeField] private GameObject characterPdanny = null;
+    [SerializeField] private GameObject characterJen = null;
 
     private GameObject PlayerOne;
     private GameObject PlayerTwo;

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4409279951800154952}
+  - component: {fileID: -7971083318252738044}
   m_Layer: 0
   m_Name: TrafficLights
   m_TagString: Untagged
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4409279951800154953}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.972, y: -6.187, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -34,6 +35,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7971083318252738044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409279951800154953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea9b2ac18bd06048af231a67dbf01bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  traficLightsX:
+  - {fileID: 5760940740258407354}
+  - {fileID: 1769840354715273613}
+  traficLightsY:
+  - {fileID: 6122811518589087902}
+  - {fileID: 1945324255026683473}
+  settings: {fileID: 11400000, guid: 015e046a23b376d499aa1d9d4c3fefe8, type: 2}
 --- !u!1001 &780190437938450637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41,6 +61,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4409279951800154952}
     m_Modifications:
+    - target: {fileID: 4241298777741961623, guid: 6f5992971759103468a8050939b733d3,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241298777741961623, guid: 6f5992971759103468a8050939b733d3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.3665978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241298777741961623, guid: 6f5992971759103468a8050939b733d3,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 1.2127198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241298777741961623, guid: 6f5992971759103468a8050939b733d3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6460435
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241298777741961623, guid: 6f5992971759103468a8050939b733d3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.16245484
+      objectReference: {fileID: 0}
     - target: {fileID: 5871815219503851058, guid: 6f5992971759103468a8050939b733d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -96,10 +141,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6785609292068577363, guid: 6f5992971759103468a8050939b733d3,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 015e046a23b376d499aa1d9d4c3fefe8,
+        type: 2}
     - target: {fileID: 7391844275868965144, guid: 6f5992971759103468a8050939b733d3,
         type: 3}
       propertyPath: m_Name
       value: TrafficLightN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8055394450834082180, guid: 6f5992971759103468a8050939b733d3,
+        type: 3}
+      propertyPath: m_Name
+      value: TrafficController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5992971759103468a8050939b733d3, type: 3}
@@ -109,6 +165,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 780190437938450637}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6122811518589087902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6785609292068577363, guid: 6f5992971759103468a8050939b733d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 780190437938450637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7985fe1d579d4764e89a7870f47fa5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1045340290660336260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,6 +184,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4409279951800154952}
     m_Modifications:
+    - target: {fileID: 1589338664641628937, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 015e046a23b376d499aa1d9d4c3fefe8,
+        type: 2}
     - target: {fileID: 3724797629319001516, guid: 91fb883affd69124ca4ed2f32c58f2f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -176,6 +250,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLightE
       objectReference: {fileID: 0}
+    - target: {fileID: 5840253105306588297, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 8.3295765
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840253105306588297, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -2.7665577
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840253105306588297, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0650768
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840253105306588297, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.7991085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840253105306588297, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063698097492151343, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+        type: 3}
+      propertyPath: m_Name
+      value: TrafficController
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91fb883affd69124ca4ed2f32c58f2f4, type: 3}
 --- !u!4 &4409279951726982952 stripped
@@ -184,6 +288,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1045340290660336260}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1769840354715273613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1589338664641628937, guid: 91fb883affd69124ca4ed2f32c58f2f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1045340290660336260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7985fe1d579d4764e89a7870f47fa5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4073823281516461933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,6 +307,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4409279951800154952}
     m_Modifications:
+    - target: {fileID: 2145793097175548269, guid: a9036c38bd04f004c9d6eb7135322c29,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145793097175548269, guid: a9036c38bd04f004c9d6eb7135322c29,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.28983372
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145793097175548269, guid: a9036c38bd04f004c9d6eb7135322c29,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -1.4659841
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145793097175548269, guid: a9036c38bd04f004c9d6eb7135322c29,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.62507236
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145793097175548269, guid: a9036c38bd04f004c9d6eb7135322c29,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.16480553
+      objectReference: {fileID: 0}
+    - target: {fileID: 2483188370756346172, guid: a9036c38bd04f004c9d6eb7135322c29,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 015e046a23b376d499aa1d9d4c3fefe8,
+        type: 2}
     - target: {fileID: 3229551133905217446, guid: a9036c38bd04f004c9d6eb7135322c29,
         type: 3}
       propertyPath: m_Name
@@ -251,6 +398,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7467418109607206487, guid: a9036c38bd04f004c9d6eb7135322c29,
+        type: 3}
+      propertyPath: m_Name
+      value: TrafficController
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9036c38bd04f004c9d6eb7135322c29, type: 3}
 --- !u!4 &6479253916977532423 stripped
@@ -259,6 +411,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4073823281516461933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1945324255026683473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2483188370756346172, guid: a9036c38bd04f004c9d6eb7135322c29,
+    type: 3}
+  m_PrefabInstance: {fileID: 4073823281516461933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7985fe1d579d4764e89a7870f47fa5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7641836122322254385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,6 +430,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4409279951800154952}
     m_Modifications:
+    - target: {fileID: 2738109836320938379, guid: 019fda0927805264d9784e63e3dd18ee,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 015e046a23b376d499aa1d9d4c3fefe8,
+        type: 2}
+    - target: {fileID: 5338569883428423692, guid: 019fda0927805264d9784e63e3dd18ee,
+        type: 3}
+      propertyPath: m_Name
+      value: TrafficController
+      objectReference: {fileID: 0}
     - target: {fileID: 6286367254778576320, guid: 019fda0927805264d9784e63e3dd18ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -326,6 +501,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLightW
       objectReference: {fileID: 0}
+    - target: {fileID: 6607004217508502157, guid: 019fda0927805264d9784e63e3dd18ee,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607004217508502157, guid: 019fda0927805264d9784e63e3dd18ee,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -1.281741
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607004217508502157, guid: 019fda0927805264d9784e63e3dd18ee,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20611727
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607004217508502157, guid: 019fda0927805264d9784e63e3dd18ee,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.17772222
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607004217508502157, guid: 019fda0927805264d9784e63e3dd18ee,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.58776546
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 019fda0927805264d9784e63e3dd18ee, type: 3}
 --- !u!4 &4409279951400683505 stripped
@@ -334,3 +534,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7641836122322254385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5760940740258407354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2738109836320938379, guid: 019fda0927805264d9784e63e3dd18ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 7641836122322254385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7985fe1d579d4764e89a7870f47fa5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

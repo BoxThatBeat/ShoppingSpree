@@ -3,6 +3,7 @@
 public class PlayerController : MonoBehaviour{
 
     public PlayerSettings settings;
+    public GameObject HospitalSpawn;
 
     [Space]
     [Header("Player Stats:")]
@@ -68,5 +69,11 @@ public class PlayerController : MonoBehaviour{
                                     , transform.position.y + currentMovement.y * settings.walkSpeed * Time.deltaTime));
         }
             
+    }
+
+    public void GoToHospital()
+    {
+        Debug.Log("going to hospital");
+        transform.position = HospitalSpawn.transform.position;
     }
 }

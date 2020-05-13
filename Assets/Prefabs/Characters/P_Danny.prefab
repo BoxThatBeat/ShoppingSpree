@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 5eba884d0ae9e814097b10817bc228ba, type: 2}
+  HospitalSpawn: {fileID: 7951699453510569583, guid: 8b30d67f2bc5f2e4bbd9c2efae7c6128,
+    type: 3}
   playerId: 0
   currentMovement: {x: 0, y: 0}
   stopped: 0
