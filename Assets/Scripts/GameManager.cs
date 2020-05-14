@@ -7,11 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public float gameTimer = 500f;
-
-    public Text moneyText;
-    public Text timeText;
-    public Text loseMoneyText;
+    private int gameTimer = 300; //5 minutes in seconds 
+    private bool canDropTimer = true;
+    private bool gameStarted = false;
 
     private void Awake() 
     {
@@ -26,12 +24,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (canDropTimer && gameStarted)
+            StartCoroutine(CountDown());
+    }
+
+    private IEnumerator CountDown()
+    {
+        canDropTimer = false;
+        yield return new WaitForSecondsRealtime(1f);
+        gameTimer -= 1;
+        EventSystemUI.current.ChangeTime(gameTimer);
+        canDropTimer = true;
+    }
 
     public IEnumerator LoadCity() //load city with the fade effect
     {
         float fadeTime = gameObject.GetComponent<FadeEffect>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene("City");
+        gameStarted = true;
     }
 
     /*
