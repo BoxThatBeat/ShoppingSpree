@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
 
@@ -71,9 +72,17 @@ public class PlayerController : MonoBehaviour{
             
     }
 
+    private IEnumerator BlockMovement()
+    {
+        stopped = true;
+        yield return new WaitForSeconds(settings.blockTime);
+        stopped = false;
+    }
+
     public void GoToHospital()
     {
-        Debug.Log("going to hospital");
         transform.position = HospitalSpawn.transform.position;
+        //StartCoroutine(BlackOut());
+        StartCoroutine(BlockMovement()); //should also play a flashing white animation
     }
 }
