@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 4.5
   runSpeed: 6
+  blockTime: 1
