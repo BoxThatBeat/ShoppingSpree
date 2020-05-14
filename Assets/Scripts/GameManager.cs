@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         canDropTimer = false;
         yield return new WaitForSecondsRealtime(1f);
         gameTimer -= 1;
-        EventSystemUI.current.ChangeTime(gameTimer);
+        EventSystemUI.current.ChangeTimeUI(gameTimer);
         canDropTimer = true;
     }
 

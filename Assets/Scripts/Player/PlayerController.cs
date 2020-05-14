@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour{
     public int playerId = 0;
     public Vector2 currentMovement;
     public bool stopped;
-    public float money;
-    public float moneySaved; //score
+
+    public int money;      //current money
+    public int moneySaved; //score
 
     private Rigidbody2D rb;
     private float vAxis;
@@ -23,6 +24,9 @@ public class PlayerController : MonoBehaviour{
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        money = settings.startMoney;
+        EventSystemUI.current.ChangeMoneyUI("Money", playerId, money);
+
     }
 
     public void OnMove(float HAxis, float VAxis)
@@ -35,8 +39,8 @@ public class PlayerController : MonoBehaviour{
         }
         else
         {
-            currentMovement.x = 0f;//block movement
-            currentMovement.y = 0f;//block movement
+            currentMovement.x = 0f; //block movement
+            currentMovement.y = 0f; //block movement
         }
     }
 
@@ -82,6 +86,9 @@ public class PlayerController : MonoBehaviour{
     public void GoToHospital()
     {
         transform.position = HospitalSpawn.transform.position;
+        money -= 200;
+        EventSystemUI.current.ChangeMoneyUI("Money", playerId, money);
+
         //StartCoroutine(BlackOut());
         StartCoroutine(BlockMovement()); //should also play a flashing white animation
     }

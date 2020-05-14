@@ -6,4 +6,6 @@ public class PlayerSettings : ScriptableObject
     public float walkSpeed;
     public float runSpeed;
     public float blockTime;
+
+    public int startMoney;
 }

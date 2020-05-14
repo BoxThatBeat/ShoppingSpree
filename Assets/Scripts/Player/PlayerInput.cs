@@ -24,6 +24,7 @@ public class PlayerInput : MonoBehaviour
 
     public void SetupInput(string type, int id)
     {
+        GetComponent<PlayerController>().playerId = id; // set the player id on the controller
 
         if (type == "C")
             usingControllers = true;

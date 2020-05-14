@@ -13,8 +13,6 @@ public class GameTimer : MonoBehaviour
 
     private void UpdateTimer(int currentTimeInSeconds)
     {
-        Debug.Log(currentTimeInSeconds);
-
         int minutes = (int)(currentTimeInSeconds % 60);
         int hours = (int)(currentTimeInSeconds / 60);
 
