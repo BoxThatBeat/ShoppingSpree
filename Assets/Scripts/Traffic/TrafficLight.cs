@@ -10,11 +10,17 @@ public enum lightColor
 public class TrafficLight : MonoBehaviour
 {
     public lightColor currentState { set; private get; }
+    public direction dir;
     public TrafficSettings settings;
 
     private Queue<CarController> carsStopped;
     private CarController car = null;
     private bool readyToMove = true;
+
+    private void Awake()
+    {
+        currentState = lightColor.green;
+    }
 
     private void Start()
     {
@@ -66,10 +72,10 @@ public class TrafficLight : MonoBehaviour
     {
         if (collision.gameObject.tag == "Car")
         {
-            if (currentState == lightColor.red)
-            {
-                car = collision.GetComponent<CarController>();
+            car = collision.GetComponent<CarController>();
 
+            if (currentState == lightColor.red && car.dir == dir)
+            {
                 car.accelerating = false; //Tell car to slow down
                 carsStopped.Enqueue(car); //Add car to list of stopped cars
             }  

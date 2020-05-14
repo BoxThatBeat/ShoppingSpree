@@ -20,7 +20,7 @@ public class CarController : MonoBehaviour
 
     private Vector3 movement;
     private Rigidbody2D rb;
-    private float currentVelocity;
+    public float currentVelocity;
 
     private void Start()
     {
@@ -60,26 +60,26 @@ public class CarController : MonoBehaviour
                 if (accelerating)
                     Accelerate(0f, 1f);
                 else
-                    Deccelerate(0f, -1f);
+                    Deccelerate(0f, 1f);
                 break;
 
             case direction.eastward:
                 if (accelerating)
                     Accelerate(1f, 0f);
                 else
-                    Deccelerate(-1f, 0f);
+                    Deccelerate(1f, 0f);
                 break;
 
             case direction.southward:
                 if (accelerating)
-                    Accelerate(0f, -1f);
+                    Accelerate(0f, 1f);
                 else
                     Deccelerate(0f, 1f);
                 break;
 
             case direction.westward:
                 if (accelerating)
-                    Accelerate(-1f, 0f);
+                    Accelerate(1f, 0f);
                 else
                     Deccelerate(1f, 0f);
                 break;
@@ -88,17 +88,8 @@ public class CarController : MonoBehaviour
 
     private void Deccelerate(float xDir, float yDir)
     {
-        if (currentVelocity > 0)
-        {
-            if (currentVelocity < settings.minStopVelocity)
-            {
-                currentVelocity = 0f; //stop car if close to stopping
-            }
-            else
-            {
-                currentVelocity -= settings.accel;
-            }
-        }
+        if (currentVelocity > settings.deccel)
+            currentVelocity -= settings.deccel;
 
         Vector3 vector = new Vector3(xDir, yDir, 0f);
         rb.MovePosition(transform.position + vector * currentVelocity * Time.fixedDeltaTime);

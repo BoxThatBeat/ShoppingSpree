@@ -11,8 +11,14 @@ public class TrafficController : MonoBehaviour
 
     private bool readyToChange = true;
 
+    private void Start()
+    {
+        traficLightsX[0].currentState = lightColor.red;
+        traficLightsX[1].currentState = lightColor.red;
+    }
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (readyToChange)
             StartCoroutine(ChangeLights());

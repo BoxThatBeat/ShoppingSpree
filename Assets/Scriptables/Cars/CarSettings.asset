@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 6
   accel: 0.05
+  deccel: 0.1
   startVelocity: 0.02
   minStopVelocity: 0.01
