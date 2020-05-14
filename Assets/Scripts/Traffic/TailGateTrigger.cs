@@ -4,13 +4,18 @@ using UnityEngine;
 public class TailGateTrigger : MonoBehaviour
 {
     public TrafficSettings settings;
-    private CarController carBehind;
-    private CarController car;
+    private CarController carBehind = null;
+    private CarController myCar = null;
 
     public Collider2D colNorthward = null;
     public Collider2D colEastward = null;
     public Collider2D colSouthward = null;
     public Collider2D colWestward = null;
+
+    private void Start()
+    {
+        myCar = GetComponentInParent<CarController>();
+    }
 
     public void SetCollider(direction d)
     {
@@ -43,7 +48,8 @@ public class TailGateTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Car")
+        Debug.Log("slowdown");
+        if (collision.gameObject.tag == "Car" && carBehind == null && myCar.accelerating == false)
         {
             carBehind = collision.GetComponent<CarController>();
 
@@ -56,5 +62,6 @@ public class TailGateTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(settings.letGoTime);
         car.accelerating = true;
+        carBehind = null;
     }
 }

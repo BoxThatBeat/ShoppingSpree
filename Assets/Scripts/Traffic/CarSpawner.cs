@@ -15,6 +15,10 @@ public class CarSpawner : MonoBehaviour
     private string color;
     private Transform location;
     private GameObject carSpawned;
+    private int indexE = 0;
+    private int indexS = 0;
+    private int indexW = 0;
+    private int indexN = 0;
 
 
     private void Update()
@@ -26,6 +30,16 @@ public class CarSpawner : MonoBehaviour
     //spawn cars at random start locations at random intervals with a random color
     private IEnumerator SpawnCar()
     {
+        if (indexE >= eastwardSpawns.Length)
+            indexE = 0;
+        if (indexS >= southwardSpawns.Length)
+            indexS = 0;
+        if (indexW >= westwardSpawns.Length)
+            indexW = 0;
+        if (indexN >= northwardSpawns.Length)
+            indexN = 0;
+
+
         readyToSpawn = false;
 
         switch (Random.Range(0, 4)) //choose color of car to spawn
@@ -49,23 +63,27 @@ public class CarSpawner : MonoBehaviour
         switch (Random.Range(0, 4)) //choose color of car to spawn
         {
             case 0://northward
-                location = northwardSpawns[Random.Range(0, northwardSpawns.Length - 1)];
+                location = northwardSpawns[indexN];
+                ++indexN;
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x,location.position.y), Quaternion.identity);
                 carSpawned.GetComponent<CarController>().SetDirection(direction.northward);
                 break;
 
             case 1://easthward
-                location = eastwardSpawns[Random.Range(0, eastwardSpawns.Length - 1)];
+                location = eastwardSpawns[indexE];
+                ++indexE;
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x, location.position.y), Quaternion.identity);
                 carSpawned.GetComponent<CarController>().SetDirection(direction.eastward);
                 break;
             case 2://southhward
-                location = southwardSpawns[Random.Range(0, southwardSpawns.Length - 1)];
+                location = southwardSpawns[indexS];
+                ++indexS;
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x, location.position.y), Quaternion.identity);
                 carSpawned.GetComponent<CarController>().SetDirection(direction.southward);
                 break;
             case 3://westhward
-                location = westwardSpawns[Random.Range(0, westwardSpawns.Length - 1)];
+                location = westwardSpawns[indexW];
+                ++indexW;
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x, location.position.y), Quaternion.identity);
                 carSpawned.GetComponent<CarController>().SetDirection(direction.westward);
                 break;

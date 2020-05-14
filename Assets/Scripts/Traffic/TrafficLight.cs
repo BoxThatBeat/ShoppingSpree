@@ -74,7 +74,7 @@ public class TrafficLight : MonoBehaviour
         {
             car = collision.GetComponent<CarController>();
 
-            if (currentState == lightColor.red && car.dir == dir)
+            if (currentState == lightColor.red && car.direction == dir)
             {
                 car.accelerating = false; //Tell car to slow down
                 carsStopped.Enqueue(car); //Add car to list of stopped cars
