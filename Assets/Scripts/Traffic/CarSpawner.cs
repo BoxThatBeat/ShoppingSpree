@@ -51,27 +51,23 @@ public class CarSpawner : MonoBehaviour
             case 0://northward
                 location = northwardSpawns[Random.Range(0, northwardSpawns.Length - 1)];
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x,location.position.y), Quaternion.identity);
-                carSpawned.GetComponent<CarController>().dir = direction.northward;
-                carSpawned.GetComponent<CarController>().SetSprite();
+                carSpawned.GetComponent<CarController>().SetDirection(direction.northward);
                 break;
 
             case 1://easthward
                 location = eastwardSpawns[Random.Range(0, eastwardSpawns.Length - 1)];
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x, location.position.y), Quaternion.identity);
-                carSpawned.GetComponent<CarController>().dir = direction.eastward;
-                carSpawned.GetComponent<CarController>().SetSprite();
+                carSpawned.GetComponent<CarController>().SetDirection(direction.eastward);
                 break;
             case 2://southhward
                 location = southwardSpawns[Random.Range(0, southwardSpawns.Length - 1)];
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x, location.position.y), Quaternion.identity);
-                carSpawned.GetComponent<CarController>().dir = direction.southward;
-                carSpawned.GetComponent<CarController>().SetSprite();
+                carSpawned.GetComponent<CarController>().SetDirection(direction.southward);
                 break;
             case 3://westhward
                 location = westwardSpawns[Random.Range(0, westwardSpawns.Length - 1)];
                 carSpawned = pool.SpawnFromPool(color, new Vector2(location.position.x, location.position.y), Quaternion.identity);
-                carSpawned.GetComponent<CarController>().dir = direction.westward;
-                carSpawned.GetComponent<CarController>().SetSprite();
+                carSpawned.GetComponent<CarController>().SetDirection(direction.westward);
                 break;
         }
 

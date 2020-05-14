@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3fa2765edc0a9439db177e2f2ff2df, type: 3}
   m_Name: TrafficSettings
   m_EditorClassIdentifier: 
-  transitionPeriod: 6
+  transitionPeriod: 8
   yellowTime: 0.5
   letGoTime: 0.3

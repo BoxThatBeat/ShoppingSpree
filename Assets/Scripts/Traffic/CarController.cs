@@ -9,7 +9,7 @@ public class CarController : MonoBehaviour
 {
 
     public CarSettings settings;
-    public direction dir;
+    public direction dir { get; private set; }
 
     public Sprite north;
     public Sprite east;
@@ -21,6 +21,15 @@ public class CarController : MonoBehaviour
     private Vector3 movement;
     private Rigidbody2D rb;
     public float currentVelocity;
+
+    public void SetDirection(direction d)
+    {
+        dir = d;
+        GetComponentInChildren<TailGateTrigger>().SetCollider(dir); //set the direction for the child script as well
+        //set the correct sprite
+        SetSprite();
+        //set up the correct car collider:
+    }
 
     private void Start()
     {

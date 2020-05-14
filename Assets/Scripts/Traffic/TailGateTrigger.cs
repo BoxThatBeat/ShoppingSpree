@@ -5,6 +5,41 @@ public class TailGateTrigger : MonoBehaviour
 {
     public TrafficSettings settings;
     private CarController carBehind;
+    private CarController car;
+
+    public Collider2D colNorthward = null;
+    public Collider2D colEastward = null;
+    public Collider2D colSouthward = null;
+    public Collider2D colWestward = null;
+
+    public void SetCollider(direction d)
+    {
+
+        //deactive all colliders before activating one
+        colNorthward.enabled = false;
+        colEastward.enabled = false;
+        colSouthward.enabled = false;
+        colWestward.enabled = false;
+
+        switch (d)
+        {
+            case direction.northward:
+                colNorthward.enabled = true;
+                break;
+
+            case direction.eastward:
+                colEastward.enabled = true;
+                break;
+
+            case direction.southward:
+                colSouthward.enabled = true;
+                break;
+
+            case direction.westward:
+                colWestward.enabled = true;
+                break;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
