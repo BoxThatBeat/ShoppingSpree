@@ -57182,8 +57182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f3fad3a45f9664c9360ae52a248935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 0.3
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 0, z: -1}
 --- !u!1 &362133942
 GameObject:
   m_ObjectHideFlags: 0
@@ -58725,8 +58724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f3fad3a45f9664c9360ae52a248935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 0, z: -1}
 --- !u!114 &976138859
 MonoBehaviour:
   m_ObjectHideFlags: 0
