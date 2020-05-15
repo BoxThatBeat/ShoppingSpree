@@ -74,6 +74,16 @@ public class PlayerController : MonoBehaviour{
                                     , transform.position.y + currentMovement.y * settings.walkSpeed * Time.deltaTime));
         }
             
+    }   
+
+    public void GoToHospital()
+    {
+        transform.position = HospitalSpawn.transform.position;
+        money -= 200;
+        EventSystemUI.current.ChangeMoneyUI("Money", playerId, money);
+        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
+
+        StartCoroutine(BlockMovement()); //should also play a flashing white animation
     }
 
     private IEnumerator BlockMovement()
@@ -81,16 +91,5 @@ public class PlayerController : MonoBehaviour{
         stopped = true;
         yield return new WaitForSeconds(settings.blockTime);
         stopped = false;
-    }
-
-    public void GoToHospital()
-    {
-        transform.position = HospitalSpawn.transform.position;
-        money -= 200;
-        EventSystemUI.current.ChangeMoneyUI("Money", playerId, money);
-        
-        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
-
-        StartCoroutine(BlockMovement()); //should also play a flashing white animation
     }
 }

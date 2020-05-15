@@ -13,7 +13,6 @@ public class EventSystemGame : MonoBehaviour
     public event Action<int, float> onFadeEffect;
     public void FadePlayer(int id, float speed)
     {
-        Debug.Log("test");
         onFadeEffect?.Invoke(id, speed);
     }
 

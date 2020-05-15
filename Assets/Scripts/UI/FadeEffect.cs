@@ -39,13 +39,10 @@ public class FadeEffect : MonoBehaviour
     //Set the direction of the alpha fade:
     private void BeginFade(int id, float speed)
     {
-        Debug.Log("fading player " + player);
         if (id == player)
-        {
-            
+        { 
             alpha = 1;
             fadeDir = -1;
-            //fadeDir = 1;
             fadeSpeed = speed;
         }
     }
