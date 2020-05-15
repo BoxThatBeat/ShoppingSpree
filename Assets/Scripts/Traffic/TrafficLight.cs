@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public enum lightColor
 {
@@ -9,17 +10,38 @@ public enum lightColor
 
 public class TrafficLight : MonoBehaviour
 {
-    public lightColor currentState { set; private get; }
+    
     public direction dir;
     public TrafficSettings settings;
+    public Light2D trafficLight;
 
     private Queue<CarController> carsStopped;
     private CarController car = null;
     private bool readyToMove = true;
 
+    public lightColor currentState;
+
+    private void SetCurrentState(lightColor state)
+    {
+        currentState = state;
+
+        switch (currentState)
+        {
+            case lightColor.green:
+                trafficLight.color = Color.green;
+                break;
+            case lightColor.yellow:
+                trafficLight.color = Color.yellow;
+                break;
+            case lightColor.red:
+                trafficLight.color = Color.red;
+                break;
+        }
+    }
+
     private void Awake()
     {
-        currentState = lightColor.green;
+        SetCurrentState(lightColor.green);
     }
 
     private void Start()
@@ -49,15 +71,15 @@ public class TrafficLight : MonoBehaviour
 
     private IEnumerator ChangeToRed()
     {
-        currentState = lightColor.yellow;
+        SetCurrentState(lightColor.yellow);
         yield return new WaitForSeconds(settings.yellowTime);
-        currentState = lightColor.red;
+        SetCurrentState(lightColor.red);
 
     }
     private IEnumerator ChangeToGreen()
     {
         yield return new WaitForSeconds(settings.yellowTime);
-        currentState = lightColor.green;
+        SetCurrentState(lightColor.green);
     }
 
     private IEnumerator LetCarGo(CarController car)

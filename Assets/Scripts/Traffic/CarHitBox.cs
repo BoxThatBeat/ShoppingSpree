@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HitBox : MonoBehaviour
+public class CarHitBox : MonoBehaviour
 {
     public Collider2D colBoxX;
     public Collider2D colBoxY;
