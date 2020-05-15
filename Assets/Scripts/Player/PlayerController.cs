@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour{
     {
         rb = GetComponent<Rigidbody2D>();
         money = settings.startMoney;
-        EventSystemUI.current.ChangeMoneyUI("Money", playerId, money);
+        EventSystemUI.current.ChangeMoneyUI(playerId, money);
 
     }
 
@@ -43,8 +43,10 @@ public class PlayerController : MonoBehaviour{
     public void OnUse()
     {
         Debug.Log("useButtonPressed");
+
         moneySaved += 200;
-        EventSystemUI.current.ChangeMoneyUI("Score", playerId, moneySaved);
+        EventSystemUI.current.ChangeScoreUI(playerId, moneySaved);
+        
     }
 
     public void OnRunning()
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour{
     {
         transform.position = HospitalSpawn.transform.position;
         money -= 200;
-        EventSystemUI.current.ChangeMoneyUI("Money", playerId, money);
+        EventSystemUI.current.ChangeMoneyUI(playerId, money);
         EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
 
         StartCoroutine(BlockMovement()); //should also play a flashing white animation

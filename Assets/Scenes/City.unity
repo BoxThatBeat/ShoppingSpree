@@ -57866,8 +57866,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -131.40991, y: -97}
-  m_SizeDelta: {x: 262.81982, y: -2.3553467}
+  m_AnchoredPosition: {x: -131, y: -97}
+  m_SizeDelta: {x: 262, y: -2.3553467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693412494
 MonoBehaviour:
@@ -58544,14 +58544,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 906779960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccea105949eb1ed42bae6d6af6e75b65, type: 3}
+  m_Script: {fileID: 11500000, guid: 347bedf28fd837e43ac91394d41c495b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyLoss: {fileID: 693412494}
+  scoreLoss: {fileID: 693412494}
   player: 1
-  typeUI: Score
-  startPosX: 0
-  easeTypeMoney: 24
+  startPosX: -262
   easeTypeScore: 29
 --- !u!1 &938335338
 GameObject:
@@ -59217,10 +59215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyLoss: {fileID: 399376131}
   player: 2
-  typeUI: Money
   startPosX: 250
   easeTypeMoney: 24
-  easeTypeScore: 30
 --- !u!1 &1080612028
 GameObject:
   m_ObjectHideFlags: 0
@@ -59704,7 +59700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15631866, y: -91}
+  m_AnchoredPosition: {x: 242, y: -91}
   m_SizeDelta: {x: 439.6078, y: 97.10742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195741922
@@ -64285,7 +64281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 98.262, y: -99}
+  m_AnchoredPosition: {x: -123, y: -99}
   m_SizeDelta: {x: 247.72311, y: 11.383972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692625791
@@ -64668,15 +64664,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782094669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccea105949eb1ed42bae6d6af6e75b65, type: 3}
+  m_Script: {fileID: 11500000, guid: 347bedf28fd837e43ac91394d41c495b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyLoss: {fileID: 1692625791}
+  scoreLoss: {fileID: 1692625791}
   player: 2
-  typeUI: Score
   startPosX: 0
-  easeTypeMoney: 24
-  easeTypeScore: 30
+  easeTypeScore: 29
 --- !u!1 &1785706636
 GameObject:
   m_ObjectHideFlags: 0
@@ -70150,7 +70144,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyLoss: {fileID: 1195741922}
   player: 1
-  typeUI: Money
   startPosX: 0
   easeTypeMoney: 24
-  easeTypeScore: 29

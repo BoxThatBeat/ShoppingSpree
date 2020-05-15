@@ -11,10 +11,16 @@ public class EventSystemUI : MonoBehaviour
     }
 
     //define UI events that the UI scripts can subscribe to and that the gameObjects can notifty
-    public event Action<string,int,int> onMoneyChanged;
-    public void ChangeMoneyUI(string type, int id,int amount)
+    public event Action<int,int> onMoneyChanged;
+    public void ChangeMoneyUI(int id,int amount)
     {
-        onMoneyChanged?.Invoke(type, id, amount);
+        onMoneyChanged?.Invoke(id, amount);
+    }
+
+    public event Action<int, int> onScoreChanged;
+    public void ChangeScoreUI(int id, int amount)
+    {
+        onScoreChanged?.Invoke(id, amount);
     }
 
     public event Action<int> onTimeChanged;
