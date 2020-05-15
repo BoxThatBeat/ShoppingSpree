@@ -57134,7 +57134,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.49
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -57168,7 +57168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &356346852
 MonoBehaviour:
@@ -57182,7 +57182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f3fad3a45f9664c9360ae52a248935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 0.125
+  smoothSpeed: 0.3
   offset: {x: 0, y: 0, z: -10}
 --- !u!1 &362133942
 GameObject:
@@ -57934,7 +57934,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -58480,7 +58480,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -58550,7 +58550,7 @@ MonoBehaviour:
   scoreLoss: {fileID: 693412494}
   player: 1
   startPosX: -262
-  easeTypeScore: 29
+  easeTypeScore: 30
 --- !u!1 &938335338
 GameObject:
   m_ObjectHideFlags: 0
@@ -58777,9 +58777,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.51
+    x: 0.5
     y: 0
-    width: 0.49
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -59146,7 +59146,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -63706,7 +63706,7 @@ PrefabInstance:
     - target: {fileID: 5091906535819172135, guid: b60b894c3dfdd134195fa7b2a1d8745a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5091906535819172135, guid: b60b894c3dfdd134195fa7b2a1d8745a,
         type: 3}
@@ -64281,8 +64281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -123, y: -99}
-  m_SizeDelta: {x: 247.72311, y: 11.383972}
+  m_AnchoredPosition: {x: -122.56922, y: -99}
+  m_SizeDelta: {x: 246.86156, y: 11.383972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692625791
 MonoBehaviour:
@@ -64600,7 +64600,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -64669,8 +64669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreLoss: {fileID: 1692625791}
   player: 2
-  startPosX: 0
-  easeTypeScore: 29
+  startPosX: -246
+  easeTypeScore: 30
 --- !u!1 &1785706636
 GameObject:
   m_ObjectHideFlags: 0
@@ -70075,7 +70075,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -70144,5 +70144,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyLoss: {fileID: 1195741922}
   player: 1
-  startPosX: 0
+  startPosX: 242
   easeTypeMoney: 24
