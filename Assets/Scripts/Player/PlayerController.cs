@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour{
     public int moneySaved; //score
 
     private Rigidbody2D rb;
-    private float vAxis;
-    private float hAxis;
     private bool running;
 
    
@@ -31,8 +29,6 @@ public class PlayerController : MonoBehaviour{
 
     public void OnMove(float HAxis, float VAxis)
     {
-        hAxis = HAxis;
-        vAxis = VAxis;
         if (!stopped)
         {
             currentMovement = new Vector2(HAxis, VAxis);
@@ -47,6 +43,8 @@ public class PlayerController : MonoBehaviour{
     public void OnUse()
     {
         Debug.Log("useButtonPressed");
+        moneySaved += 200;
+        EventSystemUI.current.ChangeMoneyUI("Score", playerId, moneySaved);
     }
 
     public void OnRunning()
