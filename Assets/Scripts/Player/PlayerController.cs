@@ -88,8 +88,9 @@ public class PlayerController : MonoBehaviour{
         transform.position = HospitalSpawn.transform.position;
         money -= 200;
         EventSystemUI.current.ChangeMoneyUI("Money", playerId, money);
+        
+        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
 
-        //StartCoroutine(BlackOut());
         StartCoroutine(BlockMovement()); //should also play a flashing white animation
     }
 }

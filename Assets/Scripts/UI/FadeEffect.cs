@@ -3,11 +3,17 @@
 public class FadeEffect : MonoBehaviour
 {
     public Texture2D fadeImage;
-    public float fadeSpeed = 0.8f;
 
-    private int drawDepth = -1000; //always render on top
+    public int player;
+    public float fadeSpeed = 0.8f;
     public float alpha = 1.0f;
     private int fadeDir = -1;
+    private int drawDepth = -1000; //always render on top
+
+    private void Start()
+    {
+        EventSystemGame.current.onFadeEffect += BeginFade;
+    }
 
     private void OnGUI()
     {
@@ -22,21 +28,29 @@ public class FadeEffect : MonoBehaviour
 
         GUI.depth = drawDepth; //make the black texture reder on top
 
-        GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), fadeImage);
-
+        if (player == 1)
+            GUI.DrawTexture(new Rect(0, 0, Screen.width /2, Screen.height), fadeImage);
+        else
+            GUI.DrawTexture(new Rect(Screen.width / 2, 0, Screen.width / 2, Screen.height), fadeImage);
 
     }
 
     //Set the direction of the alpha fade:
-    public float BeginFade(int dir)
+    private void BeginFade(int id, float speed)
     {
-        fadeDir = dir;
-        return (fadeSpeed);
+        Debug.Log("fading player " + player);
+        if (id == player)
+        {
+            
+            alpha = 1;
+            fadeDir = -1;
+            //fadeDir = 1;
+            fadeSpeed = speed;
+        }
     }
 
-    //automate the fade to occur when a scene is loaded
-    private void OnLevelWasLoaded()
+    private void OnDisable()
     {
-        BeginFade(-1);
+        EventSystemGame.current.onFadeEffect -= BeginFade;
     }
 }

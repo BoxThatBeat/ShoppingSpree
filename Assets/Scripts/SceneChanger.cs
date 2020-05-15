@@ -11,13 +11,16 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            StartCoroutine("LoadStore");
+            //StartCoroutine("LoadStore");
         }
     }
+    /*
     IEnumerator LoadStore()
     {
         float fadeTime = GameManager.Instance.GetComponent<FadeEffect>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene(SceneName);
     }
+    */
 }
+

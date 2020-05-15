@@ -17,11 +17,12 @@ public class DoorController : MonoBehaviour
             //StartCoroutine("LoadStore");
         }
     }
-    
+    /*
     IEnumerator LoadStore()
     {
         float fadeTime = GameManager.Instance.GetComponent<FadeEffect>().BeginFade(1);
         yield return new WaitForSeconds(fadeTime);
         SceneManager.LoadScene(storeName);
     }
+    */
 }

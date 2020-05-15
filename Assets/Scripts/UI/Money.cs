@@ -46,6 +46,32 @@ public class Money : MonoBehaviour
         moneyLoss.enabled = false;
     }
 
+    private void OnDisable()
+    {
+        EventSystemUI.current.onMoneyChanged -= ChangeMoney;
+    }
+
+    /*
+    // Fades the text for the money loss
+    IEnumerator FadeOut()
+    {
+        float startAlpha = loseMoneyText.color.a;
+
+        float rate = 1.0f / 1.33f;
+        float progress = 0.0f;
+
+        while (progress < 1.0)
+        {
+            Color tempColor = loseMoneyText.color;
+
+            loseMoneyText.color = new Color(tempColor.r, tempColor.g, tempColor.b, Mathf.Lerp(startAlpha, 0, progress));
+
+            progress += rate * Time.deltaTime;
+
+            yield return null;
+        }
+    }
+    */
 }
 
 

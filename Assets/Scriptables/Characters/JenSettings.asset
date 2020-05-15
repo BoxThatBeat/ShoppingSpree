@@ -15,3 +15,5 @@ MonoBehaviour:
   walkSpeed: 4.5
   runSpeed: 6
   blockTime: 1
+  knockOutFadeTime: 0.5
+  startMoney: 6000

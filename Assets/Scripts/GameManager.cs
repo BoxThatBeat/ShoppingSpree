@@ -41,72 +41,13 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator LoadCity() //load city with the fade effect
     {
-        float fadeTime = gameObject.GetComponent<FadeEffect>().BeginFade(1);
-        yield return new WaitForSeconds(fadeTime);
+        EventSystemGame.current.FadePlayer(1, 0.8f);
+        EventSystemGame.current.FadePlayer(2, 0.8f);
+        yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene("City");
         gameStarted = true;
+
+        
     }
-
-    /*
-    public IEnumerator Blackout() //Black out the screen and fade back in
-    {
-        gameObject.GetComponent<FadeEffect>().alpha = 1;
-        float fadeTime = gameObject.GetComponent<FadeEffect>().BeginFade(-1);
-        yield return new WaitForSeconds(fadeTime);
-    }
-
-    // Shows the money loss
-    IEnumerator ShowLoss(string loss, float delay)
-    {
-        loseMoneyText.text = "-$" + loss;
-        loseMoneyText.enabled = true;
-        yield return new WaitForSeconds(delay);
-        StartCoroutine(FadeOut()); // FadeOut function
-        yield return new WaitForSeconds(delay);
-        loseMoneyText.enabled = false;
-    }
-
-    // Fades the text for the money loss
-    IEnumerator FadeOut()
-    {
-        float startAlpha = loseMoneyText.color.a;
-
-        float rate = 1.0f / 1.33f;
-        float progress = 0.0f;
-
-        while (progress < 1.0)
-        {
-            Color tempColor = loseMoneyText.color;
-
-            loseMoneyText.color = new Color(tempColor.r, tempColor.g, tempColor.b, Mathf.Lerp(startAlpha, 0, progress));
-
-            progress += rate * Time.deltaTime;
-
-            yield return null;
-        }
-    }
-
-    private void Update()
-    {
-        // Updates the user's money (note: if we have methods for adding/subtracting money, it would be ideal to place this in each of those)
-        moneyText.text = "$" + money.ToString();
-
-        gameTimer -= 1f;
-
-        int minutes = (int)(gameTimer % 60);
-        int hours = (int)(gameTimer / 60);
-
-        string timerString = string.Format("{0:00}:{1:00}", hours, minutes);
-
-        timeText.text = timerString;
-    }
-
-    
-    private void OnLevelWasLoaded()
-    {
-        StopPlayer = false; //let the player move again
-    }
-    */
-
 
 }
