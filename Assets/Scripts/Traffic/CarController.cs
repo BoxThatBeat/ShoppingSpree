@@ -35,7 +35,7 @@ public class CarController : MonoBehaviour
     public void SetDirection(direction dir) //set the corect sprite
     {
         direction = dir;
-        GetComponentInChildren<TailGateTrigger>().SetCollider(dir); //set the direction for the child script
+        //GetComponentInChildren<TailGateTrigger>().SetCollider(dir); //set the direction for the child script
         GetComponentInChildren<CarHitBox>().SetCollider(dir);
 
         //set the colider,sprite and float values for movement based on the direction set

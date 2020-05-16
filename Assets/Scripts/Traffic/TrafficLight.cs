@@ -17,7 +17,6 @@ public class TrafficLight : MonoBehaviour
 
     private Queue<CarController> carsStopped;
     private CarController car = null;
-    private bool readyToMove = true;
 
     public lightColor currentState;
 
@@ -49,13 +48,6 @@ public class TrafficLight : MonoBehaviour
         carsStopped = new Queue<CarController>(); //init queue of cars
     }
 
-    private void Update()
-    {
-        if (carsStopped.Count != 0 && currentState == lightColor.green && readyToMove)
-        {
-            StartCoroutine(LetCarGo(carsStopped.Dequeue()));
-        }
-    }
 
     public void SwitchLight()
     {
@@ -80,17 +72,44 @@ public class TrafficLight : MonoBehaviour
     {
         yield return new WaitForSeconds(settings.yellowTime);
         SetCurrentState(lightColor.green);
+        LetCarsGo();
     }
 
-    private IEnumerator LetCarGo(CarController car)
+    private void LetCarsGo()
     {
-        car.accelerating = true;
-        readyToMove = false;
-        yield return new WaitForSeconds(settings.letGoTime);
-        readyToMove = true;
+        //reset the colider box
+        switch (dir)
+        {
+            case direction.northward:
+                transform.position = new Vector2(transform.position.x, transform.position.y - carsStopped.Count * settings.ColliderMoveDistance);
+                break;
+            case direction.eastward:
+                transform.position = new Vector2(transform.position.x + carsStopped.Count * settings.ColliderMoveDistance, transform.position.y);
+                break;
+            case direction.southward:
+                transform.position = new Vector2(transform.position.x, transform.position.y + carsStopped.Count * settings.ColliderMoveDistance);
+                break;
+            case direction.westward:
+                transform.position = new Vector2(transform.position.x - carsStopped.Count * settings.ColliderMoveDistance, transform.position.y);
+                break;
+        }
+
+        Debug.Log(carsStopped.Count);
+        for (int i = 0; i < carsStopped.Count; i++)
+        {
+            StartCoroutine(LetCarGo(carsStopped.Dequeue(), i + 1)); //start coroutines to let all cars go one at a time with intervals: 0.5, 1 , 1.5 seconds
+        }
+        carsStopped.Clear();
+        Debug.Log(carsStopped.Count);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator LetCarGo(CarController car, float time)
+    {
+        yield return new WaitForSeconds(time/2);
+        car.accelerating = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Car")
         {
@@ -99,7 +118,25 @@ public class TrafficLight : MonoBehaviour
             if (currentState == lightColor.red && car.direction == dir)
             {
                 car.accelerating = false; //Tell car to slow down
-                carsStopped.Enqueue(car); //Add car to list of stopped cars
+                carsStopped.Enqueue(car); //Add car to list of stopped cars to allow them to go when it turns green
+
+                //move colider back in the correct direction by the amount set in the settings 
+                switch (dir)
+                {
+                    case direction.northward:
+                        transform.position = new Vector2(transform.position.x, transform.position.y + settings.ColliderMoveDistance);
+                        break;
+                    case direction.eastward:
+                        transform.position = new Vector2(transform.position.x - settings.ColliderMoveDistance, transform.position.y);
+                        break;
+                    case direction.southward:
+                        transform.position = new Vector2(transform.position.x, transform.position.y - settings.ColliderMoveDistance);
+                        break;
+                    case direction.westward:
+                        transform.position = new Vector2(transform.position.x + settings.ColliderMoveDistance, transform.position.y);
+                        break;
+                }
+
             }  
         }
     }

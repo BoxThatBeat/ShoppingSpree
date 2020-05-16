@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionPeriod: 8
   yellowTime: 1.3
-  letGoTime: 1
+  ColliderMoveDistance: 1.2

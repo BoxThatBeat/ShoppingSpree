@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 08adb13c742338145b0ab46c72b52bdd
-  - enabled: 1
-    path: Assets/Scenes/City.unity
-    guid: 2fe60e35c37091e4c89e455f5f0e2cdc
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Lululime.unity
     guid: 7f5044eba2dbc7a40b29bc75590236e7

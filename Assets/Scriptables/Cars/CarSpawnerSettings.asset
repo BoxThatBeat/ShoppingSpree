@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CarSpawnerSettings
   m_EditorClassIdentifier: 
   minTimeToSpawn: 0
-  maxTimeToSpawn: 2
+  maxTimeToSpawn: 0.5

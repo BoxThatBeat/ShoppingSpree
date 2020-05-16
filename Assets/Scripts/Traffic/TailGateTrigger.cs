@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TailGateTrigger : MonoBehaviour
 {
+    /*
     public TrafficSettings settings;
     private CarController carBehind = null;
     private CarController myCar = null;
@@ -64,4 +65,5 @@ public class TailGateTrigger : MonoBehaviour
         car.accelerating = true;
         carBehind = null;
     }
+    */
 }

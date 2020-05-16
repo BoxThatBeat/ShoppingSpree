@@ -168,15 +168,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3273236467049712309, guid: a5ecb3fe51c353b4d997941b9c680d0a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.36, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6052469951545494555
@@ -226,11 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e41d82376cee0f468219edd6de30c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 015e046a23b376d499aa1d9d4c3fefe8, type: 2}
-  colNorthward: {fileID: 3035019717780242966}
-  colEastward: {fileID: 2054639915189705585}
-  colSouthward: {fileID: 7240251067696641297}
-  colWestward: {fileID: 1189318379193005943}
 --- !u!61 &2054639915189705585
 BoxCollider2D:
   m_ObjectHideFlags: 0
