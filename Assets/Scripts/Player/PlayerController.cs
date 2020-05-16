@@ -63,8 +63,10 @@ public class PlayerController : MonoBehaviour{
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (running)
         {
+
             rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.runSpeed * Time.deltaTime
                                     , transform.position.y + currentMovement.y * settings.runSpeed * Time.deltaTime));
         }

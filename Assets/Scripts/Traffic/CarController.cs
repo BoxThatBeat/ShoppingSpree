@@ -67,7 +67,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate() //Movement
+    private void FixedUpdate() //Movement COULD USE FIXED UPDATE
     {
         if (accelerating)
             Accelerate(xAxisMovement, yAxisMovement);
