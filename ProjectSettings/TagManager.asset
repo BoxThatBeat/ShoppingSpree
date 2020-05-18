@@ -43,6 +43,15 @@ TagManager:
   - name: Base
     uniqueID: 3282157447
     locked: 0
+  - name: StoreBaseInterior
+    uniqueID: 3846296845
+    locked: 0
+  - name: StoreObjectsInterior
+    uniqueID: 1714151823
+    locked: 0
+  - name: StoreDefault
+    uniqueID: 4274526505
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
