@@ -218,6 +218,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLights
       objectReference: {fileID: 0}
+    - target: {fileID: 4409279951800154953, guid: 9690abd4727cfc1439fdb62f8f596a17,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9690abd4727cfc1439fdb62f8f596a17, type: 3}
 --- !u!4 &26697692 stripped
@@ -58411,7 +58416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 13.35022, y: 468.91}
+  m_AnchoredPosition: {x: 13.350098, y: 468.9099}
   m_SizeDelta: {x: -63.299606, y: -974.9619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &906779962
@@ -58890,6 +58895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrafficLights (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4409279951800154953, guid: 9690abd4727cfc1439fdb62f8f596a17,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4436966493530387953, guid: 9690abd4727cfc1439fdb62f8f596a17,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -58978,6 +58988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrafficLights (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409279951800154953, guid: 9690abd4727cfc1439fdb62f8f596a17,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4436966493530387953, guid: 9690abd4727cfc1439fdb62f8f596a17,
         type: 3}
@@ -60046,6 +60061,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrafficLights (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409279951800154953, guid: 9690abd4727cfc1439fdb62f8f596a17,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4436966493530387953, guid: 9690abd4727cfc1439fdb62f8f596a17,
         type: 3}
@@ -64461,7 +64481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 13.35022, y: 468.91}
+  m_AnchoredPosition: {x: 13.350098, y: 468.9099}
   m_SizeDelta: {x: -63.299606, y: -974.9619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782094671

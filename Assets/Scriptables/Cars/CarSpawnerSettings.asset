@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1881fe2ee9510f46bd39a303b29b444, type: 3}
   m_Name: CarSpawnerSettings
   m_EditorClassIdentifier: 
-  minTimeToSpawn: 0
+  minTimeToSpawn: 0.5
   maxTimeToSpawn: 0.5

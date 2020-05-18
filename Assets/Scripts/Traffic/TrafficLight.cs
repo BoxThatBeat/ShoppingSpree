@@ -77,36 +77,40 @@ public class TrafficLight : MonoBehaviour
 
     private void LetCarsGo()
     {
-        //reset the colider box
-        switch (dir)
+        if (carsStopped.Count > 0)
         {
-            case direction.northward:
-                transform.position = new Vector2(transform.position.x, transform.position.y - carsStopped.Count * settings.ColliderMoveDistance);
-                break;
-            case direction.eastward:
-                transform.position = new Vector2(transform.position.x + carsStopped.Count * settings.ColliderMoveDistance, transform.position.y);
-                break;
-            case direction.southward:
-                transform.position = new Vector2(transform.position.x, transform.position.y + carsStopped.Count * settings.ColliderMoveDistance);
-                break;
-            case direction.westward:
-                transform.position = new Vector2(transform.position.x - carsStopped.Count * settings.ColliderMoveDistance, transform.position.y);
-                break;
-        }
+            //reset the colider box
+            switch (dir)
+            {
+                case direction.northward:
+                    transform.position = new Vector2(transform.position.x, transform.position.y + carsStopped.Count * settings.ColliderMoveDistance);
+                    break;
+                case direction.eastward:
+                    transform.position = new Vector2(transform.position.x + carsStopped.Count * settings.ColliderMoveDistance, transform.position.y);
+                    break;
+                case direction.southward:
+                    transform.position = new Vector2(transform.position.x, transform.position.y - carsStopped.Count * settings.ColliderMoveDistance);
+                    break;
+                case direction.westward:
+                    transform.position = new Vector2(transform.position.x - carsStopped.Count * settings.ColliderMoveDistance, transform.position.y);
+                    break;
+            }
 
-        Debug.Log(carsStopped.Count);
-        for (int i = 0; i < carsStopped.Count; i++)
-        {
-            StartCoroutine(LetCarGo(carsStopped.Dequeue(), i + 1)); //start coroutines to let all cars go one at a time with intervals: 0.5, 1 , 1.5 seconds
+            int numCars = carsStopped.Count;
+            for (int i = 0; i < numCars; i++)
+            {
+                StartCoroutine(LetCarGo(carsStopped.Dequeue(), i + 1)); //start coroutines to let all cars go one at a time with intervals: 0.5, 1 , 1.5 seconds
+            }
+            
         }
-        carsStopped.Clear();
-        Debug.Log(carsStopped.Count);
+        
     }
 
     private IEnumerator LetCarGo(CarController car, float time)
     {
         yield return new WaitForSeconds(time/2);
         car.accelerating = true;
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -124,13 +128,13 @@ public class TrafficLight : MonoBehaviour
                 switch (dir)
                 {
                     case direction.northward:
-                        transform.position = new Vector2(transform.position.x, transform.position.y + settings.ColliderMoveDistance);
+                        transform.position = new Vector2(transform.position.x, transform.position.y - settings.ColliderMoveDistance);
                         break;
                     case direction.eastward:
                         transform.position = new Vector2(transform.position.x - settings.ColliderMoveDistance, transform.position.y);
                         break;
                     case direction.southward:
-                        transform.position = new Vector2(transform.position.x, transform.position.y - settings.ColliderMoveDistance);
+                        transform.position = new Vector2(transform.position.x, transform.position.y + settings.ColliderMoveDistance);
                         break;
                     case direction.westward:
                         transform.position = new Vector2(transform.position.x + settings.ColliderMoveDistance, transform.position.y);
