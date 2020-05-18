@@ -20,6 +20,10 @@ public class CarSpawner : MonoBehaviour
     private int indexW = 0;
     private int indexN = 0;
 
+    private void Start() //spawn a bunch of cars at the beginning to fill the city
+    {
+        //for (int i = 0; i < )
+    }
 
     private void Update()
     {
@@ -30,18 +34,7 @@ public class CarSpawner : MonoBehaviour
     //spawn cars at random start locations at random intervals with a random color
     private IEnumerator SpawnCar()
     {
-        if (indexE >= eastwardSpawns.Length)
-            indexE = 0;
-        if (indexS >= southwardSpawns.Length)
-            indexS = 0;
-        if (indexW >= westwardSpawns.Length)
-            indexW = 0;
-        if (indexN >= northwardSpawns.Length)
-            indexN = 0;
-
-
         readyToSpawn = false;
-
         switch (Random.Range(0, 4)) //choose color of car to spawn
         {
             case 0:
@@ -58,6 +51,14 @@ public class CarSpawner : MonoBehaviour
                 break;
         }
 
+        if (indexE >= eastwardSpawns.Length)
+            indexE = 0;
+        if (indexS >= southwardSpawns.Length)
+            indexS = 0;
+        if (indexW >= westwardSpawns.Length)
+            indexW = 0;
+        if (indexN >= northwardSpawns.Length)
+            indexN = 0;
 
         //spawn car in random direction at a random coresponding spawn point
         switch (Random.Range(0, 4)) //choose color of car to spawn

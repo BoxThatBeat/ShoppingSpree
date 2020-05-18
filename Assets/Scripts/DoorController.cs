@@ -1,28 +1,32 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DoorController : MonoBehaviour
 {
+    public int storeId;
 
-    public string storeName;
-    public Animator doorAnim;
+    public Sprite doorOpen;
+    public Sprite doorClosed;
+
+    public float waitTime;
+    public float transitionTime;
 
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            doorAnim.SetBool("Open", true);//open door
-
-            //StartCoroutine("LoadStore");
+            GetComponent<SpriteRenderer>().sprite = doorOpen;
+            StartCoroutine(LoadStore(other));
         }
     }
-    /*
-    IEnumerator LoadStore()
+    
+    IEnumerator LoadStore(Collider2D other)
     {
-        float fadeTime = GameManager.Instance.GetComponent<FadeEffect>().BeginFade(1);
-        yield return new WaitForSeconds(fadeTime);
-        SceneManager.LoadScene(storeName);
+        yield return new WaitForSeconds(waitTime);//show the door openning first
+
+        other.GetComponent<PlayerController>().GoToStore(new Vector2(storeId * 200, 0));//The store interiors are seperated by 200 units
+
+        GetComponent<SpriteRenderer>().sprite = doorClosed;
     }
-    */
+    
 }

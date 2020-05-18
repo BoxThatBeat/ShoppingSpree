@@ -24,7 +24,8 @@ public class CarHitBox : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerController>().GoToHospital();
+            if (GetComponent<CarController>().accelerating)
+                other.gameObject.GetComponent<PlayerController>().GoToHospital();
         }
     }
 }

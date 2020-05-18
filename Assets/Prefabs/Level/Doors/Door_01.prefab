@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3676686557744030282}
   - component: {fileID: 3776380313503622589}
   - component: {fileID: 2057998222082601954}
-  - component: {fileID: 9026739822063112125}
   m_Layer: 0
   m_Name: Door_01
   m_TagString: Door
@@ -123,24 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e25736274fd454fa283dceee6d6bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storeName: Lululime
-  doorAnim: {fileID: 9026739822063112125}
---- !u!95 &9026739822063112125
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911833392747234997}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4d4352566bc65534bb932d4c71539b9c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  storeId: 1
+  doorOpen: {fileID: -646586912294721622, guid: 3b7b4b7bae630c940816f4083673085f,
+    type: 3}
+  doorClosed: {fileID: -1506208886050858202, guid: 3b7b4b7bae630c940816f4083673085f,
+    type: 3}
+  waitTime: 0.3
+  transitionTime: 0.5

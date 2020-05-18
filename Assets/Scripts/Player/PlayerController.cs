@@ -80,18 +80,29 @@ public class PlayerController : MonoBehaviour{
 
     public void GoToHospital()
     {
+        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
         transform.position = HospitalSpawn.transform.position;
+
         money -= 200;
         EventSystemUI.current.ChangeMoneyUI(playerId, money);
-        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
 
-        StartCoroutine(BlockMovement()); //should also play a flashing white animation
+        StartCoroutine(BlockMovement(settings.blockTimeToHospital));
+        //should also play a flashing white animation in the future
     }
 
-    private IEnumerator BlockMovement()
+    public void GoToStore(Vector2 storePos)
+    {
+        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
+
+        transform.position = storePos;
+
+        StartCoroutine(BlockMovement(settings.blockTimeToStore));
+    }
+
+    private IEnumerator BlockMovement(float time)
     {
         stopped = true;
-        yield return new WaitForSeconds(settings.blockTime);
+        yield return new WaitForSeconds(time);
         stopped = false;
     }
 }
