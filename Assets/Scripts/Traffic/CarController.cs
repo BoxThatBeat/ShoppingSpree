@@ -15,7 +15,7 @@ public class CarController : MonoBehaviour
     public Sprite west;
 
     public direction direction;
-    public bool accelerating;
+    public bool accelerating { get; private set; }
 
     private float currentVelocity;
     private float xAxisMovement;
@@ -23,6 +23,19 @@ public class CarController : MonoBehaviour
 
     private Vector3 movement;
     private Rigidbody2D rb;
+
+    public void SetAccelerating(bool value)
+    {
+        accelerating = value;
+
+        //set the rigid body type since we want collisions with player when not accelerating
+        /*
+        if (value)
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        else
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            */
+    }
 
     private void Start()
     {
@@ -66,7 +79,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate() //Movement COULD USE FIXED UPDATE
+    private void FixedUpdate() //movement
     {
         if (accelerating)
             Accelerate(xAxisMovement, yAxisMovement);

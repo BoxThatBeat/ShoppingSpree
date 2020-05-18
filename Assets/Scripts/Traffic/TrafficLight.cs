@@ -109,7 +109,7 @@ public class TrafficLight : MonoBehaviour
     private IEnumerator LetCarGo(CarController car, float time)
     {
         yield return new WaitForSeconds(time/2);
-        car.accelerating = true;
+        car.SetAccelerating(true);
 
     }
 
@@ -121,7 +121,7 @@ public class TrafficLight : MonoBehaviour
 
             if (currentState == lightColor.red && car.direction == dir)
             {
-                car.accelerating = false; //Tell car to slow down
+                car.SetAccelerating(false);
                 carsStopped.Enqueue(car); //Add car to list of stopped cars to allow them to go when it turns green
 
                 //move colider back in the correct direction by the amount set in the settings 
