@@ -15,6 +15,7 @@ public class DoorController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.GetComponent<PlayerController>().StartBlockMovement(0.5f);
             GetComponent<SpriteRenderer>().sprite = doorOpen;
             StartCoroutine(LoadStore(other));
         }

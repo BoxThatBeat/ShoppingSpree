@@ -86,17 +86,19 @@ public class PlayerController : MonoBehaviour{
         money -= 200;
         EventSystemUI.current.ChangeMoneyUI(playerId, money);
 
-        StartCoroutine(BlockMovement(settings.blockTimeToHospital));
+        StartBlockMovement(settings.blockTimeToHospital);
         //should also play a flashing white animation in the future
     }
 
     public void GoToStore(Vector2 storePos)
     {
         EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
-
         transform.position = storePos;
+    }
 
-        StartCoroutine(BlockMovement(settings.blockTimeToStore));
+    public void StartBlockMovement(float time) //used to access this coroutine outside of the class
+    {
+        StartCoroutine(BlockMovement(time));
     }
 
     private IEnumerator BlockMovement(float time)
