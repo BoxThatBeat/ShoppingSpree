@@ -52,6 +52,9 @@ TagManager:
   - name: StoreDefault
     uniqueID: 4274526505
     locked: 0
+  - name: Poles
+    uniqueID: 3215784141
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
