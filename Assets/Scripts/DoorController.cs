@@ -5,11 +5,10 @@ public class DoorController : MonoBehaviour
 {
     public int storeId;
 
+    public DoorSettings settings;
+
     public Sprite doorOpen;
     public Sprite doorClosed;
-
-    public float waitTime;
-    public float transitionTime;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -23,7 +22,7 @@ public class DoorController : MonoBehaviour
     
     IEnumerator LoadStore(Collider2D other)
     {
-        yield return new WaitForSeconds(waitTime);//show the door openning first
+        yield return new WaitForSeconds(settings.waitTime);//show the door openning first
 
         other.GetComponent<PlayerController>().GoToStore(new Vector2(storeId * 200, 0));//The store interiors are seperated by 200 units
 

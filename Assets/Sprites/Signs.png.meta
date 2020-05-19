@@ -1,43 +1,34 @@
 fileFormatVersion: 2
-guid: 39b205e107107344c89ce401a5a62244
+guid: a26152fba57a547438a334b1fdc3cda1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5693682774409091290
-    second: CPU_02_0
+      213: 1714756807398554617
+    second: Signs_0
   - first:
-      213: 3488121861375988813
-    second: CPU_02_1
+      213: 8051134168378353487
+    second: Signs_1
   - first:
-      213: -5638333936587761982
-    second: CPU_02_2
+      213: -5459743574113085061
+    second: Signs_2
   - first:
-      213: -1540225488076893432
-    second: CPU_02_3
+      213: -2742302684088697420
+    second: Signs_3
   - first:
-      213: -5963048089583322471
-    second: CPU_02_4
+      213: 8814233360100005479
+    second: Signs_4
   - first:
-      213: 1578685628346221736
-    second: CPU_02_5
+      213: -8967832436468776462
+    second: Signs_5
   - first:
-      213: 7756783774306602614
-    second: CPU_02_6
+      213: -1180436918578810845
+    second: Signs_6
   - first:
-      213: -1425289439208272837
-    second: CPU_02_7
+      213: 4130303453484289882
+    second: Signs_7
   - first:
-      213: 1684604907758937171
-    second: CPU_02_8
-  - first:
-      213: 4292194387455846332
-    second: CPU_02_9
-  - first:
-      213: -3910377494995231765
-    second: CPU_02_10
-  - first:
-      213: -5509048098883185884
-    second: CPU_02_11
+      213: 2819549039577334838
+    second: Signs_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,14 +84,14 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +103,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,7 +115,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,253 +126,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CPU_02_0
+      name: Signs_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 34
-        width: 9
+        x: 3
+        y: 130
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb7c2d2b3a0cc710800000000000000
+      internalID: 1714756807398554617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Signs_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 114
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47a3319edf5bbf60800000000000000
+      internalID: 8051134168378353487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Signs_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 98
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79944475281b34b0800000000000000
+      internalID: -5459743574113085061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Signs_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 82
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdfa48fc3261f9d0800000000000000
+      internalID: -2742302684088697420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Signs_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 66
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766982c8a82725a70800000000000000
+      internalID: 8814233360100005479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Signs_5
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 50
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f18d03a9ebdb8380800000000000000
+      internalID: -8967832436468776462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Signs_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 33
+        width: 26
         height: 14
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 162f90dc99a097d48b4e77b09430e455
-      internalID: 5693682774409091290
+      spriteID: 3207a5470ee3e9fe0800000000000000
+      internalID: -1180436918578810845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CPU_02_1
+      name: Signs_7
       rect:
         serializedVersion: 2
-        x: 17
-        y: 34
-        width: 12
+        x: 3
+        y: 17
+        width: 26
         height: 14
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2de1feafccb1654686b4beae80a7ccc
-      internalID: 3488121861375988813
+      spriteID: a5f008f8b19c15930800000000000000
+      internalID: 4130303453484289882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CPU_02_2
+      name: Signs_8
       rect:
         serializedVersion: 2
-        x: 34
-        y: 34
-        width: 12
+        x: 3
+        y: 1
+        width: 26
         height: 14
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 094b277e959b2554894c425528463f81
-      internalID: -5638333936587761982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_3
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 34
-        width: 9
-        height: 14
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20211d1c37605924a94b412008e6ad21
-      internalID: -1540225488076893432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 17
-        width: 11
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be074d2fe42b38c4db1e4ba3c95b9af2
-      internalID: -5963048089583322471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_5
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 17
-        width: 12
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05246c43dcfc6f74b95ef073b025cdd5
-      internalID: 1578685628346221736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_6
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 17
-        width: 12
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d891725babf7f5b4d921ce79f6cde6c5
-      internalID: 7756783774306602614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_7
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 17
-        width: 11
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebb96e3e7724d9644ac6ff5833f3b460
-      internalID: -1425289439208272837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 11
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77c8a851565b7ee4fb9b61954d404591
-      internalID: 1684604907758937171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_9
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 0
-        width: 12
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50eb384210434354ab1645f9d6428638
-      internalID: 4292194387455846332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_10
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 0
-        width: 12
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2e58dd3e795b304b823c791fbe00dfc
-      internalID: -3910377494995231765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CPU_02_11
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 11
-        height: 15
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ada2648e28690e44fba6a12347a4d83f
-      internalID: -5509048098883185884
+      spriteID: 6340dc2b9ec012720800000000000000
+      internalID: 2819549039577334838
       vertices: []
       indices: 
       edges: []
@@ -389,7 +317,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4d296b1a240db6d4d95c283a8135e694
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
