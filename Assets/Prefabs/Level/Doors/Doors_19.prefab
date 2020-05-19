@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3694357515824032498
+--- !u!1 &8368894799080984362
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3694357515824032499}
-  - component: {fileID: 3694357515824032496}
-  - component: {fileID: 8805433458859560467}
+  - component: {fileID: 8368894799080984363}
+  - component: {fileID: 8368894799080984361}
+  - component: {fileID: 8368894799080984360}
+  - component: {fileID: 3201069389470804073}
   m_Layer: 0
-  m_Name: NTrafficLight
+  m_Name: Doors_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3694357515824032499
+--- !u!4 &8368894799080984363
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694357515824032498}
+  m_GameObject: {fileID: 8368894799080984362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.59, y: -6.19, z: 0}
+  m_LocalPosition: {x: 0.53, y: -3.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3694357515824032496
+--- !u!212 &8368894799080984361
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694357515824032498}
+  m_GameObject: {fileID: 8368894799080984362}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,40 +72,58 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 07159c3d4bf165d4dad53ab782a2eb4b, type: 3}
+  m_Sprite: {fileID: 647500809055624950, guid: 120aed1d2df395649b5f34dec61ae335, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 7}
+  m_Size: {x: 0.875, y: 0.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8805433458859560467
+--- !u!114 &8368894799080984360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8368894799080984362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e25736274fd454fa283dceee6d6bbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeId: 1
+  settings: {fileID: 11400000, guid: 8140e520ff590c846b2ad016a0fd0093, type: 2}
+  doorOpen: {fileID: 5780870785757574232, guid: 120aed1d2df395649b5f34dec61ae335,
+    type: 3}
+  doorClosed: {fileID: 647500809055624950, guid: 120aed1d2df395649b5f34dec61ae335,
+    type: 3}
+--- !u!61 &3201069389470804073
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694357515824032498}
+  m_GameObject: {fileID: 8368894799080984362}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.75212, y: -0.15597534}
+  m_Offset: {x: 0, y: -0.54504657}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 7}
-    newSize: {x: 2, y: 7}
+    oldSize: {x: 0.875, y: 0.9375}
+    newSize: {x: 0.875, y: 0.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38163185, y: 0.55839443}
+  m_Size: {x: 0.875, y: 0.12911654}
   m_EdgeRadius: 0
