@@ -24,7 +24,7 @@ public class DoorController : MonoBehaviour
     {
         yield return new WaitForSeconds(settings.waitTime);//show the door openning first
 
-        other.GetComponent<PlayerController>().GoToStore(new Vector2(storeId * 200, 0));//The store interiors are seperated by 200 units
+        other.GetComponent<PlayerController>().GoToStore(new Vector2(storeId * 100, 0));//The store interiors are seperated by 100 units on the x axis
 
         GetComponent<SpriteRenderer>().sprite = doorClosed;
     }
