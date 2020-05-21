@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "TrafficSettings")]
+[CreateAssetMenu(menuName = "Settings/TrafficSettings")]
 public class TrafficSettings : ScriptableObject
 {
     public float transitionPeriod;

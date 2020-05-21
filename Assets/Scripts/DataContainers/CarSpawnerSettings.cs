@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName ="CarSpawnerSettings")]
+[CreateAssetMenu(menuName = "Settings/CarSpawnerSettings")]
 public class CarSpawnerSettings : ScriptableObject
 {
     public float minTimeToSpawn;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "CarSettings")]
+[CreateAssetMenu(menuName = "Settings/CarSettings")]
 public class CarSettings : ScriptableObject
 {
     public float maxVelocity;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName ="Settings")]
+[CreateAssetMenu(menuName = "Settings/Settings")]
 public class Settings : ScriptableObject
 {
     public bool usingControllers;
