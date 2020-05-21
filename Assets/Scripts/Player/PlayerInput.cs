@@ -8,9 +8,6 @@ public class PlayerInput : MonoBehaviour
     private string useButton;
     private string runButton;
 
-    //private int controllerNum;  //not used presently
-
-    private bool usingControllers = false;
     private float hAxis;
     private float vAxis;
 
@@ -25,9 +22,6 @@ public class PlayerInput : MonoBehaviour
     public void SetupInput(string type, int id)
     {
         GetComponent<PlayerController>().playerId = id; // set the player id on the controller
-
-        if (type == "C")
-            usingControllers = true;
 
         horizontalAxis = type + "Horizontal" + id;
         verticalAxis = type + "Vertical" + id;
