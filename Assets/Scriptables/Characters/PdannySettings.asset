@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4861eddf6c47cb4698444d198d3121b, type: 3}
   m_Name: PdannySettings
   m_EditorClassIdentifier: 
-  walkSpeed: 4.5
-  runSpeed: 2
+  walkSpeed: 4
+  runSpeed: 4.5
   blockTimeToHospital: 0.5
   blockTimeToStore: 0.6
   knockOutFadeTime: 0.5
+  StoreFadeTime: 0.6
   startMoney: 10000

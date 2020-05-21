@@ -8,5 +8,6 @@ public class PlayerSettings : ScriptableObject
     public float blockTimeToHospital;
     public float blockTimeToStore;
     public float knockOutFadeTime;
+    public float StoreFadeTime;
     public int startMoney;
 }

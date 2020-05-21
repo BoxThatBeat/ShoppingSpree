@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7377311707533095840}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6471278975227837729
 MonoBehaviour:
@@ -173,7 +173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7377311707533095840}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8671025135574514706
 BoxCollider2D:
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 7377311707533095840}
   - component: {fileID: 7377311707533095841}
   m_Layer: 0
-  m_Name: Store02
+  m_Name: StoreSmall02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,9 +363,9 @@ Transform:
   - {fileID: 5882172955279408764}
   - {fileID: 5823164313838785650}
   - {fileID: 7732006580724338942}
-  - {fileID: 5744358260004772469}
   - {fileID: 7655416753906436299}
   - {fileID: 8041708286731613956}
+  - {fileID: 5744358260004772469}
   - {fileID: 4744812025933080792}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -414,7 +414,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8, y: 11}
+  m_Size: {x: 8, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -449,7 +449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7377311707533095840}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8675180843994553165
 BoxCollider2D:
@@ -464,7 +464,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.49823356, y: -1.4988079}
+  m_Offset: {x: 0.49823356, y: -1.3232312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -475,7 +475,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.0003505, y: 3.9976158}
+  m_Size: {x: 7.0003505, y: 4.348769}
   m_EdgeRadius: 0
 --- !u!1001 &1316511877008948334
 PrefabInstance:
@@ -484,6 +484,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7377311707533095840}
     m_Modifications:
+    - target: {fileID: 8368894799080984360, guid: aafab65fcaa0e7f4a9abbd01f17e0a79,
+        type: 3}
+      propertyPath: storeId
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8368894799080984362, guid: aafab65fcaa0e7f4a9abbd01f17e0a79,
         type: 3}
       propertyPath: m_Name

@@ -17,4 +17,5 @@ MonoBehaviour:
   blockTimeToHospital: 0.5
   blockTimeToStore: 0.6
   knockOutFadeTime: 0.5
+  StoreFadeTime: 0.6
   startMoney: 5000

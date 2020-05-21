@@ -95,6 +95,15 @@ public class PlayerController : MonoBehaviour{
         EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
         transform.position = storePos;
         GetComponent<SpriteRenderer>().sortingLayerName = "StoreDefault";
+        StartBlockMovement(settings.StoreFadeTime);
+    }
+
+    public void ExitStore(Vector2 doorPos)
+    {
+        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
+        transform.position = doorPos;
+        GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+        StartBlockMovement(settings.StoreFadeTime);
     }
 
     public void StartBlockMovement(float time) //used to access this coroutine outside of the class
