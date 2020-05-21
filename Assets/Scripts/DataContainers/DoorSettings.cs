@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="DoorSettings")]
+[CreateAssetMenu(menuName = "Settings/DoorSettings")]
 public class DoorSettings : ScriptableObject
 {
     public float waitTime;
