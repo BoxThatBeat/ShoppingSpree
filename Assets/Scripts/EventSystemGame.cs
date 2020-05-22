@@ -16,4 +16,16 @@ public class EventSystemGame : MonoBehaviour
         onFadeEffect?.Invoke(id, speed);
     }
 
+    public event Action onLightsOn;
+    public void TurnLightsOn()
+    {
+        onLightsOn?.Invoke();
+    }
+
+    public event Action<int> onSunLower;
+    public void LowerSun(int time)
+    {
+        onSunLower?.Invoke(time);
+    }
+
 }
