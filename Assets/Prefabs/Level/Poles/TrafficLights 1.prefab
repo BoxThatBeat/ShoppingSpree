@@ -306,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4556230495572852781}
   - component: {fileID: 1859798814}
+  - component: {fileID: 1859798806}
   m_Layer: 0
   m_Name: TrafficLights 1
   m_TagString: Untagged
@@ -350,6 +351,18 @@ MonoBehaviour:
   - {fileID: 2121186095}
   - {fileID: 862744062}
   settings: {fileID: 11400000, guid: 015e046a23b376d499aa1d9d4c3fefe8, type: 2}
+--- !u!114 &1859798806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374790379506331577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c98400f9e9878c438e1f919377d4087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &902803224697784048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,6 +374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Light_Traffic
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255822069406966396, guid: a367e64f8c4cae748bdedace1de30c4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8255822069728694949, guid: a367e64f8c4cae748bdedace1de30c4a,
         type: 3}
@@ -422,6 +440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ETrafficLight
       objectReference: {fileID: 0}
+    - target: {fileID: 8255822070096640950, guid: a367e64f8c4cae748bdedace1de30c4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a367e64f8c4cae748bdedace1de30c4a, type: 3}
 --- !u!4 &9085437004009837653 stripped
@@ -454,10 +477,25 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: 6353975019376479109, guid: f0765f47b7892d941b93c2921b567280,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353975019784089080, guid: f0765f47b7892d941b93c2921b567280,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6353975020372255669, guid: f0765f47b7892d941b93c2921b567280,
         type: 3}
       propertyPath: m_Name
       value: Light_Traffic
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353975020650634173, guid: f0765f47b7892d941b93c2921b567280,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6353975020730575426, guid: f0765f47b7892d941b93c2921b567280,
         type: 3}
@@ -546,10 +584,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4556230495572852781}
     m_Modifications:
+    - target: {fileID: 2795032132825918894, guid: 4c0044699683ae848bd531df75866130,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4268105465151019004, guid: 4c0044699683ae848bd531df75866130,
         type: 3}
       propertyPath: m_Name
       value: Light_Traffic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268105465180826818, guid: 4c0044699683ae848bd531df75866130,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268105465359268320, guid: 4c0044699683ae848bd531df75866130,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4268105466194236660, guid: 4c0044699683ae848bd531df75866130,
         type: 3}
@@ -650,9 +703,17 @@ PrefabInstance:
       propertyPath: m_ShapeLightFalloffSize
       value: 2.66
       objectReference: {fileID: 0}
+    - target: {fileID: 951248, guid: b016520e14f18d44b80da3cf1a99c0ca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 178591585, guid: b016520e14f18d44b80da3cf1a99c0ca, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 178591587, guid: b016520e14f18d44b80da3cf1a99c0ca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 311869708, guid: b016520e14f18d44b80da3cf1a99c0ca, type: 3}
       propertyPath: m_Name
@@ -665,6 +726,10 @@ PrefabInstance:
     - target: {fileID: 1159936363, guid: b016520e14f18d44b80da3cf1a99c0ca, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.733
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159936364, guid: b016520e14f18d44b80da3cf1a99c0ca, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3694357515824032498, guid: b016520e14f18d44b80da3cf1a99c0ca,
         type: 3}

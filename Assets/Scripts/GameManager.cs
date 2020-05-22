@@ -7,12 +7,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private int gameTimer = 300; //5 minutes in seconds 
+    private int gameTimer = 600; //10 minutes in seconds 
     private bool canDropTimer = true;
     private bool gameStarted = false;
+    private bool lightsAreOn = false;
 
     private void Awake() 
     {
+
         if (Instance == null)//makes the script a singleton
         {
             Instance = this;
@@ -35,8 +37,15 @@ public class GameManager : MonoBehaviour
         canDropTimer = false;
         yield return new WaitForSecondsRealtime(1f);
         gameTimer -= 1;
-        EventSystemUI.current.ChangeTimeUI(gameTimer);
+        EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
         EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
+
+        if (gameTimer <= 210 && !lightsAreOn)
+        {
+            lightsAreOn = true;
+            EventSystemGame.current.TurnLightsOn();
+        }
+
         canDropTimer = true;
     }
 
