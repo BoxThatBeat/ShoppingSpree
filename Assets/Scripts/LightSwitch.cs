@@ -8,9 +8,13 @@ public class LightSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lightsInChildren = GetComponentsInChildren<Light2D>(true); //get an array of all 2D lights in the children
-
+        SetupChildren();
         EventSystemGame.current.onLightsOn += turnLightsOn;
+    }
+
+    public void SetupChildren()
+    {
+        lightsInChildren = GetComponentsInChildren<Light2D>(true); //get an array of all 2D lights in the children
     }
 
     private void turnLightsOn()

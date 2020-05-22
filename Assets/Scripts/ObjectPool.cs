@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class ObjectPool : MonoBehaviour
 {
+
     [System.Serializable]
     public class Pool
     {
@@ -25,6 +27,7 @@ public class ObjectPool : MonoBehaviour
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
+                obj.gameObject.transform.parent = gameObject.transform;//set objects to be children of this pooler
                 obj.SetActive(false);
                 objPool.Enqueue(obj);
 
@@ -32,6 +35,9 @@ public class ObjectPool : MonoBehaviour
 
             poolDict.Add(pool.tag, objPool);
         }
+
+        //after all the pools have been loaded, get the lights in the children created
+        GetComponent<LightSwitch>().SetupChildren();
     }
 
     public GameObject SpawnFromPool (string tag, Vector2 pos, Quaternion rotation)
