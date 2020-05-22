@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         canDropTimer = false;
         yield return new WaitForSecondsRealtime(1f);
-        gameTimer -= 1;
+        gameTimer -= 30;
         EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
         EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public enum direction
 {
@@ -14,6 +15,13 @@ public class CarController : MonoBehaviour
     public Sprite south;
     public Sprite west;
 
+    public Light2D northBreakLight;
+    public Light2D eastBreakLight;
+    public Light2D southBreakLight;
+    public Light2D westBreakLight;
+
+    private Light2D currentBreakLight;
+
     public direction direction;
     public bool accelerating { get; private set; }
 
@@ -24,9 +32,14 @@ public class CarController : MonoBehaviour
     private Vector3 movement;
     private Rigidbody2D rb;
 
-    public void SetAccelerating(bool value)
+    public void SetAccelerating(bool accelerating)
     {
-        accelerating = value;
+        this.accelerating = accelerating;
+
+        if (accelerating)
+            currentBreakLight.intensity = 1.0f;
+        else
+            currentBreakLight.intensity = 1.7f;
 
         //set the rigid body type since we want collisions with player when not accelerating
         /*
@@ -55,28 +68,34 @@ public class CarController : MonoBehaviour
         {
             case direction.northward:
                 GetComponent<SpriteRenderer>().sprite = north;
+                currentBreakLight = northBreakLight;
                 xAxisMovement = 0f;
                 yAxisMovement = 1f;
                 break;
 
             case direction.eastward:
                 GetComponent<SpriteRenderer>().sprite = east;
+                currentBreakLight = eastBreakLight;
                 xAxisMovement = 1f;
                 yAxisMovement = 0f;
                 break;
 
             case direction.southward:
                 GetComponent<SpriteRenderer>().sprite = south;
+                currentBreakLight = southBreakLight;
                 xAxisMovement = 0f;
                 yAxisMovement = -1f;
                 break;
 
             case direction.westward:
                 GetComponent<SpriteRenderer>().sprite = west;
+                currentBreakLight = westBreakLight;
                 xAxisMovement = -1f;
                 yAxisMovement = 0f;
                 break;
         }
+
+        currentBreakLight.enabled = true;
     }
 
     private void FixedUpdate() //movement
