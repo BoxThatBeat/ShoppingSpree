@@ -32,8 +32,7 @@ public class FadeEffect : MonoBehaviour
             GUI.DrawTexture(new Rect(0, 0, Screen.width /2, Screen.height), fadeImage);
         else if (player == 2)
             GUI.DrawTexture(new Rect(Screen.width / 2, 0, Screen.width / 2, Screen.height), fadeImage);
-        else
-            GUI.DrawTexture(new Rect(Screen.width, 0, Screen.width, Screen.height), fadeImage);
+
     }
 
     //Set the direction of the alpha fade:
