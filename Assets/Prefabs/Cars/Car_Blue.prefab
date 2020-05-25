@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 754392458}
   m_Layer: 0
   m_Name: BreakLightE
-  m_TagString: Untagged
+  m_TagString: BreakLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 4495492816426490482}
   m_Layer: 0
   m_Name: BreakLightW
-  m_TagString: Untagged
+  m_TagString: BreakLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 5497218573747344402}
   m_Layer: 0
   m_Name: BreakLightN
-  m_TagString: Untagged
+  m_TagString: BreakLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 8442208108044194092}
   m_Layer: 0
   m_Name: BreakLightS
-  m_TagString: Untagged
+  m_TagString: BreakLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
