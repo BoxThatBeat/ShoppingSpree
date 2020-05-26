@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d72cf9f9939b0344b3fd602cefe047f, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  usingControllers: 0
+  usingControllers: 1

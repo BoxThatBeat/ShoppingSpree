@@ -72117,7 +72117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 05:00
+  m_text: 10:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b451151659050b546a75c2060f428d92, type: 2}
   m_sharedMaterial: {fileID: 8541999777478904884, guid: b451151659050b546a75c2060f428d92,
@@ -75011,7 +75011,7 @@ MonoBehaviour:
   playerOneSpawnPos: {fileID: 805850739}
   playerTwoSpawnPos: {fileID: 120966828}
   playerOneChoice: 0
-  playerTwoChoice: 1
+  playerTwoChoice: 2
   characterAaron: {fileID: 4250201621292746825, guid: 3da8753c50e2ee6458a0c6648f69262e,
     type: 3}
   characterPdanny: {fileID: 5635358888095784866, guid: f95adcfbe4b9990469d7cb1a724535fd,
