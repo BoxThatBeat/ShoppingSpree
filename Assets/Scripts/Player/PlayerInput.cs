@@ -3,6 +3,7 @@
 public class PlayerInput : MonoBehaviour
 {
     private PlayerController player;
+    private PlayerInteracter playerInter;
     private string horizontalAxis;
     private string verticalAxis;
     private string useButton;
@@ -16,6 +17,7 @@ public class PlayerInput : MonoBehaviour
     void Awake()
     {
         player = GetComponent<PlayerController>();
+        playerInter = GetComponent<PlayerInteracter>();
     }
 
 
@@ -31,11 +33,11 @@ public class PlayerInput : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         if (Input.GetButton(useButton))
-            player.OnUse();
+            playerInter.OnUse();
 
         if (Input.GetButton(runButton))
             player.OnRunning();

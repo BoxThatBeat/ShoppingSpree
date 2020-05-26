@@ -40,15 +40,6 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    public void OnUse()
-    {
-        Debug.Log("useButtonPressed");
-
-        moneySaved += 200;
-        EventSystemUI.current.ChangeScoreUI(playerId, moneySaved);
-        
-    }
-
     public void OnRunning()
     {
         running = true;
