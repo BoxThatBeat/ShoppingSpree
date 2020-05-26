@@ -34,7 +34,6 @@ public class CarController : MonoBehaviour
     private float xAxisMovement;
     private float yAxisMovement;
 
-    private Vector3 movement;
     private Rigidbody2D rb;
 
     public void SetAccelerating(bool accelerating)
@@ -137,8 +136,6 @@ public class CarController : MonoBehaviour
 
     private void Accelerate(float xDir, float yDir)
     {
-
-
         if (currentVelocity < settings.maxVelocity)
             currentVelocity += settings.accel;
 
