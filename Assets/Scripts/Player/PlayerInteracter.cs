@@ -7,9 +7,7 @@ public class PlayerInteracter : MonoBehaviour
 {
 	public GameObject target;
 	public IconBox iconBox;
-	
-	[SerializeField]
-	private Item heldItem;
+	public Item heldItem;
 
 	private void OnTriggerEnter2D(Collider2D col)
 	{
@@ -57,17 +55,14 @@ public class PlayerInteracter : MonoBehaviour
 		ItemController item = target.GetComponent<ItemController>();
 		if (item != null)
 		{
-			Debug.Log(item.gameObject.tag);
 			item.Interact(gameObject);
 		}
 
-		/*
-		TableTile table = target.GetComponent<TableTile>();
-		if (table != null)
+		CashRegister cashReg = target.GetComponent<CashRegister>();
+		if (cashReg != null && heldItem != null)
 		{
-			table.Interact(crop, tool, this);
+			cashReg.Interact(gameObject);
 		}
-		*/
 	}
 
 	public void SetItem(Item itemToHold)

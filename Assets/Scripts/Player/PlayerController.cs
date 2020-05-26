@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour{
     public Vector2 currentMovement;
     public bool stopped;
 
-    public int money;      //current money
-    public int moneySaved; //score
+    public int money;
+    public int score;
 
     private Rigidbody2D rb;
     private bool running;
@@ -27,6 +27,30 @@ public class PlayerController : MonoBehaviour{
 
     }
 
+    #region Money and Score
+    public void AddMoney(int amount)
+    {
+        money += amount;
+        EventSystemUI.current.ChangeMoneyUI(playerId, money);
+    }
+    public void AddScore(int amount)
+    {
+        score += amount;
+        EventSystemUI.current.ChangeScoreUI(playerId, score);
+    }
+    public void SubtractMoney(int amount)
+    {
+        money -= amount;
+        EventSystemUI.current.ChangeMoneyUI(playerId, money);
+    }
+    public void SubtractScore(int amount)
+    {
+        score -= amount;
+        EventSystemUI.current.ChangeScoreUI(playerId, score);
+    }
+    #endregion
+
+    #region Movement
     public void OnMove(float HAxis, float VAxis)
     {
         if (!stopped)
@@ -49,10 +73,8 @@ public class PlayerController : MonoBehaviour{
     {
         running = false;
     }
-    
 
-    // Update is called once per frame
-    void FixedUpdate()
+   private void FixedUpdate()
     {
 
         if (running)
@@ -65,10 +87,24 @@ public class PlayerController : MonoBehaviour{
         {
             rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.walkSpeed * Time.deltaTime
                                     , transform.position.y + currentMovement.y * settings.walkSpeed * Time.deltaTime));
-        }
-            
-    }   
+        }    
+    }
 
+    public void StartBlockMovement(float time) //used to access this coroutine outside of the class
+    {
+        StartCoroutine(BlockMovement(time));
+    }
+
+    private IEnumerator BlockMovement(float time)
+    {
+        stopped = true;
+        yield return new WaitForSeconds(time);
+        stopped = false;
+    }
+
+    #endregion
+
+    #region Transportation
     public void GoToHospital()
     {
         EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
@@ -96,16 +132,6 @@ public class PlayerController : MonoBehaviour{
         GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         StartBlockMovement(settings.StoreFadeTime);
     }
+    #endregion
 
-    public void StartBlockMovement(float time) //used to access this coroutine outside of the class
-    {
-        StartCoroutine(BlockMovement(time));
-    }
-
-    private IEnumerator BlockMovement(float time)
-    {
-        stopped = true;
-        yield return new WaitForSeconds(time);
-        stopped = false;
-    }
 }

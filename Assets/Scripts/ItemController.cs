@@ -8,6 +8,7 @@ public class ItemController : MonoBehaviour, IInteractable
 
     [SerializeField] private Item itemInfo = null;
     private SpriteRenderer sr;
+    private PlayerInteracter playerIter;
 
     private void Awake()
     {
@@ -23,7 +24,13 @@ public class ItemController : MonoBehaviour, IInteractable
 
     public void Interact(GameObject player)
     {
-        player.GetComponent<PlayerInteracter>().SetItem(itemInfo); //give the player the item info
-        Destroy(this.gameObject);//delete the item picked up, the player must sell the item and cannot leave the shop until they do
+        playerIter = player.GetComponent<PlayerInteracter>();
+
+        if (playerIter.heldItem == null)//make the the player is not holding anything
+        {
+            playerIter.SetItem(itemInfo); //give the player the item info
+
+            Destroy(this.gameObject);//delete the item picked up, the player must sell the item and cannot leave the shop until they do
+        }
     }
 }
