@@ -7,7 +7,15 @@ public class EventSystemGame : MonoBehaviour
 
     private void Awake()
     {
-        current = this;
+
+        if (current == null)//makes the script a singleton
+        {
+            current = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public event Action<int, float> onFadeEffect;

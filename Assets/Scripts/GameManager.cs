@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)//makes the script a singleton
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
