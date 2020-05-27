@@ -27,6 +27,17 @@ public class ItemController : MonoBehaviour, IInteractable
 
             GetComponent<SpriteRenderer>().enabled = false; //make the item disapear
             interactable = false;
+            CloseDisplay();
         }
+    }
+
+    public void DisplayItemInfo()
+    {
+        GetComponentInChildren<Canvas>().enabled = true;
+    }
+
+    public void CloseDisplay()
+    {
+        GetComponentInChildren<Canvas>().enabled = false;
     }
 }

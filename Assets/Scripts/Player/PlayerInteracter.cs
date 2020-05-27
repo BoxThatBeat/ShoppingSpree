@@ -16,14 +16,8 @@ public class PlayerInteracter : MonoBehaviour
 			}
 
 			target = col.gameObject;
-
-			SpriteRenderer[] srs = target.GetComponentsInChildren<SpriteRenderer>(); //highlight selected object
-			foreach (SpriteRenderer sr in srs)
-			{
-				sr.color = new Color(190, 190, 190, 0.7f);
-			}
+			Select();
 		}
-		
 	}
 
 	private void OnTriggerExit2D(Collider2D col)
@@ -35,12 +29,54 @@ public class PlayerInteracter : MonoBehaviour
 		}
 	}
 
+	void Select()
+	{
+		//highlight selected object
+		SpriteRenderer[] srs = target.GetComponentsInChildren<SpriteRenderer>(); 
+		foreach (SpriteRenderer sr in srs)
+		{
+			sr.color = new Color(190, 190, 190, 0.7f);
+		}
+
+		//show information about object selected
+		ItemController item = target.GetComponent<ItemController>();
+		if (item != null && heldItem == null)
+		{
+			item.DisplayItemInfo();
+			return;
+		}
+
+		CashRegister cashReg = target.GetComponent<CashRegister>();
+		if (cashReg != null && heldItem != null)
+		{
+			cashReg.DisplayItemInfo();
+			return;
+		}
+
+	}
+
 	void Deselect()
 	{
-		SpriteRenderer[] srs = target.GetComponentsInChildren<SpriteRenderer>(); //unhighlight the unselected object
+		//unhighlight the unselected object
+		SpriteRenderer[] srs = target.GetComponentsInChildren<SpriteRenderer>(); 
 		foreach (SpriteRenderer sr in srs)
 		{
 			sr.color = Color.white;
+		}
+
+		//close information about object selected
+		ItemController item = target.GetComponent<ItemController>();
+		if (item != null && heldItem == null)
+		{
+			item.CloseDisplay();
+			return;
+		}
+
+		CashRegister cashReg = target.GetComponent<CashRegister>();
+		if (cashReg != null && heldItem != null)
+		{
+			cashReg.CloseDisplay();
+			return;
 		}
 	}
 

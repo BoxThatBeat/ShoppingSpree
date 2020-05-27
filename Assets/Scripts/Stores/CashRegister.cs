@@ -17,7 +17,14 @@ public class CashRegister : MonoBehaviour, IInteractable
         playerController.AddScore( (int) Math.Ceiling(itemToBuy.itemInfo.price * itemToBuy.discount) ); //add score for buying item based on discount (ceilinged for int value)
 
         playerInteracter.heldItem = null;
+    }
+    public void DisplayItemInfo()
+    {
+        Debug.Log("cashOpen");
+    }
 
-
+    public void CloseDisplay()
+    {
+        Debug.Log("cashClosed");
     }
 }
