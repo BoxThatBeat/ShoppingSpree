@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e412d0e3c6757324a940a35b10138e80, type: 3}
   m_Name: Unique
   m_EditorClassIdentifier: 
-  weight: 0
+  weight: 20
   sign: {fileID: 21300000, guid: b7e89aac2687a0141802749e4b22bc03, type: 3}
   minDiscount: 50
   maxDiscount: 70

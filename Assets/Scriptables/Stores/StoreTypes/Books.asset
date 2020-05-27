@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94288bcf94d8a48bf85f6b6bb1d9df, type: 3}
   m_Name: Books
   m_EditorClassIdentifier: 
-  weight: 0
+  weight: 30
   logo: {fileID: 21300000, guid: 0ae2d4da61df0844ba80d6a01b0c142d, type: 3}
   storeName: 2

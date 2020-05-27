@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94288bcf94d8a48bf85f6b6bb1d9df, type: 3}
   m_Name: Jewellery
   m_EditorClassIdentifier: 
-  weight: 0
+  weight: 10
   logo: {fileID: 21300000, guid: c3934ffe0f2f7f44ca4bbb2b8fee2791, type: 3}
   storeName: 0

@@ -72013,8 +72013,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f15686938912e64faeff573ff248203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storeTypes: []
-  discounts: []
+  storeTypes:
+  - {fileID: 11400000, guid: 8219049a8b3693f49a75ba96ebf10abb, type: 2}
+  - {fileID: 11400000, guid: 424ee2dc004e9384badc6974750ba8da, type: 2}
+  - {fileID: 11400000, guid: 0ee70cb322c09bb41ac9ddec1c3a879a, type: 2}
+  discounts:
+  - {fileID: 11400000, guid: 4d1e5ca3036259a46a1bd829b7558f2e, type: 2}
+  - {fileID: 11400000, guid: 50ddfd82a83769c45b1ee1aa727f5f32, type: 2}
+  - {fileID: 11400000, guid: f414e8c4a49df9641a2c680b12996048, type: 2}
+  - {fileID: 11400000, guid: 8851ead97e0db4444b91fe51e311e8ac, type: 2}
   smallStoreLocations:
   - {fileID: 635931107}
   - {fileID: 574807036}
