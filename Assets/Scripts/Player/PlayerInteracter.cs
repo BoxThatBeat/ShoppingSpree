@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class PlayerInteracter : MonoBehaviour
 {
@@ -56,13 +53,16 @@ public class PlayerInteracter : MonoBehaviour
 		if (item != null)
 		{
 			item.Interact(gameObject);
+			return;
 		}
-
+		
 		CashRegister cashReg = target.GetComponent<CashRegister>();
 		if (cashReg != null && heldItem != null)
 		{
 			cashReg.Interact(gameObject);
+			return;
 		}
+		
 	}
 
 	public void SetItem(Item itemToHold)

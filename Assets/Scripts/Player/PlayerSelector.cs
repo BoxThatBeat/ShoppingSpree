@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerSelector : MonoBehaviour
 {
 
-	[SerializeField] private Collider2D colUp;
-	[SerializeField] private Collider2D colDown;
-	[SerializeField] private Collider2D colRight;
-	[SerializeField] private Collider2D colLeft;
+	[SerializeField] private Collider2D colUp = null;
+	[SerializeField] private Collider2D colDown = null;
+	[SerializeField] private Collider2D colRight = null;
+	[SerializeField] private Collider2D colLeft = null;
 
 	private PlayerController player = null;
 	

@@ -29,14 +29,13 @@ public class PlayerInput : MonoBehaviour
         verticalAxis = type + "Vertical" + id;
         runButton = type + "Run" + id;
         useButton = type + "Use" + id;
-
     }
 
 
     private void Update()
     {
 
-        if (Input.GetButton(useButton))
+        if (Input.GetButtonDown(useButton))
             playerInter.OnUse();
 
         if (Input.GetButton(runButton))
