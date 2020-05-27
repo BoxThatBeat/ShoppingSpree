@@ -1,10 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public class SpriteEditor : MonoBehaviour
+public enum SignTypes
 {
+    store,sale,decoration
+}
+public class SignEditor : MonoBehaviour
+{
+
+
+    public SignTypes signType;
     private SpriteRenderer sr;
 
     // Start is called before the first frame update

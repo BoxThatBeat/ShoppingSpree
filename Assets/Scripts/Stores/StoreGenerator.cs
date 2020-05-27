@@ -5,11 +5,13 @@ using UnityEngine;
 
 /*
  * Class That generates all stores randomly to create a new city each game
- * 
- * 
  */
+ 
 public class StoreGenerator : MonoBehaviour
 {
+    [SerializeField] private Weighted[] storeTypes;
+    [SerializeField] private Weighted[] discounts;
+
     [SerializeField] private Transform[] smallStoreLocations = null;
     [SerializeField] private Transform[] mediumStoreLocations = null;
     [SerializeField] private Transform[] largeStoreLocations = null;
@@ -40,8 +42,35 @@ public class StoreGenerator : MonoBehaviour
             //set up door connection between exteriors and interiors
             DoorController storeDoor = newStore.GetComponentInChildren<DoorController>();
             interiors[StoreId - 1].door = storeDoor.transform;
-            storeDoor.storeId = StoreId++;
 
+            //Select the store type and store discount
+            //cast the weighted to be storeType as it derives from Weigted and we dont need the weighted attribute after selecting the store type
+            StoreType selectedType = (StoreType)Weighted.WeightedPick(storeTypes);
+            Discount selectedDiscount = (Discount)Weighted.WeightedPick(discounts);
+
+            //set up store exterior by setting the sign sprites to the one stored in the StoreType asset
+            SignEditor[] signs = newStore.GetComponentsInChildren<SignEditor>();
+            foreach (SignEditor sign in signs)
+            {
+                //set the type of store sign
+                if (sign.signType == SignTypes.store)
+                {
+                    sign.SetSprite(selectedType.logo);
+                }
+                else if (sign.signType == SignTypes.sale)
+                {
+                    sign.SetSprite(selectedDiscount.sign);
+                }
+            }
+
+            //set up the store interior by setting the type for the generation
+            InteriorGenerator storeInterior = interiors[StoreId - 1].GetComponent<InteriorGenerator>();
+            storeInterior.type = selectedType;
+            storeInterior.discount = selectedDiscount;
+            storeInterior.GenerateItems();
+
+
+            storeDoor.storeId = StoreId++;
         }
     }
 

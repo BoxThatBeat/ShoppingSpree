@@ -695,6 +695,7 @@ GameObject:
   - component: {fileID: 5438485567658950049}
   - component: {fileID: 1210214042882653708}
   - component: {fileID: 8709527192552947065}
+  - component: {fileID: 2995451659179828187}
   m_Layer: 0
   m_Name: StoreInsideSmall
   m_TagString: Untagged
@@ -830,6 +831,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 0}
+--- !u!114 &2995451659179828187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228887625967053288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70af162e23183144bd0b8dc0be5d9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3941752309553563001
 GameObject:
   m_ObjectHideFlags: 0
