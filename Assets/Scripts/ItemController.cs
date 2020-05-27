@@ -3,28 +3,17 @@
 public class ItemController : MonoBehaviour, IInteractable
 {
 
-    public int price;
-    public Sprite sprite;
-
     [SerializeField] private Item itemInfo = null;
-    private SpriteRenderer sr;
-    private PlayerInteracter playerIter;
 
-    private void Awake()
+    public void InitItem(Item type)
     {
-        sr = GetComponent<SpriteRenderer>();
-        sprite = itemInfo.sprite;
-    }
-
-    private void Start()
-    {
-        sr.sprite = sprite; //set the object sprite to the assigned scriptable objects sprite (dynamically set in store generation)
-        price = itemInfo.price;
+        itemInfo = type;
+        GetComponent<SpriteRenderer>().sprite = itemInfo.sprite;
     }
 
     public void Interact(GameObject player)
     {
-        playerIter = player.GetComponent<PlayerInteracter>();
+        PlayerInteracter playerIter = player.GetComponent<PlayerInteracter>();
 
         if (playerIter.heldItem == null)//make the the player is not holding anything
         {

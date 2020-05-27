@@ -71995,7 +71995,7 @@ GameObject:
   - component: {fileID: 852521177}
   - component: {fileID: 852521176}
   m_Layer: 0
-  m_Name: GameInitializer
+  m_Name: StoreGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72013,6 +72013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f15686938912e64faeff573ff248203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameItems: []
   storeTypes:
   - {fileID: 11400000, guid: 8219049a8b3693f49a75ba96ebf10abb, type: 2}
   - {fileID: 11400000, guid: 424ee2dc004e9384badc6974750ba8da, type: 2}

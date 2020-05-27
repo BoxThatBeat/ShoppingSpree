@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
  * Class That generates all stores randomly to create a new city each game
@@ -9,8 +6,9 @@ using UnityEngine;
  
 public class StoreGenerator : MonoBehaviour
 {
-    [SerializeField] private Weighted[] storeTypes;
-    [SerializeField] private Weighted[] discounts;
+    [SerializeField] private Weighted[] gameItems = null;
+    [SerializeField] private Weighted[] storeTypes = null;
+    [SerializeField] private Weighted[] discounts = null;
 
     [SerializeField] private Transform[] smallStoreLocations = null;
     [SerializeField] private Transform[] mediumStoreLocations = null;
@@ -45,7 +43,7 @@ public class StoreGenerator : MonoBehaviour
 
             //Select the store type and store discount
             //cast the weighted to be storeType as it derives from Weigted and we dont need the weighted attribute after selecting the store type
-            StoreType selectedType = (StoreType)Weighted.WeightedPick(storeTypes);
+            StoreType selectedStore = (StoreType)Weighted.WeightedPick(storeTypes);
             Discount selectedDiscount = (Discount)Weighted.WeightedPick(discounts);
 
             //set up store exterior by setting the sign sprites to the one stored in the StoreType asset
@@ -55,7 +53,7 @@ public class StoreGenerator : MonoBehaviour
                 //set the type of store sign
                 if (sign.signType == SignTypes.store)
                 {
-                    sign.SetSprite(selectedType.logo);
+                    sign.SetSprite(selectedStore.logo);
                 }
                 else if (sign.signType == SignTypes.sale)
                 {
@@ -65,13 +63,10 @@ public class StoreGenerator : MonoBehaviour
 
             //set up the store interior by setting the type for the generation
             InteriorGenerator storeInterior = interiors[StoreId - 1].GetComponent<InteriorGenerator>();
-            storeInterior.type = selectedType;
+            storeInterior.store = selectedStore;
             storeInterior.discount = selectedDiscount;
-            storeInterior.GenerateItems();
 
-
-            storeDoor.storeId = StoreId++;
+            storeDoor.storeId = StoreId++; //after setting the storeId post-increment the static variable for the next store
         }
     }
-
 }
