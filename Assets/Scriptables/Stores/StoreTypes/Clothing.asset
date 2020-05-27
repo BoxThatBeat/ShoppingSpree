@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Clothing
   m_EditorClassIdentifier: 
   weight: 50
+  items:
+  - {fileID: 11400000, guid: 3d2eb86df0b2d8a41ba58281779316b7, type: 2}
+  - {fileID: 11400000, guid: 75e4eb518147a75468ac91c2a270e426, type: 2}
   logo: {fileID: 21300000, guid: 9105b14434f7321458fdc11fa8a99294, type: 3}
   storeName: 1

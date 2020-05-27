@@ -65,6 +65,7 @@ public class StoreGenerator : MonoBehaviour
             InteriorGenerator storeInterior = interiors[StoreId - 1].GetComponent<InteriorGenerator>();
             storeInterior.store = selectedStore;
             storeInterior.discount = selectedDiscount;
+            storeInterior.GenerateItems();
 
             storeDoor.storeId = StoreId++; //after setting the storeId post-increment the static variable for the next store
         }
