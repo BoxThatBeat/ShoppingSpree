@@ -18,7 +18,7 @@ public class InteriorGenerator : MonoBehaviour
             for (int i = 0; i < itemSpawnPositions.childCount; i++)
             {
                 ItemController item = Instantiate(itemPrefab, itemSpawnPositions.GetChild(i).position, transform.rotation);
-                item.InitItem((Item)Weighted.WeightedPick(store.items)); //set the item's data to a randomly (weighted) pick from the items available to spawn in the store
+                item.InitItem((Item)Weighted.WeightedPick(store.items), discount); //set the item's data to a randomly (weighted) pick from the items available to spawn in the store
             }
         }
     }

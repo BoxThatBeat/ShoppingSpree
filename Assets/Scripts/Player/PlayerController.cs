@@ -80,13 +80,13 @@ public class PlayerController : MonoBehaviour{
         if (running)
         {
 
-            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.runSpeed * Time.deltaTime
-                                    , transform.position.y + currentMovement.y * settings.runSpeed * Time.deltaTime));
+            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.runSpeed * Time.fixedDeltaTime
+                                    , transform.position.y + currentMovement.y * settings.runSpeed * Time.fixedDeltaTime));
         }
         else
         {
-            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.walkSpeed * Time.deltaTime
-                                    , transform.position.y + currentMovement.y * settings.walkSpeed * Time.deltaTime));
+            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.walkSpeed * Time.fixedDeltaTime
+                                    , transform.position.y + currentMovement.y * settings.walkSpeed * Time.fixedDeltaTime));
         }    
     }
 
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour{
         EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
         transform.position = HospitalSpawn.transform.position;
 
-        money -= 200;
+        money -= 500;
         EventSystemUI.current.ChangeMoneyUI(playerId, money);
 
         StartBlockMovement(settings.blockTimeToHospital);

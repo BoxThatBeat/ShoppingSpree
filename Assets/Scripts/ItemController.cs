@@ -3,23 +3,30 @@
 public class ItemController : MonoBehaviour, IInteractable
 {
 
-    [SerializeField] private Item itemInfo = null;
+    public Item itemInfo = null;
+    public float discount;
+    private bool interactable = true;
 
-    public void InitItem(Item type)
+    public void InitItem(Item type, Discount storeDiscount)
     {
         itemInfo = type;
-        GetComponent<SpriteRenderer>().sprite = itemInfo.sprite;
+        discount = Random.Range(storeDiscount.minDiscount, storeDiscount.maxDiscount);
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = itemInfo.sprite;
+        sr.sortingLayerName = "StoreObjectsInterior";
+
     }
 
     public void Interact(GameObject player)
     {
-        PlayerInteracter playerIter = player.GetComponent<PlayerInteracter>();
-
-        if (playerIter.heldItem == null)//make the the player is not holding anything
+        if (interactable)
         {
-            playerIter.SetItem(itemInfo); //give the player the item info
+            PlayerInteracter playerIter = player.GetComponent<PlayerInteracter>();
 
-            Destroy(this.gameObject);//delete the item picked up, the player must sell the item and cannot leave the shop until they do
+            playerIter.SetItem(this); //give the player the item info
+
+            GetComponent<SpriteRenderer>().enabled = false; //make the item disapear
+            interactable = false;
         }
     }
 }

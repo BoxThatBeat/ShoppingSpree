@@ -4,6 +4,6 @@
 public class Discount : Weighted
 {
     public Sprite sign;
-    public int minDiscount;
-    public int maxDiscount;
+    public float minDiscount;
+    public float maxDiscount;
 }

@@ -4,11 +4,11 @@ public class PlayerInteracter : MonoBehaviour
 {
 	public GameObject target;
 	public IconBox iconBox;
-	public Item heldItem;
+	public ItemController heldItem;
 
 	private void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.tag == "Selectable")
+		if (col.CompareTag("Selectable"))
 		{
 			if (target != col.gameObject && target != null)
 			{
@@ -28,7 +28,7 @@ public class PlayerInteracter : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.gameObject == target && col.tag == "Selectable")
+		if (col.gameObject == target && col.CompareTag("Selectable"))
 		{
 			Deselect();
 			target = null;
@@ -50,7 +50,7 @@ public class PlayerInteracter : MonoBehaviour
 			return;
 
 		ItemController item = target.GetComponent<ItemController>();
-		if (item != null)
+		if (item != null && heldItem == null)
 		{
 			item.Interact(gameObject);
 			return;
@@ -65,7 +65,7 @@ public class PlayerInteracter : MonoBehaviour
 		
 	}
 
-	public void SetItem(Item itemToHold)
+	public void SetItem(ItemController itemToHold)
 	{
 		heldItem = itemToHold;
 		DisplayItem();
@@ -73,6 +73,6 @@ public class PlayerInteracter : MonoBehaviour
 
 	void DisplayItem()
 	{
-		iconBox.SetIcon(heldItem.sprite);
+		iconBox.SetIcon(heldItem.itemInfo.sprite);
 	}
 }
