@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94288bcf94d8a48bf85f6b6bb1d9df, type: 3}
   m_Name: Clothing
   m_EditorClassIdentifier: 
-  weight: 50
+  weight: 40
   items:
   - {fileID: 11400000, guid: 3d2eb86df0b2d8a41ba58281779316b7, type: 2}
   - {fileID: 11400000, guid: 75e4eb518147a75468ac91c2a270e426, type: 2}

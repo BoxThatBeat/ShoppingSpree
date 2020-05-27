@@ -13,7 +13,7 @@ public class CashRegister : MonoBehaviour, IInteractable
         PlayerController playerController = player.GetComponent<PlayerController>();
         ItemController itemToBuy = player.GetComponent<PlayerInteracter>().heldItem;
 
-        playerController.SubtractMoney(itemToBuy.itemInfo.price); //charge the player
+        playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
         playerController.AddScore( (int) Math.Ceiling(itemToBuy.itemInfo.price * itemToBuy.discount) ); //add score for buying item based on discount (ceilinged for int value)
 
         playerInteracter.heldItem = null;

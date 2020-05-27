@@ -6,7 +6,6 @@
  
 public class StoreGenerator : MonoBehaviour
 {
-    [SerializeField] private Weighted[] gameItems = null;
     [SerializeField] private Weighted[] storeTypes = null;
     [SerializeField] private Weighted[] discounts = null;
 

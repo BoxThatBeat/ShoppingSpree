@@ -1,19 +1,36 @@
-﻿using UnityEngine;
+﻿using System;
+using TMPro;
+using UnityEngine;
 
 public class ItemController : MonoBehaviour, IInteractable
 {
 
-    public Item itemInfo = null;
-    public float discount;
+    [NonSerialized] public Item itemInfo = null;
+    [NonSerialized] public float discount;
+    [NonSerialized] public int newPrice;
+
+    [SerializeField] private TextMeshProUGUI wasPrice;
+    [SerializeField] private TextMeshProUGUI nowPrice;
+    [SerializeField] private TextMeshProUGUI percentageOff;
     private bool interactable = true;
 
     public void InitItem(Item type, Discount storeDiscount)
     {
         itemInfo = type;
-        discount = Random.Range(storeDiscount.minDiscount, storeDiscount.maxDiscount);
+        discount = UnityEngine.Random.Range(storeDiscount.minDiscount, storeDiscount.maxDiscount);
+        newPrice = (int) Math.Ceiling(itemInfo.price * (1 - discount));
+
+        //set up sprite
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = itemInfo.sprite;
         sr.sortingLayerName = "StoreObjectsInterior";
+
+        //set up item info canvas
+        wasPrice.text = itemInfo.price.ToString();
+        nowPrice.text = newPrice.ToString();
+
+        int percentOff = (int)Math.Ceiling(discount*100);
+        percentageOff.text = percentOff.ToString() + "% OFF";
 
     }
 
@@ -33,7 +50,8 @@ public class ItemController : MonoBehaviour, IInteractable
 
     public void DisplayItemInfo()
     {
-        GetComponentInChildren<Canvas>().enabled = true;
+        if (interactable)
+            GetComponentInChildren<Canvas>().enabled = true;
     }
 
     public void CloseDisplay()
