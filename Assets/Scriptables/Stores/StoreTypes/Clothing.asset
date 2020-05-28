@@ -17,5 +17,29 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d2eb86df0b2d8a41ba58281779316b7, type: 2}
   - {fileID: 11400000, guid: 75e4eb518147a75468ac91c2a270e426, type: 2}
   - {fileID: 11400000, guid: 121ea9b53415821458128b23b67c761e, type: 2}
+  - {fileID: 11400000, guid: 53e6367a39c8ba54c87d6cb5cdf95d5a, type: 2}
+  - {fileID: 11400000, guid: d941b53015fb4b14f8d34a4258d7ac3a, type: 2}
+  - {fileID: 11400000, guid: 1aa737070c0328341a43fab58ab0a604, type: 2}
+  - {fileID: 11400000, guid: 1d28c23ea250bc24398cf4b79c03b5b7, type: 2}
+  - {fileID: 11400000, guid: 9ae335cc314800f419a935497ea40abe, type: 2}
+  - {fileID: 11400000, guid: c3ef0f589aa2bd648a53dfbe3f7ebc17, type: 2}
+  - {fileID: 11400000, guid: 3324c8c169f8aa949af60d7bc263d2c4, type: 2}
+  - {fileID: 11400000, guid: b56c330c5e3d5a240ad8699566d87b82, type: 2}
+  - {fileID: 11400000, guid: 010dfc396c40bb044b0c515eb9db90f3, type: 2}
+  - {fileID: 11400000, guid: 3074484f1b52d5143bca4eb6ea79d4fa, type: 2}
+  - {fileID: 11400000, guid: 2f99cdc1dcb0fcb42a4fdffa6ab1f759, type: 2}
+  - {fileID: 11400000, guid: 3156d87232875eb4990cac6e8dbd4408, type: 2}
+  - {fileID: 11400000, guid: 0bb8f6ecf96baa44d865a92c2d2350cc, type: 2}
+  - {fileID: 11400000, guid: af48efd6055a4b14dad4c852b79ea502, type: 2}
+  - {fileID: 11400000, guid: 1f17638a62f40784faeee3a08e7c2390, type: 2}
+  - {fileID: 11400000, guid: 7a21f4c6f3547e34692cf00507443edc, type: 2}
+  - {fileID: 11400000, guid: 7b2f8e71ecc14944d9650a4deecec2a2, type: 2}
+  - {fileID: 11400000, guid: 0fa05fc3a43cefa45a0eb23ed059fda2, type: 2}
+  - {fileID: 11400000, guid: 94ec504762754094cb3b3f0b0dc3cd67, type: 2}
+  - {fileID: 11400000, guid: 76de13885e40917479184f17ee074137, type: 2}
+  - {fileID: 11400000, guid: 547168b43a9306a4c8456f53b8e276ce, type: 2}
+  - {fileID: 11400000, guid: d361cec252b9c8e4f93688f35a952e09, type: 2}
+  - {fileID: 11400000, guid: 3b91f44be61b9a64f8475df204971041, type: 2}
+  - {fileID: 11400000, guid: 8720d4c20b4e2b84f8a509f025ba884a, type: 2}
   logo: {fileID: 21300000, guid: 9105b14434f7321458fdc11fa8a99294, type: 3}
   storeName: 1

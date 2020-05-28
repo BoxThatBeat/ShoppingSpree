@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aa0db4796c31cd45a1d4a672be1f268, type: 3}
-  m_Name: Tshirt2
+  m_Name: Tshirt5
   m_EditorClassIdentifier: 
-  weight: 10
+  weight: 20
   store: 1
-  sprite: {fileID: 21300000, guid: b2fbbd43c91c517498d9dc269fc46170, type: 3}
-  price: 55
+  sprite: {fileID: 21300000, guid: cfc3766dec5859e4fb5d701e60f3f8a0, type: 3}
+  price: 45
