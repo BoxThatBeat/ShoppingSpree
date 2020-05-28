@@ -13,6 +13,20 @@ MonoBehaviour:
   m_Name: Books
   m_EditorClassIdentifier: 
   weight: 30
-  items: []
+  items:
+  - {fileID: 11400000, guid: bec6b4b2c3ac7654d8a7da00b95ed97a, type: 2}
+  - {fileID: 11400000, guid: 78760dc6cee245f49ad085626e2b1058, type: 2}
+  - {fileID: 11400000, guid: 422e6ccf99670d4488ebd53bf3e7af8b, type: 2}
+  - {fileID: 11400000, guid: b119c8ef4e39ac44b9c66511ab8b6b2a, type: 2}
+  - {fileID: 11400000, guid: e501718a73d3cff478a06f6d1d53a25a, type: 2}
+  - {fileID: 11400000, guid: 63a3090e40e69ac4c991649d90671a51, type: 2}
+  - {fileID: 11400000, guid: 15c3f4696d78873449a2e105d5b36989, type: 2}
+  - {fileID: 11400000, guid: 74a3bd2df5619cb43b1f8c2fa3eb2a5c, type: 2}
+  - {fileID: 11400000, guid: e90993aea34ce0a48b303b29dfdf426b, type: 2}
+  - {fileID: 11400000, guid: 43c54bdd4a5d61d40a2e535c0f813082, type: 2}
+  - {fileID: 11400000, guid: ca6da9a66426d67498f5a7481fa227e5, type: 2}
+  - {fileID: 11400000, guid: 0c031a77bf941df438e902482acc8325, type: 2}
+  - {fileID: 11400000, guid: ee09cbe830755294b87b6f70a53b6cc9, type: 2}
+  - {fileID: 11400000, guid: 95d63f9abd64de54e9decced54517c35, type: 2}
   logo: {fileID: 21300000, guid: 0ae2d4da61df0844ba80d6a01b0c142d, type: 3}
   storeName: 2
