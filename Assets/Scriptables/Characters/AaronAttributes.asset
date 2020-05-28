@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 7
-  knockOutFadeTime: 0.5
+  knockOutFadeSpeed: 0.4
   maxStamina: 150
-  startMoney: 5000
+  startMoney: 2000

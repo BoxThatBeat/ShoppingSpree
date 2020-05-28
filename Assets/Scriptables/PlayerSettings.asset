@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   storeFadeTime: 0.6
-  blockTimeToHospital: 1.5
   blockTimeToStore: 0.6
   staminaDecreaseInterval: 0.05
+  hospitalCost: 250

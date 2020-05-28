@@ -105,7 +105,8 @@ public class PlayerController : MonoBehaviour{
 
         if (running && stamina != 0)
         {
-            SubtractStamina(settings.staminaDecreaseInterval);//use stamina while running
+            if (currentMovement.x != 0 || currentMovement.y != 0) //make sure the player is actually moving and not just holding the sprint button
+                SubtractStamina(settings.staminaDecreaseInterval);//use stamina while running
 
             rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * attributes.runSpeed * Time.fixedDeltaTime
                                     , transform.position.y + currentMovement.y * attributes.runSpeed * Time.fixedDeltaTime));
@@ -134,13 +135,13 @@ public class PlayerController : MonoBehaviour{
     #region Transportation
     public void GoToHospital()
     {
-        EventSystemGame.current.FadePlayer(playerId, attributes.knockOutFadeTime);
+        EventSystemGame.current.FadePlayer(playerId, attributes.knockOutFadeSpeed);
         transform.position = HospitalSpawn.transform.position;
 
-        money -= 500;
+        money -= settings.hospitalCost;
         EventSystemUI.current.ChangeMoneyUI(playerId, money);
 
-        StartBlockMovement(attributes.knockOutFadeTime);
+        StartBlockMovement(attributes.knockOutFadeSpeed);
         //should also play a flashing white animation in the future
     }
 
@@ -149,7 +150,7 @@ public class PlayerController : MonoBehaviour{
         EventSystemGame.current.FadePlayer(playerId, settings.storeFadeTime);
         transform.position = storePos;
         GetComponent<SpriteRenderer>().sortingLayerName = "StoreDefault";
-        StartBlockMovement(attributes.knockOutFadeTime);
+        StartBlockMovement(settings.blockTimeToStore);
     }
 
     public void ExitStore(Vector2 doorPos)

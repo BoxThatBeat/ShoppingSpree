@@ -5,7 +5,7 @@ public class CharacterAttributes : ScriptableObject
 {
     public float walkSpeed;
     public float runSpeed;
-    public float knockOutFadeTime;
+    public float knockOutFadeSpeed;
     public float maxStamina;
     public int startMoney;
     

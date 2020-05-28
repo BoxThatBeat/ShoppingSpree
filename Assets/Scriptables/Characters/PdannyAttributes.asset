@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PdannyAttributes
   m_EditorClassIdentifier: 
   walkSpeed: 4
-  runSpeed: 4.5
-  knockOutFadeTime: 1.5
+  runSpeed: 5
+  knockOutFadeSpeed: 0.08
   maxStamina: 100
-  startMoney: 10000
+  startMoney: 5000
