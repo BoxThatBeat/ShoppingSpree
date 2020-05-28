@@ -18,7 +18,7 @@ public class FoodStand : MonoBehaviour, IInteractable
         playerController.SubtractMoney(price); //charge the player for food
         playerController.AddStamina(addedStamina);
     }
-    public void DisplayItemInfo()
+    public void OpenDisplay()
     {
         Debug.Log("foodstand display");
     }

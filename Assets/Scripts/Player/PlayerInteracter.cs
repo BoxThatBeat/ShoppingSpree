@@ -38,20 +38,7 @@ public class PlayerInteracter : MonoBehaviour
 			sr.color = new Color(190, 190, 190, 0.7f);
 		}
 
-		//show information about object selected
-		ItemController item = target.GetComponent<ItemController>();
-		if (item != null && heldItem == null)
-		{
-			item.DisplayItemInfo();
-			return;
-		}
-
-		CashRegister cashReg = target.GetComponent<CashRegister>();
-		if (cashReg != null && heldItem != null)
-		{
-			cashReg.DisplayItemInfo();
-			return;
-		}
+		Interact(target, "openDisplay");
 
 	}
 
@@ -64,20 +51,7 @@ public class PlayerInteracter : MonoBehaviour
 			sr.color = Color.white;
 		}
 
-		//close information about object selected
-		ItemController item = target.GetComponent<ItemController>();
-		if (item != null && heldItem == null)
-		{
-			item.CloseDisplay();
-			return;
-		}
-
-		CashRegister cashReg = target.GetComponent<CashRegister>();
-		if (cashReg != null && heldItem != null)
-		{
-			cashReg.CloseDisplay();
-			return;
-		}
+		Interact(target, "closeDisplay");
 	}
 
 	public void OnUse() //called when player's use button is pressed
@@ -85,20 +59,30 @@ public class PlayerInteracter : MonoBehaviour
 		if (target == null)
 			return;
 
-		ItemController item = target.GetComponent<ItemController>();
-		if (item != null && heldItem == null)
+		Interact(target, "interact");
+	}
+
+	private void Interact(GameObject target, string interaction)
+	{
+		IInteractable interactable = target.GetComponent<IInteractable>(); 
+		if (interactable != null)//make sure the item interacting with implements the Interactable interface
 		{
-			item.Interact(gameObject);
-			return;
+			switch (interaction)
+			{
+				case "interact":
+					interactable.Interact(gameObject);
+					break;
+
+				case "openDisplay":
+					interactable.OpenDisplay();
+					break;
+
+				case "closeDisplay":
+					interactable.CloseDisplay();
+					break;
+
+			}
 		}
-		
-		CashRegister cashReg = target.GetComponent<CashRegister>();
-		if (cashReg != null && heldItem != null)
-		{
-			cashReg.Interact(gameObject);
-			return;
-		}
-		
 	}
 
 	public void SetItem(ItemController itemToHold)

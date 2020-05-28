@@ -36,11 +36,12 @@ public class ItemController : MonoBehaviour, IInteractable
 
     public void Interact(GameObject player)
     {
-        if (interactable)
-        {
-            PlayerInteracter playerIter = player.GetComponent<PlayerInteracter>();
+        PlayerInteracter playerInteracter = player.GetComponent<PlayerInteracter>();
 
-            playerIter.SetItem(this); //give the player the item info
+        if (interactable && playerInteracter.heldItem == null)
+        {
+
+            playerInteracter.SetItem(this); //give the player the item info
 
             GetComponent<SpriteRenderer>().enabled = false; //make the item disapear
             interactable = false;
@@ -48,7 +49,7 @@ public class ItemController : MonoBehaviour, IInteractable
         }
     }
 
-    public void DisplayItemInfo()
+    public void OpenDisplay()
     {
         if (interactable)
             GetComponentInChildren<Canvas>().enabled = true;
