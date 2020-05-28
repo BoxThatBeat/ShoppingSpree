@@ -15,12 +15,17 @@ public class FoodStand : MonoBehaviour, IInteractable
     public void Interact(GameObject player)
     {
         PlayerController playerController = player.GetComponent<PlayerController>();
-        playerController.SubtractMoney(price); //charge the player for food
-        playerController.AddStamina(addedStamina);
+        
+        if (playerController.money - price >= 0 && playerController.stamina != playerController.attributes.maxStamina)
+        {
+            playerController.SubtractMoney(price); //charge the player for food
+            playerController.AddStamina(addedStamina);
+        }
     }
     public void OpenDisplay()
     {
         Debug.Log("foodstand display");
+        //GetComponentInChildren<Canvas>().enabled = true;
     }
 
     public void CloseDisplay()

@@ -4,7 +4,6 @@
 public class PlayerSettings : ScriptableObject
 {
     public float storeFadeTime;
-    public float blockTimeToHospital;
     public float blockTimeToStore;
     public float staminaDecreaseInterval;
 

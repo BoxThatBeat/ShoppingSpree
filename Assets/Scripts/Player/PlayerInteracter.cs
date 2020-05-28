@@ -8,7 +8,7 @@ public class PlayerInteracter : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.CompareTag("Selectable"))
+		if (col.GetComponent<IInteractable>() != null)
 		{
 			if (target != col.gameObject && target != null)
 			{
@@ -22,7 +22,7 @@ public class PlayerInteracter : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.gameObject == target && col.CompareTag("Selectable"))
+		if (col.gameObject == target && col.GetComponent<IInteractable>() != null)
 		{
 			Deselect();
 			target = null;

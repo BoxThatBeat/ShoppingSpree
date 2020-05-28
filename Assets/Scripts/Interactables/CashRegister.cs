@@ -10,15 +10,20 @@ public class CashRegister : MonoBehaviour, IInteractable
 
         if (playerInteracter.heldItem != null)
         {
-            player.GetComponentInChildren<IconBox>().Close();//close the icon bubble
-
             PlayerController playerController = player.GetComponent<PlayerController>();
             ItemController itemToBuy = player.GetComponent<PlayerInteracter>().heldItem;
 
-            playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
-            playerController.AddScore((int)Math.Ceiling(itemToBuy.itemInfo.price * itemToBuy.discount)); //add score for buying item based on discount (ceilinged for int value)
+            if (playerController.money - itemToBuy.itemInfo.price >= 0) //make sure player has enough money
+            {
+                player.GetComponentInChildren<IconBox>().Close();//close the icon bubble
 
-            playerInteracter.heldItem = null;
+                playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
+                playerController.AddScore((int)Math.Ceiling(itemToBuy.itemInfo.price * itemToBuy.discount)); //add score for buying item based on discount (ceilinged for int value)
+
+                playerInteracter.heldItem = null;
+            }
+
+            
         }
     }
     public void OpenDisplay()

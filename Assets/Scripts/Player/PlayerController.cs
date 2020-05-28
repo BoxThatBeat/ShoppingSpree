@@ -140,16 +140,16 @@ public class PlayerController : MonoBehaviour{
         money -= 500;
         EventSystemUI.current.ChangeMoneyUI(playerId, money);
 
-        StartBlockMovement(settings.blockTimeToHospital);
+        StartBlockMovement(attributes.knockOutFadeTime);
         //should also play a flashing white animation in the future
     }
 
-    public void GoToStore(Vector2 storePos)
+    public void GoToStore(Vector2 storePos) //could make GoToStore and ExitStore into one function
     {
         EventSystemGame.current.FadePlayer(playerId, settings.storeFadeTime);
         transform.position = storePos;
         GetComponent<SpriteRenderer>().sortingLayerName = "StoreDefault";
-        StartBlockMovement(settings.blockTimeToStore);
+        StartBlockMovement(attributes.knockOutFadeTime);
     }
 
     public void ExitStore(Vector2 doorPos)

@@ -79314,15 +79314,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1790087160}
     m_Modifications:
+    - target: {fileID: 1211165927, guid: d64aa2a2fb835f344a672aea0c809511, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.72258496
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211165927, guid: d64aa2a2fb835f344a672aea0c809511, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5548301
+      objectReference: {fileID: 0}
     - target: {fileID: 3201427333265102040, guid: d64aa2a2fb835f344a672aea0c809511,
         type: 3}
       propertyPath: m_Name
       value: FoodStand0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3201427333265102042, guid: d64aa2a2fb835f344a672aea0c809511,
-        type: 3}
-      propertyPath: addedStamina
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3201427333265102043, guid: d64aa2a2fb835f344a672aea0c809511,
         type: 3}
