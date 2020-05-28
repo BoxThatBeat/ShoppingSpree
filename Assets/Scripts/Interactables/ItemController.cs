@@ -6,12 +6,12 @@ public class ItemController : MonoBehaviour, IInteractable
 {
 
     [NonSerialized] public Item itemInfo = null;
-    [NonSerialized] public float discount;
-    [NonSerialized] public int newPrice;
+    [NonSerialized] public float discount = 0;
+    [NonSerialized] public int newPrice = 0;
 
-    [SerializeField] private TextMeshProUGUI wasPrice;
-    [SerializeField] private TextMeshProUGUI nowPrice;
-    [SerializeField] private TextMeshProUGUI percentageOff;
+    [SerializeField] private TextMeshProUGUI wasPrice = null;
+    [SerializeField] private TextMeshProUGUI nowPrice = null;
+    [SerializeField] private TextMeshProUGUI percentageOff = null;
     private bool interactable = true;
 
     public void InitItem(Item type, Discount storeDiscount)

@@ -131,14 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da6609190a2dcc47ab588aeeb7958ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 5eba884d0ae9e814097b10817bc228ba, type: 2}
+  attributes: {fileID: 11400000, guid: 5eba884d0ae9e814097b10817bc228ba, type: 2}
+  settings: {fileID: 11400000, guid: 7ac80215102fb5c44894d590c820a13e, type: 2}
   HospitalSpawn: {fileID: 7951699453510569583, guid: 8b30d67f2bc5f2e4bbd9c2efae7c6128,
     type: 3}
-  playerId: 0
-  currentMovement: {x: 0, y: 0}
-  stopped: 0
-  money: 0
-  score: 0
 --- !u!114 &672873660209530380
 MonoBehaviour:
   m_ObjectHideFlags: 0

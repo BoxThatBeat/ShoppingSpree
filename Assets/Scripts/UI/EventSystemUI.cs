@@ -23,6 +23,18 @@ public class EventSystemUI : MonoBehaviour
         onScoreChanged?.Invoke(id, amount);
     }
 
+    public event Action<int,float> onStaminaChanged;
+    public void ChangeStaminaUI(int id, float amount)
+    {
+        onStaminaChanged?.Invoke(id, amount);
+    }
+
+    public event Action<int, float> onSetMaxStamina;
+    public void SetMaxStamina(int id, float amount)
+    {
+        onSetMaxStamina?.Invoke(id, amount);
+    }
+
     public event Action<int> onTimeChanged;
     public void ChangeTimeUI(int time)
     {

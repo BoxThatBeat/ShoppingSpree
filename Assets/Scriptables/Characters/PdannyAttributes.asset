@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4861eddf6c47cb4698444d198d3121b, type: 3}
-  m_Name: AaronSettings
+  m_Name: PdannyAttributes
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 7
-  blockTimeToHospital: 0.5
-  blockTimeToStore: 0.6
+  walkSpeed: 4
+  runSpeed: 4.5
   knockOutFadeTime: 0.5
-  StoreFadeTime: 0.6
-  startMoney: 5000
+  maxStamina: 100
+  startMoney: 10000

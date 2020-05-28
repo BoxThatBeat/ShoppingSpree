@@ -38,9 +38,9 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown(useButton))
             playerInter.OnUse();
 
-        if (Input.GetButton(runButton))
+        if (Input.GetButtonDown(runButton))
             player.OnRunning();
-        else
+        else if (Input.GetButtonUp(runButton))
             player.OnWalking();
 
         //always send axis info

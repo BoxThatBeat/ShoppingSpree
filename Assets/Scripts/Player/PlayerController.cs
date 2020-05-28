@@ -1,52 +1,78 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
 
+    [Space]
+    [Header("Settings and Attribute scriptable objects:")]
+    public CharacterAttributes attributes;
     public PlayerSettings settings;
     public GameObject HospitalSpawn;
 
-    [Space]
-    [Header("Player Stats:")]
-    public int playerId = 0;
-    public Vector2 currentMovement;
-    public bool stopped;
+    //these are attributes not to be set in the inspector
+    [NonSerialized] public int playerId = 0;
+    [NonSerialized] public Vector2 currentMovement;
+    [NonSerialized] public bool stopped;
 
-    public int money;
-    public int score;
+    [NonSerialized] public int money;
+    [NonSerialized] public int score;
+    [NonSerialized] public float maxStamina;
+    [NonSerialized] public float stamina;
+    
 
     private Rigidbody2D rb;
     private bool running;
 
-   
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        money = settings.startMoney;
+
+        maxStamina = attributes.maxStamina;
+        stamina = maxStamina;
+        EventSystemUI.current.SetMaxStamina(playerId, attributes.maxStamina);
+
+        money = attributes.startMoney;
         EventSystemUI.current.ChangeMoneyUI(playerId, money);
 
     }
 
-    #region Money and Score
+    #region Money and Score and Stamina
+
+    public void AddStamina(float amount)
+    {
+        if (stamina + amount >= maxStamina) //case where adding too much stamina
+            stamina = maxStamina;
+        else
+            stamina += amount;
+
+        EventSystemUI.current.ChangeStaminaUI(playerId, stamina);
+    }
     public void AddMoney(int amount)
     {
-        money += amount;
-        EventSystemUI.current.ChangeMoneyUI(playerId, money);
+        EventSystemUI.current.ChangeMoneyUI(playerId, money += amount);
     }
     public void AddScore(int amount)
     {
-        score += amount;
-        EventSystemUI.current.ChangeScoreUI(playerId, score);
+        EventSystemUI.current.ChangeScoreUI(playerId, score += amount);
+    }
+    public void SubtractStamina(float amount)
+    {
+        if (stamina - amount <= 0) //case where adding too much stamina
+            stamina = 0;
+        else
+            stamina -= amount;
+
+        EventSystemUI.current.ChangeStaminaUI(playerId, stamina);
     }
     public void SubtractMoney(int amount)
     {
-        money -= amount;
-        EventSystemUI.current.ChangeMoneyUI(playerId, money);
+        EventSystemUI.current.ChangeMoneyUI(playerId, money -= amount);
     }
     public void SubtractScore(int amount)
     {
-        score -= amount;
-        EventSystemUI.current.ChangeScoreUI(playerId, score);
+        EventSystemUI.current.ChangeScoreUI(playerId, score -= amount);
     }
     #endregion
 
@@ -77,16 +103,17 @@ public class PlayerController : MonoBehaviour{
    private void FixedUpdate()
     {
 
-        if (running)
+        if (running && stamina != 0)
         {
+            SubtractStamina(settings.staminaDecreaseInterval);//use stamina while running
 
-            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.runSpeed * Time.fixedDeltaTime
-                                    , transform.position.y + currentMovement.y * settings.runSpeed * Time.fixedDeltaTime));
+            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * attributes.runSpeed * Time.fixedDeltaTime
+                                    , transform.position.y + currentMovement.y * attributes.runSpeed * Time.fixedDeltaTime));
         }
         else
         {
-            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * settings.walkSpeed * Time.fixedDeltaTime
-                                    , transform.position.y + currentMovement.y * settings.walkSpeed * Time.fixedDeltaTime));
+            rb.MovePosition(new Vector2(transform.position.x + currentMovement.x * attributes.walkSpeed * Time.fixedDeltaTime
+                                    , transform.position.y + currentMovement.y * attributes.walkSpeed * Time.fixedDeltaTime));
         }    
     }
 
@@ -107,7 +134,7 @@ public class PlayerController : MonoBehaviour{
     #region Transportation
     public void GoToHospital()
     {
-        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
+        EventSystemGame.current.FadePlayer(playerId, attributes.knockOutFadeTime);
         transform.position = HospitalSpawn.transform.position;
 
         money -= 500;
@@ -119,18 +146,18 @@ public class PlayerController : MonoBehaviour{
 
     public void GoToStore(Vector2 storePos)
     {
-        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
+        EventSystemGame.current.FadePlayer(playerId, settings.storeFadeTime);
         transform.position = storePos;
         GetComponent<SpriteRenderer>().sortingLayerName = "StoreDefault";
-        StartBlockMovement(settings.StoreFadeTime);
+        StartBlockMovement(settings.blockTimeToStore);
     }
 
     public void ExitStore(Vector2 doorPos)
     {
-        EventSystemGame.current.FadePlayer(playerId, settings.knockOutFadeTime);
+        EventSystemGame.current.FadePlayer(playerId, settings.storeFadeTime);
         transform.position = doorPos;
         GetComponent<SpriteRenderer>().sortingLayerName = "Default";
-        StartBlockMovement(settings.StoreFadeTime);
+        StartBlockMovement(settings.blockTimeToStore);
     }
     #endregion
 
