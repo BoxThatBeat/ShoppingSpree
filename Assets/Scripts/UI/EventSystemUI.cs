@@ -7,7 +7,15 @@ public class EventSystemUI : MonoBehaviour
 
     private void Awake()
     {
-        current = this;
+
+        if (current == null)//makes the script a singleton
+        {
+            current = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     //define UI events that the UI scripts can subscribe to and that the gameObjects can notifty

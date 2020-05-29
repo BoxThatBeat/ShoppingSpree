@@ -36,4 +36,9 @@ public class EventSystemGame : MonoBehaviour
         onSunLower?.Invoke(time);
     }
 
+    public event Action<int, bool> onPlayerRunStateChanged;
+    public void PlayerRunning(int id, bool value)
+    {
+        onPlayerRunStateChanged?.Invoke(id, value);
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour{
 
@@ -90,14 +91,16 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    public void OnRunning()
+    public void OnRunning() //only called once when running button is pressed down
     {
         running = true;
+        EventSystemGame.current.PlayerRunning(playerId, true);
     }
 
-    public void OnWalking()
+    public void OnWalking()//only called once when running button is unpressed
     {
         running = false;
+        EventSystemGame.current.PlayerRunning(playerId, false);
     }
 
    private void FixedUpdate()

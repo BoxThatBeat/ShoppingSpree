@@ -2,12 +2,38 @@
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private float zoomInAmount;
+    [SerializeField] private float zoomSpeed;
+    [SerializeField] private int player;
 
-    //public float smoothSpeed = 0.125f;
-    public Vector3 offset = new Vector3(0, 0, -1);
-
+    private Camera cam;
     private Transform target;
+    private Vector3 offset = new Vector3(0, 0, -1);
+
     private bool targetFound = false;
+    private bool targetRunning = false;
+
+    private float zoomedInLevel;
+    private float zoomedOutLevel;
+    public float zoomPercentage = 0;
+
+
+    private void Start()
+    {
+        cam = GetComponent<Camera>();
+        zoomedOutLevel = cam.orthographicSize;
+        zoomedInLevel = cam.orthographicSize - zoomInAmount;
+        EventSystemGame.current.onPlayerRunStateChanged += ZoomControl;
+    }
+
+    private void ZoomControl(int playerId, bool running)
+    {
+        if (playerId == player)
+        {
+            targetRunning = running;
+        }
+    }
+
 
     public void lockTarget(Transform t)
     {
@@ -19,10 +45,6 @@ public class CameraController : MonoBehaviour
     {
         if (targetFound)
         {
-            //Vector3 desiredPosition = target.transform.position + offset;
-            //Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-            //transform.position = smoothedPosition;
-
             // Always Update to Exactly Targets Position + Offset
             transform.position = new Vector3(
                 target.transform.position.x + offset.x,
@@ -30,5 +52,31 @@ public class CameraController : MonoBehaviour
                 target.transform.position.z + offset.z);
         }
 
+        //always be inbetween these two points
+        cam.orthographicSize = Mathf.Lerp(zoomedOutLevel, zoomedInLevel, zoomPercentage);
+
+        if (targetRunning)
+        {
+            if (zoomPercentage <= 1f)
+            {
+                zoomPercentage += zoomSpeed;
+            }
+
+        }
+        else
+        {
+            if (zoomPercentage >= 0f)
+            {
+                zoomPercentage -= zoomSpeed;
+            }
+        }
+
+            
+
+    }
+
+    private void OnDestroy()
+    {
+        EventSystemGame.current.onPlayerRunStateChanged -= ZoomControl;
     }
 }
