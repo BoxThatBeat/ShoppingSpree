@@ -330,6 +330,7 @@ MonoBehaviour:
   wasPrice: {fileID: 6167549239153782313}
   nowPrice: {fileID: 2016732487761586993}
   percentageOff: {fileID: 6234002268481336872}
+  easeType: 23
 --- !u!61 &218649351
 BoxCollider2D:
   m_ObjectHideFlags: 0

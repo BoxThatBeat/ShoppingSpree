@@ -12,7 +12,16 @@ public class ItemController : MonoBehaviour, IInteractable
     [SerializeField] private TextMeshProUGUI wasPrice = null;
     [SerializeField] private TextMeshProUGUI nowPrice = null;
     [SerializeField] private TextMeshProUGUI percentageOff = null;
+
+    public LeanTweenType easeType;
+
     private bool interactable = true;
+    private bool selected = false;
+
+    private void OnEnable()
+    {
+        LeanTween.moveLocalY(gameObject, transform.position.y + 0.3f, 1f).setLoopPingPong().setEase(easeType);
+    }
 
     public void InitItem(Item type, Discount storeDiscount)
     {
@@ -52,11 +61,16 @@ public class ItemController : MonoBehaviour, IInteractable
     public void OpenDisplay()
     {
         if (interactable)
+        {
             GetComponentInChildren<Canvas>().enabled = true;
+            LeanTween.pause(gameObject);
+        }
+            
     }
 
     public void CloseDisplay()
     {
         GetComponentInChildren<Canvas>().enabled = false;
+        LeanTween.resume(gameObject);
     }
 }
