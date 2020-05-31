@@ -8,6 +8,8 @@ public class BonusItems : MonoBehaviour
     private Image[] images;
     private Item[] currentBonusItems;
 
+   
+
     private void Awake()
     {
         currentBonusItems = new Item[9];
@@ -55,8 +57,6 @@ public class BonusItems : MonoBehaviour
 
     private void EliminateBonusItem(int playerId, int itemId)
     {
-        //add the player icon overtop
-        Debug.Log("Item Eliminated");
 
         currentBonusItems[itemId].bonusItemIndex = -1; //makes all of the items that use this asset not give bonus points anymore
     }

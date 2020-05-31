@@ -15,7 +15,10 @@ public class GameManager : MonoBehaviour
 
     private bool gameStarted = false;
     private bool lightsAreOn = false;
-    
+
+    public characters playerOneCharacter;
+    public characters playerTwoCharacter;
+
 
     private void Awake() 
     {

@@ -14,8 +14,8 @@ public class PlayerSpawner : MonoBehaviour
     public Transform playerOneSpawnPos;
     public Transform playerTwoSpawnPos;
 
-    public characters playerOneChoice;
-    public characters playerTwoChoice;
+    private characters playerOneChoice;
+    private characters playerTwoChoice;
 
     [SerializeField] private GameObject characterAaron = null;
     [SerializeField] private GameObject characterPdanny = null;
@@ -28,6 +28,8 @@ public class PlayerSpawner : MonoBehaviour
 
     public void Start()
     {
+        playerOneChoice = GameManager.Instance.playerOneCharacter;
+        playerTwoChoice = GameManager.Instance.playerTwoCharacter;
         SpawnPlayers();
     }
 

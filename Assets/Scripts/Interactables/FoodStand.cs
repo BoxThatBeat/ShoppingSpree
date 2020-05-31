@@ -24,12 +24,10 @@ public class FoodStand : MonoBehaviour, IInteractable
     }
     public void OpenDisplay()
     {
-        Debug.Log("foodstand display");
         //GetComponentInChildren<Canvas>().enabled = true;
     }
 
     public void CloseDisplay()
     {
-        Debug.Log("closed display");
     }
 }
