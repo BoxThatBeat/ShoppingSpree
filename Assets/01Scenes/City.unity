@@ -71281,6 +71281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637287808}
   - component: {fileID: 637287810}
+  - component: {fileID: 637287811}
   - component: {fileID: 637287809}
   m_Layer: 5
   m_Name: BonusPanel
@@ -71354,6 +71355,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637287807}
   m_CullTransparentMesh: 0
+--- !u!114 &637287811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637287807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a9f34fa5934d3469abbf38814df6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stores:
+  - {fileID: 11400000, guid: 8219049a8b3693f49a75ba96ebf10abb, type: 2}
+  - {fileID: 11400000, guid: 424ee2dc004e9384badc6974750ba8da, type: 2}
+  - {fileID: 11400000, guid: 0ee70cb322c09bb41ac9ddec1c3a879a, type: 2}
 --- !u!1 &638158387
 GameObject:
   m_ObjectHideFlags: 0
@@ -75709,7 +75726,7 @@ MonoBehaviour:
   playerOneSpawnPos: {fileID: 805850739}
   playerTwoSpawnPos: {fileID: 120966828}
   playerOneChoice: 0
-  playerTwoChoice: 2
+  playerTwoChoice: 1
   characterAaron: {fileID: 4250201621292746825, guid: 3da8753c50e2ee6458a0c6648f69262e,
     type: 3}
   characterPdanny: {fileID: 5635358888095784866, guid: f95adcfbe4b9990469d7cb1a724535fd,
