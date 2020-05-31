@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ExitStore : MonoBehaviour
 {
-    public Transform door;
+    [NonSerialized] public Transform door;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

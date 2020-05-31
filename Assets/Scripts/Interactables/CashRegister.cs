@@ -19,7 +19,7 @@ public class CashRegister : MonoBehaviour, IInteractable
                 player.GetComponentInChildren<IconBox>().Close();//close the icon bubble
 
                 playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
-                playerController.AddScore((int)Math.Ceiling(itemToBuy.itemInfo.price * itemToBuy.discount)); //add score for buying item based on discount (ceilinged for int value)
+                playerController.AddScore(itemToBuy.scoreRewarded); //add score for buying item based on discount (ceilinged for int value)
 
 
                 int bonusIndex = playerInteracter.heldItem.itemInfo.bonusItemIndex;

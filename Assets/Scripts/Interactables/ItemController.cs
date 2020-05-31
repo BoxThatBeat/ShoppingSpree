@@ -8,6 +8,7 @@ public class ItemController : MonoBehaviour, IInteractable
     [NonSerialized] public Item itemInfo = null;
     [NonSerialized] public float discount = 0;
     [NonSerialized] public int newPrice = 0;
+    [NonSerialized] public int scoreRewarded = 0;
 
     [SerializeField] private TextMeshProUGUI wasPrice = null;
     [SerializeField] private TextMeshProUGUI nowPrice = null;
@@ -27,11 +28,12 @@ public class ItemController : MonoBehaviour, IInteractable
         itemInfo = type;
         discount = UnityEngine.Random.Range(storeDiscount.minDiscount, storeDiscount.maxDiscount);
         newPrice = (int) Math.Ceiling(itemInfo.price * (1 - discount));
+        scoreRewarded = (int)Math.Ceiling(itemInfo.price * discount);
 
         //set up sprite
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.sprite = itemInfo.sprite;
-        sr.sortingLayerName = "StoreObjectsInterior";
+        sr.sortingLayerName = "StoreItems";
 
         //set up item info canvas
         wasPrice.text = itemInfo.price.ToString();
