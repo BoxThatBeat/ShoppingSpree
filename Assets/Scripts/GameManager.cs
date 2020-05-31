@@ -7,10 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public int bonusItemReward { get; private set; }
+    private bool canIncreaseReward = true;
+
     private int gameTimer = 600; //10 minutes in seconds 
     private bool canDropTimer = true;
+
     private bool gameStarted = false;
     private bool lightsAreOn = false;
+    
 
     private void Awake() 
     {
@@ -25,10 +30,32 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        bonusItemReward = 150; //start bonus amount at 150
+
+        /*
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
+        //REMOVE WHEN STARTING FROM MAINMENU
+        gameStarted = true;
+    }
+
     private void Update()
     {
-        if (canDropTimer && gameStarted)
-            StartCoroutine(CountDown());
+        if (gameStarted)
+        {
+            if (canDropTimer)
+                StartCoroutine(CountDown());
+
+            if (canIncreaseReward)
+                StartCoroutine(IncreaseBonusReward());
+        }
+        
     }
 
     private IEnumerator CountDown()
@@ -48,6 +75,16 @@ public class GameManager : MonoBehaviour
         canDropTimer = true;
     }
 
+    private IEnumerator IncreaseBonusReward()
+    {
+        canIncreaseReward = false;
+        yield return new WaitForSecondsRealtime(10f);
+
+        bonusItemReward += 10; //increase bonus item reward by $10 every 10 seconds
+        EventSystemUI.current.ChangeBonusReward(bonusItemReward);
+        canIncreaseReward = true;
+    }
+
     public IEnumerator LoadCity() //load city with the fade effect
     {
         EventSystemGame.current.FadePlayer(1, 0.8f);
@@ -55,8 +92,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene("City");
         gameStarted = true;
-
-        
     }
 
 }

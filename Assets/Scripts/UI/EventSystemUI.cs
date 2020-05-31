@@ -49,4 +49,16 @@ public class EventSystemUI : MonoBehaviour
         onTimeChanged?.Invoke(time);
     }
 
+    public event Action<int> onBonusRewardChanged;
+    public void ChangeBonusReward(int amount)
+    {
+        onBonusRewardChanged?.Invoke(amount);
+    }
+
+    public event Action<int,int> onBonusItemBought;
+    public void BoughtBonusItem(int playerId, int itemId)
+    {
+        onBonusItemBought?.Invoke(playerId, itemId);
+    }
+
 }

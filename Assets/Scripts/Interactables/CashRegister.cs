@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 
 public class CashRegister : MonoBehaviour, IInteractable
 {
@@ -20,12 +21,16 @@ public class CashRegister : MonoBehaviour, IInteractable
                 playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
                 playerController.AddScore((int)Math.Ceiling(itemToBuy.itemInfo.price * itemToBuy.discount)); //add score for buying item based on discount (ceilinged for int value)
 
-                if (playerInteracter.heldItem.itemInfo.bonusItemIndex != -1)
+
+                int bonusIndex = playerInteracter.heldItem.itemInfo.bonusItemIndex;
+                if (bonusIndex != -1)
                 {
+                    Debug.Log("BONUS ITEM FOUND");
                     //Start a coroutine to add more score in a two seconds with a special sound effect
-                    //send a event call to UI systsem with the bonus index to cover the item with the players face
-                    //and it will also make the bonus item not a bonus item anymore
-                    Debug.Log("BONUS ITEM");
+                    StartCoroutine(AddBonusScore(playerController));
+
+                    //send a event call to UI systsem with the bonus index to cover the item with the players face and  make the bonus item not a bonus item anymore
+                    EventSystemUI.current.BoughtBonusItem(playerController.playerId, bonusIndex);
                     
                 }
 
@@ -33,6 +38,13 @@ public class CashRegister : MonoBehaviour, IInteractable
             } 
         }
     }
+
+    private IEnumerator AddBonusScore(PlayerController player)
+    {
+        yield return new WaitForSeconds(2f);
+        player.AddScore(GameManager.Instance.bonusItemReward); //get the bonus from the game manager as it is constantly increasing throughout the match
+    }
+
     public void OpenDisplay()
     {
         Debug.Log("cashOpen");
