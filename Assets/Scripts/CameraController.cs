@@ -2,9 +2,9 @@
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float zoomInAmount;
-    [SerializeField] private float zoomSpeed;
-    [SerializeField] private int player;
+    [SerializeField] private float zoomInAmount = 0f;
+    [SerializeField] private float zoomSpeed = 0f;
+    [SerializeField] private int player = 0;
 
     private Camera cam;
     private Transform target;

@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using System;
 
 public class FoodStand : MonoBehaviour, IInteractable
 {
     [SerializeField] private int minPrice;
     [SerializeField] private int maxPrice;
-    [SerializeField] private int price;
     [SerializeField] private int addedStamina;
+
+    private int price;
 
     private void Start()
     {
