@@ -10,10 +10,11 @@ public class CharacterOverlay : MonoBehaviour
 
     void Start()
     {
+        EventSystemUI.current.onBonusItemBought += SelectOverlay;
         overlays = GetComponentsInChildren<Image>();
     }
 
-    private void EliminateBonusItem(int playerId, int itemId)
+    private void SelectOverlay(int playerId, int itemId)
     {
         //add the player icon overtop item bought
         if (playerId == 1)
@@ -41,5 +42,10 @@ public class CharacterOverlay : MonoBehaviour
                 overlays[index].sprite = PDannyIcon;
                 break;
         }
+    }
+
+    private void OnDisable()
+    {
+        EventSystemUI.current.onBonusItemBought -= SelectOverlay;
     }
 }

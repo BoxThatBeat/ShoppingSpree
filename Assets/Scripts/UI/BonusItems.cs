@@ -8,8 +8,6 @@ public class BonusItems : MonoBehaviour
     private Image[] images;
     private Item[] currentBonusItems;
 
-   
-
     private void Awake()
     {
         currentBonusItems = new Item[9];
