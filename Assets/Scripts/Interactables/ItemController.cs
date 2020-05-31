@@ -16,7 +16,6 @@ public class ItemController : MonoBehaviour, IInteractable
     public LeanTweenType easeType;
 
     private bool interactable = true;
-    private bool selected = false;
 
     private void OnEnable()
     {
