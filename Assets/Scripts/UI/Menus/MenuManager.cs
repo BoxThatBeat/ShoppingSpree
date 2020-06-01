@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class BtnManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject Options;
@@ -11,18 +12,30 @@ public class BtnManager : MonoBehaviour
     public GameObject UIOptionsFirstSelected;
     public GameObject UICharacterFirstSelected;
 
+    public Toggle UsingControllersCheckBox;
+
     public EventSystem eventSystem;
 
 
+    public void SetUsingControllers(bool value)
+    {
+        GameManager.Instance.SetUsingControllers(value);
+    }
+
     public void QuitBtn()
     {
-        Application.Quit();
+        GameManager.Instance.QuitGame();
     }
 
     public void SwitchToOptions()
     {
         MainMenu.SetActive(false);
         Options.SetActive(true);
+
+        if (GameManager.Instance.GetUsingControllers())
+        {
+            UsingControllersCheckBox.isOn = true;
+        }
 
         eventSystem.SetSelectedGameObject(UIOptionsFirstSelected);
     }

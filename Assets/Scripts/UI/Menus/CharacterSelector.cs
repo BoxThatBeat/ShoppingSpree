@@ -28,7 +28,7 @@ public class CharacterSelector : MonoBehaviour
 
         characterName.text = character.menuName;
         characterSpeed.text = "Speed: " + character.speedUI + "/5";
-        characterWealth.text = "Wealth: " + character.speedUI + "/5";
+        characterWealth.text = "Wealth: " + character.moneyUI + "/5";
         characterSpecial.text = "Special: " + character.specialUI;
 
     }

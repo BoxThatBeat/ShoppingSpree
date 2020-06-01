@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d3cabd11cd2ac4d833803b47a33f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameIsPaused: 0
   playerOneCharacter: 0
   playerTwoCharacter: 0
   gameSettings: {fileID: 11400000, guid: 0cbb524c401f0c5448a03ce2323dd536, type: 2}
@@ -3174,7 +3175,7 @@ GameObject:
   - component: {fileID: 1179933013}
   - component: {fileID: 1179933012}
   m_Layer: 0
-  m_Name: Btn Manager
+  m_Name: MenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3198,6 +3199,7 @@ MonoBehaviour:
   UIMenuFirstSelected: {fileID: 1684798697}
   UIOptionsFirstSelected: {fileID: 1771827655}
   UICharacterFirstSelected: {fileID: 2002884623}
+  UsingControllersCheckBox: {fileID: 1771827657}
   eventSystem: {fileID: 1605722334}
 --- !u!4 &1179933013
 Transform:
@@ -4622,9 +4624,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 187006876}
+      - m_Target: {fileID: 1179933012}
         m_MethodName: SetUsingControllers
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
