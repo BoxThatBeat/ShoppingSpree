@@ -17,3 +17,9 @@ MonoBehaviour:
   knockOutFadeSpeed: 0.08
   maxStamina: 100
   startMoney: 5000
+  characterName: 1
+  menuName: P-Danny
+  speedUI: 1
+  moneyUI: 5
+  specialUI: Buyout
+  menuArt: {fileID: 8694227240585872061, guid: bc9a38a951821674fba5288e507cba20, type: 3}

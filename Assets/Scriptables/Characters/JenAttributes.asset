@@ -17,3 +17,9 @@ MonoBehaviour:
   knockOutFadeSpeed: 0.15
   maxStamina: 125
   startMoney: 2500
+  characterName: 2
+  menuName: JJ
+  speedUI: 3
+  moneyUI: 3
+  specialUI: Spree
+  menuArt: {fileID: 1740906822642746709, guid: a5c3d23a1d8aa6e428f583979b12f1a1, type: 3}

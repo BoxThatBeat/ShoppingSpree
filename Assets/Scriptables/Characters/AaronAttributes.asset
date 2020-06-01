@@ -17,3 +17,9 @@ MonoBehaviour:
   knockOutFadeSpeed: 0.4
   maxStamina: 150
   startMoney: 2000
+  characterName: 0
+  menuName: A-aron
+  speedUI: 5
+  moneyUI: 2
+  specialUI: Steal
+  menuArt: {fileID: 619155705007297848, guid: 9b301f8bc6d1fdb4ab389bc40ac9c956, type: 3}

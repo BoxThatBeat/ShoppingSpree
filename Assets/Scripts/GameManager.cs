@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +18,15 @@ public class GameManager : MonoBehaviour
     public characters playerOneCharacter;
     public characters playerTwoCharacter;
 
+    public Settings gameSettings;
+
+    public void SetUsingControllers() //swap value everytime this is called
+    {
+        if (gameSettings.usingControllers)
+            gameSettings.usingControllers = false;
+        else
+            gameSettings.usingControllers = true;
+    }
 
     private void Awake() 
     {
@@ -35,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameSettings.usingControllers = false; //default to not using controllers
+
         bonusItemReward = 150; //start bonus amount at 150
 
         /*
@@ -45,7 +55,7 @@ public class GameManager : MonoBehaviour
          * 
          */
         //REMOVE WHEN STARTING FROM MAINMENU
-        gameStarted = true;
+        //gameStarted = true;
     }
 
     private void Update()

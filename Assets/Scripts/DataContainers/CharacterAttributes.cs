@@ -8,5 +8,12 @@ public class CharacterAttributes : ScriptableObject
     public float knockOutFadeSpeed;
     public float maxStamina;
     public int startMoney;
+
+    public characters characterName;
+    public string menuName;
+    public string speedUI;
+    public string moneyUI;
+    public string specialUI;
+    public Sprite menuArt;
     
 }
