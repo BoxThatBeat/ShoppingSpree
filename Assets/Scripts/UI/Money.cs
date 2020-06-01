@@ -32,7 +32,7 @@ public class Money : MonoBehaviour
 
     private void ChangeMoney(int playerId, int amount)
     {
-
+        
         if (player == playerId)
         {
             difference = int.Parse(money.text.Substring(1)) - amount; //removes the dollar sign and gets the integer value to find the diff
