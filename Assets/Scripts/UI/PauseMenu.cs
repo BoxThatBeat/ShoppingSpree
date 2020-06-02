@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
     public void SwitchToMainMenu()
     {
         Time.timeScale = 1f;
+        GameManager.Instance.GameIsPaused = false;
         GameManager.Instance.LoadMainMenu();
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameTimer : MonoBehaviour
 {
     private TextMeshProUGUI timer;
+    private bool isRed;
 
     private void Start()
     {
@@ -13,6 +14,12 @@ public class GameTimer : MonoBehaviour
 
     private void UpdateTimer(int currentTimeInSeconds)
     {
+        if (!isRed && currentTimeInSeconds <= 30)
+        {
+            timer.color = Color.red;
+            isRed = true;
+        }
+
         int minutes = (int)(currentTimeInSeconds % 60);
         int hours = (int)(currentTimeInSeconds / 60);
 

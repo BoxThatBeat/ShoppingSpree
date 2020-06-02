@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
         if (gameStarted && !GameIsPaused)
         {
             if (canDropTimer)
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
             {
                 EventSystemGame.current.GameOver(); //call the gameover event
                 LeanTween.pauseAll();
+                gameStarted = false;
             }
         }
     }
@@ -95,8 +97,8 @@ public class GameManager : MonoBehaviour
     {
         gameStarted = false;
         canIncreaseReward = true;
-        lightsAreOn = false;
         canDropTimer = true;
+        lightsAreOn = false;
 
         gameTimer = 600;
         bonusItemReward = 150;
@@ -123,14 +125,15 @@ public class GameManager : MonoBehaviour
         canDropTimer = false;
         yield return new WaitForSecondsRealtime(1f);
 
+        
         if (!GameIsPaused)
         {
             gameTimer -= 30;//CHANGE WHEN DONE TESTING
             EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
             EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
-
-            canDropTimer = true;
         }
+
+        canDropTimer = true;
     }
 
     private IEnumerator IncreaseBonusReward()
@@ -142,19 +145,8 @@ public class GameManager : MonoBehaviour
         {
             bonusItemReward += 10; //increase bonus item reward by $10 every 10 seconds
             EventSystemUI.current.ChangeBonusReward(bonusItemReward);
-            canIncreaseReward = true;
         }
-    }
 
-    /*
-    public IEnumerator LoadCity() //load city with the fade effect
-    {
-        EventSystemGame.current.FadePlayer(1, 0.8f);
-        EventSystemGame.current.FadePlayer(2, 0.8f);
-        yield return new WaitForSeconds(0.8f);
-        SceneManager.LoadScene("City");
-        gameStarted = true;
+        canIncreaseReward = true;
     }
-
-    */
 }
