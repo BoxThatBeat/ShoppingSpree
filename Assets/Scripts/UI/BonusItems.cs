@@ -29,28 +29,35 @@ public class BonusItems : MonoBehaviour
     {
         images = GetComponentsInChildren<Image>();
 
-        for (int i = 0; i < storeArray.stores.Length; i++)
+        int storeIndex = 0;
+        for (int i = 0; i < storeArray.stores.Length*2; i += 2)
         {
 
-            if (i == images.Length)
+            if (i*2 == images.Length)
             {
                 Debug.LogError("Too many stores to fit in bonus item UI");
                 return;//stop if there are more stores than bonus items slots (future proofing)
             }
 
-            Weighted[] items = storeArray.stores[i].items; //get the list of items in each store
+            Weighted[] items = storeArray.stores[storeIndex++].items; //get the list of items in each store
 
-            if (items.Length != 0)
+            if (items.Length >= 2)
             {
-                int randItemIndex = Random.Range(0, items.Length);
-                Item item = (Item)items[randItemIndex];
-
-                images[i].sprite = item.sprite;
-                item.bonusItemIndex = i;
-
-                currentBonusItems[i] = item; //add the item to a local list of items that are selected bonus items
+                AddRandomItemToBonusList(items, i);     //add two items from each shop
+                AddRandomItemToBonusList(items, i + 1);
             }
         }
+    }
+
+    private void AddRandomItemToBonusList(Weighted[] items, int index)
+    {
+        int randItemIndex = Random.Range(0, items.Length);
+        Item item = (Item)items[randItemIndex];
+
+        images[index].sprite = item.sprite;
+        item.bonusItemIndex = index;
+
+        currentBonusItems[index] = item; //add the item to a local list of items that are selected bonus items
     }
 
     private void EliminateBonusItem(int playerId, int itemId)
