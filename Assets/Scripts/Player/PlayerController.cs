@@ -69,12 +69,19 @@ public class PlayerController : MonoBehaviour{
     }
     public void SubtractMoney(int amount)
     {
-        EventSystemUI.current.ChangeMoneyUI(playerId, money -= amount);
+        if (money - amount <= 0) //case where adding too much stamina
+            money = 0;
+        else
+            money -= amount;
+
+        EventSystemUI.current.ChangeMoneyUI(playerId, money);
     }
+    /*
     public void SubtractScore(int amount)
     {
         EventSystemUI.current.ChangeScoreUI(playerId, score -= amount);
     }
+    */
     #endregion
 
     #region Movement
