@@ -72167,10 +72167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a9f34fa5934d3469abbf38814df6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stores:
-  - {fileID: 11400000, guid: 8219049a8b3693f49a75ba96ebf10abb, type: 2}
-  - {fileID: 11400000, guid: 424ee2dc004e9384badc6974750ba8da, type: 2}
-  - {fileID: 11400000, guid: 0ee70cb322c09bb41ac9ddec1c3a879a, type: 2}
+  storeArray: {fileID: 11400000, guid: b286c0b2f4c0bf744abaed0093225c50, type: 2}
 --- !u!1 &638158387
 GameObject:
   m_ObjectHideFlags: 0
@@ -73590,10 +73587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f15686938912e64faeff573ff248203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storeTypes:
-  - {fileID: 11400000, guid: 8219049a8b3693f49a75ba96ebf10abb, type: 2}
-  - {fileID: 11400000, guid: 424ee2dc004e9384badc6974750ba8da, type: 2}
-  - {fileID: 11400000, guid: 0ee70cb322c09bb41ac9ddec1c3a879a, type: 2}
+  storeArray: {fileID: 11400000, guid: b286c0b2f4c0bf744abaed0093225c50, type: 2}
   discounts:
   - {fileID: 11400000, guid: 4d1e5ca3036259a46a1bd829b7558f2e, type: 2}
   - {fileID: 11400000, guid: 50ddfd82a83769c45b1ee1aa727f5f32, type: 2}
@@ -73741,7 +73735,7 @@ MonoBehaviour:
   GameIsPaused: 0
   playerOneCharacter: 0
   playerTwoCharacter: 2
-  gameSettings: {fileID: 0}
+  gameSettings: {fileID: 11400000, guid: 0cbb524c401f0c5448a03ce2323dd536, type: 2}
 --- !u!4 &868838066
 Transform:
   m_ObjectHideFlags: 0

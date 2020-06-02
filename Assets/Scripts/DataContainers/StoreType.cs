@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 public enum Store
 {
-    Jewellery, Clothing, Bookstore, Flowershop, Equipement, Auto, Computer
+    Jewellery, Clothing, Bookstore, Floral, Equipement, Auto, Computer
 }
 [CreateAssetMenu(menuName ="Store")]
 public class StoreType : Weighted

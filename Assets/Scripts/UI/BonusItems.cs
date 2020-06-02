@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class BonusItems : MonoBehaviour
 {
-    [SerializeField] private StoreType[] stores;
+    [SerializeField] private Stores storeArray;
 
     private Image[] images;
     private Item[] currentBonusItems;
@@ -14,7 +14,7 @@ public class BonusItems : MonoBehaviour
 
         EventSystemUI.current.onBonusItemBought += EliminateBonusItem;
 
-        foreach (StoreType store in stores)
+        foreach (StoreType store in storeArray.stores)
         {
             Weighted[] items = store.items;
 
@@ -29,7 +29,7 @@ public class BonusItems : MonoBehaviour
     {
         images = GetComponentsInChildren<Image>();
 
-        for (int i = 0; i < stores.Length; i++)
+        for (int i = 0; i < storeArray.stores.Length; i++)
         {
 
             if (i == images.Length)
@@ -38,7 +38,7 @@ public class BonusItems : MonoBehaviour
                 return;//stop if there are more stores than bonus items slots (future proofing)
             }
 
-            Weighted[] items = stores[i].items; //get the list of items in each store
+            Weighted[] items = storeArray.stores[i].items; //get the list of items in each store
 
             if (items.Length != 0)
             {

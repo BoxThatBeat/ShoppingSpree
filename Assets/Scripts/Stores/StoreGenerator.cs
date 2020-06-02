@@ -6,7 +6,7 @@
  
 public class StoreGenerator : MonoBehaviour
 {
-    [SerializeField] private Weighted[] storeTypes = null;
+    [SerializeField] private Stores storeArray = null;
     [SerializeField] private Weighted[] discounts = null;
 
     [SerializeField] private Transform[] smallStoreLocations = null;
@@ -42,7 +42,7 @@ public class StoreGenerator : MonoBehaviour
 
             //Select the store type and store discount
             //cast the weighted to be storeType as it derives from Weigted and we dont need the weighted attribute after selecting the store type
-            StoreType selectedStore = (StoreType)Weighted.WeightedPick(storeTypes);
+            StoreType selectedStore = (StoreType)Weighted.WeightedPick(storeArray.stores);
             Discount selectedDiscount = (Discount)Weighted.WeightedPick(discounts);
 
             //set up store exterior by setting the sign sprites to the one stored in the StoreType asset

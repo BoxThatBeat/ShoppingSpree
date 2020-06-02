@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94288bcf94d8a48bf85f6b6bb1d9df, type: 3}
   m_Name: Books
   m_EditorClassIdentifier: 
-  weight: 30
+  weight: 40
   items:
   - {fileID: 11400000, guid: bec6b4b2c3ac7654d8a7da00b95ed97a, type: 2}
   - {fileID: 11400000, guid: 78760dc6cee245f49ad085626e2b1058, type: 2}
