@@ -16,7 +16,7 @@ public class ItemController : MonoBehaviour, IInteractable
 
     public LeanTweenType easeType;
 
-    private bool interactable = true;
+    public bool interactable = true;
 
     private void OnEnable()
     {
@@ -55,6 +55,7 @@ public class ItemController : MonoBehaviour, IInteractable
 
             GetComponent<SpriteRenderer>().enabled = false; //make the item disapear
             interactable = false;
+
             CloseDisplay();
         }
     }

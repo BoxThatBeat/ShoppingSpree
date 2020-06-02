@@ -18,6 +18,12 @@ public class EventSystemGame : MonoBehaviour
         }
     }
 
+    public event Action onGameOver;
+    public void GameOver()
+    {
+        onGameOver?.Invoke();
+    }
+
     public event Action<int, float> onFadeEffect;
     public void FadePlayer(int id, float speed)
     {

@@ -16,7 +16,7 @@ public class CashRegister : MonoBehaviour, IInteractable
 
             if (playerController.money - itemToBuy.itemInfo.price >= 0) //make sure player has enough money
             {
-                player.GetComponentInChildren<IconBox>().Close();//close the icon bubble
+                playerInteracter.CloseDisplay();
 
                 playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
                 playerController.AddScore(itemToBuy.scoreRewarded); //add score for buying item based on discount (ceilinged for int value)
@@ -25,7 +25,6 @@ public class CashRegister : MonoBehaviour, IInteractable
                 int bonusIndex = playerInteracter.heldItem.itemInfo.bonusItemIndex;
                 if (bonusIndex != -1)
                 {
-                    Debug.Log("BONUS ITEM FOUND");
                     //Start a coroutine to add more score in a two seconds with a special sound effect
                     StartCoroutine(AddBonusScore(playerController));
 
@@ -34,6 +33,7 @@ public class CashRegister : MonoBehaviour, IInteractable
                     
                 }
 
+                Destroy(playerInteracter.heldItem.gameObject); //free up memory when item bought
                 playerInteracter.heldItem = null;
             } 
         }

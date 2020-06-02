@@ -211,7 +211,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.613
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.57
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 0dd541e52919c8fec3ee7cc1
   m_LightCookieSprite: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1357204905
 Transform:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.613
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.57
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 0dd541e52919c8fec3ee7cc1
   m_LightCookieSprite: {fileID: 0}
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.613
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.57
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 0dd541e52919c8fec3ee7cc1
   m_LightCookieSprite: {fileID: 0}
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.613
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.57
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 0dd541e52919c8fec3ee7cc1
   m_LightCookieSprite: {fileID: 0}

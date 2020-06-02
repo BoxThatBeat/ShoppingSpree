@@ -3,10 +3,10 @@
 public class PlayerInteracter : MonoBehaviour
 {
 	public GameObject target;
-	public IconBox iconBox;
-	public ItemController heldItem;
+    public ItemController heldItem;
+    public IconBox iconBox;
 
-	private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.GetComponent<IInteractable>() != null)
 		{
@@ -56,11 +56,23 @@ public class PlayerInteracter : MonoBehaviour
 
 	public void OnUse() //called when player's use button is pressed
 	{
+        if (target == null && heldItem != null)
+            DropItem();
+
 		if (target == null)
 			return;
 
 		Interact(target, "interact");
 	}
+
+    public void DropItem()
+    {
+        heldItem.interactable = true;
+        heldItem.GetComponent<SpriteRenderer>().enabled = true;
+        CloseDisplay();
+
+        heldItem = null;
+    }
 
 	private void Interact(GameObject target, string interaction)
 	{
@@ -91,8 +103,13 @@ public class PlayerInteracter : MonoBehaviour
 		DisplayItem();
 	}
 
-	void DisplayItem()
+	private void DisplayItem()
 	{
 		iconBox.SetIcon(heldItem.itemInfo.sprite);
 	}
+
+    public void CloseDisplay()
+    {
+        GetComponentInChildren<IconBox>().Close();//close the icon bubble
+    }
 }

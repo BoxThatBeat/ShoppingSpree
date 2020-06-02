@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExitStore : MonoBehaviour
@@ -11,6 +9,11 @@ public class ExitStore : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            if (collision.GetComponent<PlayerInteracter>().heldItem)
+            {
+                collision.GetComponent<PlayerInteracter>().DropItem();
+            }
+
             collision.GetComponent<PlayerController>().ExitStore(new Vector2(door.position.x, door.position.y - 0.5f));
         }
     }

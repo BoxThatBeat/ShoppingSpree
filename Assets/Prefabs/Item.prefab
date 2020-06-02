@@ -331,6 +331,7 @@ MonoBehaviour:
   nowPrice: {fileID: 2016732487761586993}
   percentageOff: {fileID: 6234002268481336872}
   easeType: 23
+  interactable: 1
 --- !u!61 &218649351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -355,7 +356,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.6}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!1 &6606054903158493472
 GameObject:

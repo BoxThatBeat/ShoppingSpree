@@ -77,8 +77,13 @@ public class GameManager : MonoBehaviour
                 lightsAreOn = true;
                 EventSystemGame.current.TurnLightsOn();
             }
+
+            if (gameTimer <= 0)
+            {
+                EventSystemGame.current.GameOver(); //call the gameover event
+                LeanTween.pauseAll();
+            }
         }
-        
     }
 
     public void QuitGame()
@@ -99,6 +104,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadMainMenu() //load city with the fade effect
     {
+        EventSystemGame.current.FadePlayer(1, 1.5f);
+        EventSystemGame.current.FadePlayer(2, 1.5f);
         SceneManager.LoadScene("MainMenu");
         ResetGame();
     }

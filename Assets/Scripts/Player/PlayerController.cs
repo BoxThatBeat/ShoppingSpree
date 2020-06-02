@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour{
 
@@ -21,7 +20,6 @@ public class PlayerController : MonoBehaviour{
     [NonSerialized] public float maxStamina;
     [NonSerialized] public float stamina;
     
-
     private Rigidbody2D rb;
     private bool running;
 
@@ -37,6 +35,12 @@ public class PlayerController : MonoBehaviour{
         money = attributes.startMoney;
         EventSystemUI.current.ChangeMoneyUI(playerId, money);
 
+        EventSystemGame.current.onGameOver += OnGameOver;
+    }
+
+    private void OnGameOver()
+    {
+        stopped = true;
     }
 
     #region Money and Score and Stamina
