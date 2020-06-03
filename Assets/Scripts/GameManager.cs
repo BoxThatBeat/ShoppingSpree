@@ -50,16 +50,6 @@ public class GameManager : MonoBehaviour
         gameSettings.usingControllers = false; //default to not using controllers
 
         bonusItemReward = 150; //start bonus amount at 150
-
-        /*
-         * 
-         * 
-         * 
-         * 
-         * 
-         */
-        //REMOVE WHEN STARTING FROM MAINMENU
-        //gameStarted = true;
     }
 
     private void Update()

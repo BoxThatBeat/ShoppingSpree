@@ -88,4 +88,10 @@ public class EndGameStats : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        EventSystemGame.current.onGameOver -= ShowTimeIsUp;
+        EventSystemGame.current.onStatsSent -= StoreStats;
+    }
+
 }
