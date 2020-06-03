@@ -7,5 +7,7 @@ public class PlayerSettings : ScriptableObject
     public float blockTimeToStore;
     public float staminaDecreaseInterval;
     public int hospitalCost;
+    public int pocketSize;
+    public int moneyInBank;
 }
 

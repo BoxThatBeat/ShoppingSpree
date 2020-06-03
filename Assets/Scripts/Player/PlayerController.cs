@@ -8,33 +8,37 @@ public class PlayerController : MonoBehaviour{
     [Header("Settings and Attribute scriptable objects:")]
     public CharacterAttributes attributes;
     public PlayerSettings settings;
-    public GameObject HospitalSpawn;
+    [SerializeField] private GameObject HospitalSpawn;
 
     //these are attributes not to be set in the inspector
     [NonSerialized] public int playerId = 0;
     [NonSerialized] public Vector2 currentMovement;
     [NonSerialized] public bool stopped;
 
-    [NonSerialized] public int money;
-    [NonSerialized] public int score;
-    [NonSerialized] public int numItemsBought = 0;
+    public int money { get; private set; }
+    public int score { get; private set; }
+    public float stamina { get; private set; }
     [NonSerialized] public float maxStamina;
-    [NonSerialized] public float stamina;
-    
+    [NonSerialized] public int numItemsBought = 0;
+
     private Rigidbody2D rb;
     private bool running;
 
+    private void Awake()
+    {
+        money = 0;
+        score = 0;
+        stamina = 0;
+    }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         maxStamina = attributes.maxStamina;
-        stamina = maxStamina;
-        EventSystemUI.current.SetMaxStamina(playerId, attributes.maxStamina);
+        AddStamina(maxStamina);
 
-        money = attributes.startMoney;
-        EventSystemUI.current.ChangeMoneyUI(playerId, money);
+        AddMoney(attributes.startMoney);
 
         EventSystemGame.current.onGameOver += OnGameOver;
     }
@@ -155,8 +159,7 @@ public class PlayerController : MonoBehaviour{
         EventSystemGame.current.FadePlayer(playerId, attributes.knockOutFadeSpeed);
         transform.position = HospitalSpawn.transform.position;
 
-        money -= settings.hospitalCost;
-        EventSystemUI.current.ChangeMoneyUI(playerId, money);
+        SubtractMoney(settings.hospitalCost);
 
         StartBlockMovement(attributes.knockOutFadeSpeed);
         //should also play a flashing white animation in the future
