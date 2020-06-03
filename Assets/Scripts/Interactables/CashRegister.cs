@@ -21,6 +21,7 @@ public class CashRegister : MonoBehaviour, IInteractable
                 playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
                 playerController.AddScore(itemToBuy.scoreRewarded); //add score for buying item based on discount (ceilinged for int value)
 
+                playerController.numItemsBought++;
 
                 int bonusIndex = playerInteracter.heldItem.itemInfo.bonusItemIndex;
                 if (bonusIndex != -1)
@@ -30,12 +31,16 @@ public class CashRegister : MonoBehaviour, IInteractable
 
                     //send a event call to UI systsem with the bonus index to cover the item with the players face and  make the bonus item not a bonus item anymore
                     EventSystemUI.current.BoughtBonusItem(playerController.playerId, bonusIndex);
-                    
                 }
 
                 Destroy(playerInteracter.heldItem.gameObject); //free up memory when item bought
                 playerInteracter.heldItem = null;
-            } 
+            }
+            else
+            {
+                Debug.Log("you cant afford that");
+                //show a sign that indicates not enough money or have the clerk say you cant afford that in a bubble speach
+            }
         }
     }
 

@@ -109,11 +109,12 @@ public class GameManager : MonoBehaviour
         EventSystemGame.current.FadePlayer(1, 1.5f);
         EventSystemGame.current.FadePlayer(2, 1.5f);
         SceneManager.LoadScene("MainMenu");
-        ResetGame();
+        gameStarted = false;
     }
 
     public void LoadCity()
     {
+        ResetGame();
         EventSystemGame.current.FadePlayer(1, 0.8f);
         EventSystemGame.current.FadePlayer(2, 0.8f);
         SceneManager.LoadScene("City");

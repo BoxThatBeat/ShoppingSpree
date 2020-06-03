@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour{
 
     [NonSerialized] public int money;
     [NonSerialized] public int score;
+    [NonSerialized] public int numItemsBought = 0;
     [NonSerialized] public float maxStamina;
     [NonSerialized] public float stamina;
     
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour{
     private void OnGameOver()
     {
         stopped = true;
+
+        EventSystemGame.current.SendStats(playerId, score, numItemsBought);
     }
 
     #region Money and Score and Stamina
