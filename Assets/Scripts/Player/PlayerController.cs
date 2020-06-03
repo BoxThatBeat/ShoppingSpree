@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour{
     public int score { get; private set; }
     public float stamina { get; private set; }
     [NonSerialized] public float maxStamina;
+    [NonSerialized] public int moneyInBank = 0;
     [NonSerialized] public int numItemsBought = 0;
 
     private Rigidbody2D rb;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour{
         EventSystemUI.current.SetMaxStamina(playerId,maxStamina);
 
         AddMoney(attributes.pocketSize);
+        moneyInBank = attributes.maxMoneyInBank;
 
         EventSystemGame.current.onGameOver += OnGameOver;
     }

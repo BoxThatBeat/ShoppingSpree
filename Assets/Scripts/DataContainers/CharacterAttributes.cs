@@ -9,7 +9,7 @@ public class CharacterAttributes : ScriptableObject
     public float knockOutFadeSpeed;
     public float maxStamina;
     public int pocketSize;
-    public int moneyInBank;
+    public int maxMoneyInBank;
 
     [Space]
     [Header("Menu display information:")]

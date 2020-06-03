@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -81002,6 +81002,7 @@ Transform:
   m_Children:
   - {fileID: 428453421}
   - {fileID: 1132313242}
+  - {fileID: 1976506285}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81020,13 +81021,14 @@ MonoBehaviour:
   spawns:
   - {fileID: 428453421}
   - {fileID: 1132313242}
+  - {fileID: 1976506285}
   foodStands:
   - {fileID: 3201427333265102040, guid: d64aa2a2fb835f344a672aea0c809511, type: 3}
   - {fileID: 1397431892611719814, guid: a5351e330a133d440993abf83aaa0fc9, type: 3}
   - {fileID: 1417458271908426089, guid: 6974837bea80b2c408437f854fda7618, type: 3}
   - {fileID: 7194968004406032155, guid: d21f974f4725ce54783dba13b54dfc17, type: 3}
   - {fileID: 5526784670789933652, guid: 979337b8abc40af46b8bca6fa5b576ac, type: 3}
-  atm: {fileID: 3201427333265102040, guid: d64aa2a2fb835f344a672aea0c809511, type: 3}
+  atm: {fileID: 4612969068930462261, guid: 3d9e3fdb8770be041a4861d850b2a65c, type: 3}
 --- !u!1001 &1799082379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82192,6 +82194,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1976506284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976506285}
+  m_Layer: 0
+  m_Name: StandSpawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1976506285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976506284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.25, y: 0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1790087160}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996079398
 GameObject:
   m_ObjectHideFlags: 0

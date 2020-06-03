@@ -77,7 +77,7 @@ public class CashRegister : MonoBehaviour, IInteractable
         player.AddScore(GameManager.Instance.bonusItemReward); //get the bonus from the game manager as it is constantly increasing throughout the match
     }
 
-    public void OpenDisplay()
+    public void OpenDisplay(GameObject player)
     {
         SetSaying(withoutItemSaying);
         display.SetIcon(null); //open canvas with animation

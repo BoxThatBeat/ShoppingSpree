@@ -26,7 +26,7 @@ public class FoodStand : MonoBehaviour, IInteractable
             playerController.AddStamina(addedStamina);
         }
     }
-    public void OpenDisplay()
+    public void OpenDisplay(GameObject player)
     {
         display.SetIcon(null);//open display
     }

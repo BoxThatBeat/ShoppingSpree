@@ -86,7 +86,7 @@ public class PlayerInteracter : MonoBehaviour
 					break;
 
 				case "openDisplay":
-					interactable.OpenDisplay();
+					interactable.OpenDisplay(gameObject);
 					break;
 
 				case "closeDisplay":

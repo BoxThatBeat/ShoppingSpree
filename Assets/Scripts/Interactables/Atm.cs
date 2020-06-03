@@ -3,31 +3,45 @@ using TMPro;
 
 public class Atm : MonoBehaviour, IInteractable
 {
-    [SerializeField] private int addedStamina;
-    [SerializeField] private int price;
     private IconBox display;
-    private TextMeshProUGUI priceText;
+    [SerializeField] private TextMeshProUGUI moneyInBank;
 
     private void Start()
     {
-        priceText = GetComponentInChildren<TextMeshProUGUI>();
         display = GetComponentInChildren<IconBox>();
-
-        priceText.text = price.ToString();
     }
 
     public void Interact(GameObject player)
     {
         PlayerController playerController = player.GetComponent<PlayerController>();
         
-        if (playerController.money - price >= 0 && playerController.stamina != playerController.attributes.maxStamina)
+        if (playerController.money < playerController.attributes.pocketSize && playerController.moneyInBank > 0)
         {
-            playerController.SubtractMoney(price); //charge the player for food
-            playerController.AddStamina(addedStamina);
+            int exchange = playerController.attributes.pocketSize - playerController.money;
+
+            if (exchange > playerController.moneyInBank)
+            {
+                playerController.AddMoney(playerController.moneyInBank);
+                playerController.moneyInBank = 0;
+            }
+            else
+            {
+                playerController.AddMoney(exchange);
+                playerController.moneyInBank = playerController.moneyInBank - exchange;
+            }
         }
+
+        SetMoneyInBank(playerController.moneyInBank);
     }
-    public void OpenDisplay()
+
+    private void SetMoneyInBank(int amount)
     {
+        moneyInBank.text = amount.ToString();
+    }
+
+    public void OpenDisplay(GameObject player)
+    {
+        SetMoneyInBank(player.GetComponent<PlayerController>().moneyInBank);
         display.SetIcon(null);//open display
     }
 

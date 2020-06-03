@@ -4,6 +4,6 @@ public interface IInteractable
 {
     void Interact(GameObject player);
 
-    void OpenDisplay();
+    void OpenDisplay(GameObject player);
     void CloseDisplay();
 }

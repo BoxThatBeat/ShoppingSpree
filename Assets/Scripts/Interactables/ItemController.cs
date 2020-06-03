@@ -60,7 +60,7 @@ public class ItemController : MonoBehaviour, IInteractable
         }
     }
 
-    public void OpenDisplay()
+    public void OpenDisplay(GameObject player)
     {
         if (interactable)
         {
