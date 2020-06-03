@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class FoodStand : MonoBehaviour, IInteractable
 {
-    [SerializeField] private int minPrice;
-    [SerializeField] private int maxPrice;
     [SerializeField] private int addedStamina;
-
-    private int price;
+    [SerializeField] private int price;
+    private IconBox display;
+    private TextMeshProUGUI priceText;
 
     private void Start()
     {
-        price = UnityEngine.Random.Range(minPrice, maxPrice);
+        priceText = GetComponentInChildren<TextMeshProUGUI>();
+        display = GetComponentInChildren<IconBox>();
+
+        priceText.text = price.ToString();
     }
+
     public void Interact(GameObject player)
     {
         PlayerController playerController = player.GetComponent<PlayerController>();
@@ -24,10 +28,11 @@ public class FoodStand : MonoBehaviour, IInteractable
     }
     public void OpenDisplay()
     {
-        //GetComponentInChildren<Canvas>().enabled = true;
+        display.SetIcon(null);//open display
     }
 
     public void CloseDisplay()
     {
+        display.Close();
     }
 }

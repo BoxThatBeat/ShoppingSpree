@@ -1,9 +1,34 @@
 ﻿using UnityEngine;
-using System;
+using TMPro;
 using System.Collections;
+
+
 
 public class CashRegister : MonoBehaviour, IInteractable
 {
+
+    private IconBox display = null;
+
+    [SerializeField] private TextMeshProUGUI withoutItemSaying = null;
+    [SerializeField] private TextMeshProUGUI withItemSaying = null;
+    [SerializeField] private TextMeshProUGUI cantAffordSaying = null;
+
+    private TextMeshProUGUI activeSaying = null;
+
+    private void Start()
+    {
+        display = GetComponentInChildren<IconBox>();
+        activeSaying = withoutItemSaying;
+        activeSaying.enabled = true;
+
+    }
+
+    private void SetSaying(TextMeshProUGUI saying)
+    {
+        activeSaying.enabled = false;
+        activeSaying = saying;
+        activeSaying.enabled = true;
+    }
 
     public void Interact(GameObject player)
     {
@@ -35,11 +60,13 @@ public class CashRegister : MonoBehaviour, IInteractable
 
                 Destroy(playerInteracter.heldItem.gameObject); //free up memory when item bought
                 playerInteracter.heldItem = null;
+
+                SetSaying(withItemSaying);
             }
             else
             {
-                Debug.Log("you cant afford that");
-                //show a sign that indicates not enough money or have the clerk say you cant afford that in a bubble speach
+                //clerk says you cant afford that in the bubble speach
+                SetSaying(cantAffordSaying);
             }
         }
     }
@@ -52,11 +79,12 @@ public class CashRegister : MonoBehaviour, IInteractable
 
     public void OpenDisplay()
     {
-        Debug.Log("cashOpen");
+        SetSaying(withoutItemSaying);
+        display.SetIcon(null); //open canvas with animation
     }
 
     public void CloseDisplay()
     {
-        Debug.Log("cashClosed");
+        display.Close();
     }
 }

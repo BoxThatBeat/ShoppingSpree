@@ -82,9 +82,13 @@ public class EndGameStats : MonoBehaviour
         {
             playerWinner.text = "Player 1 won!";
         }
-        else
+        else if (scoreTwo > scoreOne)
         {
             playerWinner.text = "Player 2 won!";
+        }
+        else
+        {
+            playerWinner.text = "It's a tie!";
         }
     }
 

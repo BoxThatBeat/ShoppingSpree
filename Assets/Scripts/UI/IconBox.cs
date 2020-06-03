@@ -15,7 +15,11 @@ public class IconBox : MonoBehaviour
 
 	public void SetIcon(Sprite s)
 	{
-		icon.sprite = s;
+        if (s != null)
+        {
+            icon.sprite = s;
+        }
+		
 		iconBubble.SetActive(true);
 		LeanTween.scale(iconBubble, new Vector3(1, 1, 1), 0.1f).setEase(easeType);
 	}
