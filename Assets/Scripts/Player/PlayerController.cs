@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
 
-    [Space]
     [Header("Settings and Attribute scriptable objects:")]
     public CharacterAttributes attributes;
     public PlayerSettings settings;
@@ -37,8 +36,9 @@ public class PlayerController : MonoBehaviour{
 
         maxStamina = attributes.maxStamina;
         AddStamina(maxStamina);
+        EventSystemUI.current.SetMaxStamina(playerId,maxStamina);
 
-        AddMoney(attributes.startMoney);
+        AddMoney(attributes.pocketSize);
 
         EventSystemGame.current.onGameOver += OnGameOver;
     }

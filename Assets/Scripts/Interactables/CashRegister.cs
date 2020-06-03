@@ -39,7 +39,7 @@ public class CashRegister : MonoBehaviour, IInteractable
             PlayerController playerController = player.GetComponent<PlayerController>();
             ItemController itemToBuy = player.GetComponent<PlayerInteracter>().heldItem;
 
-            if (playerController.money - itemToBuy.itemInfo.price >= 0) //make sure player has enough money
+            if (playerController.money - itemToBuy.newPrice >= 0) //make sure player has enough money
             {
                 playerInteracter.CloseDisplay();
 

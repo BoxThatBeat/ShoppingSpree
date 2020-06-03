@@ -3,12 +3,16 @@
 [CreateAssetMenu(menuName = "Settings/CharacterAttributes")]
 public class CharacterAttributes : ScriptableObject
 {
+    [Header("Attributes for specific character:")]
     public float walkSpeed;
     public float runSpeed;
     public float knockOutFadeSpeed;
     public float maxStamina;
-    public int startMoney;
+    public int pocketSize;
+    public int moneyInBank;
 
+    [Space]
+    [Header("Menu display information:")]
     public characters characterName;
     public string menuName;
     public string speedUI;

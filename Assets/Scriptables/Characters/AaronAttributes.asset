@@ -16,7 +16,8 @@ MonoBehaviour:
   runSpeed: 7
   knockOutFadeSpeed: 0.4
   maxStamina: 150
-  startMoney: 2000
+  pocketSize: 1000
+  moneyInBank: 2000
   characterName: 0
   menuName: A-aron
   speedUI: 5
