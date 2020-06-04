@@ -21,10 +21,7 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private GameObject characterPdanny = null;
     [SerializeField] private GameObject characterJen = null;
 
-    private GameObject PlayerOne;
-    private GameObject PlayerTwo;
-
-    private string controlType;
+    private GameObject player;
 
     public void Start()
     {
@@ -35,53 +32,46 @@ public class PlayerSpawner : MonoBehaviour
 
     public void SpawnPlayers()
     {
-        if (gameSettings.usingControllers)//setup input type
-            controlType = "J";
-        else
-            controlType = "K";
-
         //Spawn player one
         switch (playerOneChoice)
         {
             case characters.aaron:
-                PlayerOne = Instantiate(characterAaron, playerOneSpawnPos);
-                PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
+                CreatePlayer(characterAaron, playerOneSpawnPos, camOne, 1);
                 break;
 
             case characters.pdanny:
-                PlayerOne = Instantiate(characterPdanny, playerOneSpawnPos);
-                PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
+                CreatePlayer(characterPdanny, playerOneSpawnPos, camOne, 1);
                 break;
 
             case characters.jen:
-                PlayerOne = Instantiate(characterJen, playerOneSpawnPos);
-                PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
+                CreatePlayer(characterJen, playerOneSpawnPos, camOne, 1);
                 break;
-
         }
 
         //Spawn player two
         switch (playerTwoChoice)
         {
             case characters.aaron:
-                PlayerTwo = Instantiate(characterAaron, playerTwoSpawnPos);
-                PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
+                CreatePlayer(characterAaron, playerTwoSpawnPos, camTwo, 2);
                 break;
 
             case characters.pdanny:
-                PlayerTwo = Instantiate(characterPdanny, playerTwoSpawnPos);
-                PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
+                CreatePlayer(characterPdanny, playerTwoSpawnPos, camTwo, 2);
                 break;
 
             case characters.jen:
-                PlayerTwo = Instantiate(characterJen, playerTwoSpawnPos);
-                PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
+                CreatePlayer(characterJen, playerTwoSpawnPos, camTwo, 2);
                 break;
 
         }
+    }
 
-        camOne.lockTarget(PlayerOne.transform);
-        camTwo.lockTarget(PlayerTwo.transform);
+    private void CreatePlayer(GameObject character, Transform spawn, CameraController camera, int id)
+    {
+        player = Instantiate(character, spawn);
+        player.GetComponent<PlayerInput>().SetupInput(id);
+
+        camera.lockTarget(player.transform);
     }
 
 }
