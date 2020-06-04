@@ -2,11 +2,8 @@
 using TMPro;
 using System.Collections;
 
-
-
 public class CashRegister : MonoBehaviour, IInteractable
 {
-
     private IconBox display = null;
 
     [SerializeField] private TextMeshProUGUI withoutItemSaying = null;
@@ -20,7 +17,6 @@ public class CashRegister : MonoBehaviour, IInteractable
         display = GetComponentInChildren<IconBox>();
         activeSaying = withoutItemSaying;
         activeSaying.enabled = true;
-
     }
 
     private void SetSaying(TextMeshProUGUI saying)
@@ -43,24 +39,20 @@ public class CashRegister : MonoBehaviour, IInteractable
             {
                 playerInteracter.CloseDisplay();
 
+                //set money and score for player
                 playerController.SubtractMoney(itemToBuy.newPrice); //charge the player
-                playerController.AddScore(itemToBuy.scoreRewarded); //add score for buying item based on discount (ceilinged for int value)
+                StartCoroutine(GiveScoreToPlayer(playerController, itemToBuy.scoreRewarded, playerInteracter.heldItem.itemInfo.bonusItemIndex));
+                EventSystemGame.current.PlaySound("KaChing");
 
+                //increase stats of player for endgame stats
                 playerController.numItemsBought++;
+                playerController.moneySpent += itemToBuy.newPrice;
 
-                int bonusIndex = playerInteracter.heldItem.itemInfo.bonusItemIndex;
-                if (bonusIndex != -1)
-                {
-                    //Start a coroutine to add more score in a two seconds with a special sound effect
-                    StartCoroutine(AddBonusScore(playerController));
-
-                    //send a event call to UI systsem with the bonus index to cover the item with the players face and  make the bonus item not a bonus item anymore
-                    EventSystemUI.current.BoughtBonusItem(playerController.playerId, bonusIndex);
-                }
-
-                Destroy(playerInteracter.heldItem.gameObject); //free up memory when item bought
+                //free up memory when item bought
+                Destroy(playerInteracter.heldItem.gameObject); 
                 playerInteracter.heldItem = null;
 
+                //set what the clerk is saying
                 SetSaying(withItemSaying);
             }
             else
@@ -71,10 +63,20 @@ public class CashRegister : MonoBehaviour, IInteractable
         }
     }
 
-    private IEnumerator AddBonusScore(PlayerController player)
+    private IEnumerator GiveScoreToPlayer(PlayerController player,int scoreToAdd, int bonusIndex)
     {
-        yield return new WaitForSeconds(2f);
-        player.AddScore(GameManager.Instance.bonusItemReward); //get the bonus from the game manager as it is constantly increasing throughout the match
+        yield return new WaitForSeconds(0.8f);
+        player.AddScore(scoreToAdd); //add score for buying item based on discount (ceilinged for int value)
+
+        //check if item is a bonus Item
+        if (bonusIndex != -1)
+        {
+            yield return new WaitForSeconds(1.5f);
+            player.AddScore(GameManager.Instance.bonusItemReward); //get the bonus from the game manager as it is constantly increasing throughout the match
+
+            //send a event call to UI systsem with the bonus index to cover the item with the players face and  make the bonus item not a bonus item anymore
+            EventSystemUI.current.BoughtBonusItem(player.playerId, bonusIndex);
+        }
     }
 
     public void OpenDisplay(GameObject player)

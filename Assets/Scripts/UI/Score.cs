@@ -56,7 +56,7 @@ public class Score : MonoBehaviour
 
     private IEnumerator ResetScore()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         LeanTween.moveX(scoreLoss.GetComponent<RectTransform>(), startPosX, 0.2f);
 

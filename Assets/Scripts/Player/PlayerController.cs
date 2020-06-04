@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour{
     [NonSerialized] public float maxStamina;
     [NonSerialized] public int moneyInBank = 0;
     [NonSerialized] public int numItemsBought = 0;
+    [NonSerialized] public int moneySpent = 0;
 
     private Rigidbody2D rb;
     private bool running;

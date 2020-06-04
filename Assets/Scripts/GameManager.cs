@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
         
         if (!GameIsPaused)
         {
-            gameTimer -= 30;
+            gameTimer -= 15;
             EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
             EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
         }

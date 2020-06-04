@@ -54,4 +54,16 @@ public class EventSystemGame : MonoBehaviour
     {
         onStatsSent?.Invoke(playerId, score, numItemsBought);
     }
+
+    public event Action<string> onPlaySound;
+    public void PlaySound(string name)
+    {
+        onPlaySound?.Invoke(name);
+    }
+
+    public event Action<string> onStopSound;
+    public void StopSound(string name)
+    {
+        onStopSound?.Invoke(name);
+    }
 }

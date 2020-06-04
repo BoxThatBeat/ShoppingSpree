@@ -98,6 +98,7 @@ public class PlayerInteracter : MonoBehaviour
 	{
 		heldItem = itemToHold;
 		DisplayItem();
+		EventSystemGame.current.PlaySound("PickUp");
 	}
 
 	private void DisplayItem()

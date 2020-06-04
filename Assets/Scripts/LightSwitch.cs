@@ -9,7 +9,7 @@ public class LightSwitch : MonoBehaviour
     void Start()
     {
         SetupChildren();
-        EventSystemGame.current.onLightsOn += turnLightsOn;
+        EventSystemGame.current.onLightsOn += TurnLightsOn;
     }
 
     public void SetupChildren()
@@ -17,7 +17,7 @@ public class LightSwitch : MonoBehaviour
         lightsInChildren = GetComponentsInChildren<Light2D>(true); //get an array of all 2D lights in the children
     }
 
-    private void turnLightsOn()
+    private void TurnLightsOn()
     {
         for (int i = 0; i < lightsInChildren.Length; i++)
         {
@@ -28,7 +28,7 @@ public class LightSwitch : MonoBehaviour
 
     private void OnDisable()
     {
-        EventSystemGame.current.onLightsOn -= turnLightsOn;
+        EventSystemGame.current.onLightsOn -= TurnLightsOn;
     }
 
 }
