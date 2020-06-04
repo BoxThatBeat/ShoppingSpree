@@ -27,7 +27,7 @@ public class Atm : MonoBehaviour, IInteractable
             else
             {
                 playerController.AddMoney(exchange);
-                playerController.moneyInBank = playerController.moneyInBank - exchange;
+                playerController.moneyInBank -= exchange;
             }
         }
 
