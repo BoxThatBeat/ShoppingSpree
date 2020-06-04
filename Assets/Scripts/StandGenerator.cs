@@ -2,21 +2,27 @@
 
 public class StandGenerator : MonoBehaviour
 {
-    [SerializeField] private Transform[] spawns;
     [SerializeField] private GameObject[] foodStands;
     [SerializeField] private GameObject atm;
 
+    private Transform[] spawns;
 
     void Start()
     {
-        foreach (Transform spawn in spawns)
-        {
-            int randChoice = Random.Range(0, 2);
+        spawns = GetComponentsInChildren<Transform>();
 
-            if (randChoice == 0)
-                Instantiate(foodStands[Random.Range(0, foodStands.Length)], spawn.position, transform.rotation);
-            else
-                Instantiate(atm, spawn.position, transform.rotation);
+        for (int i = 0; i < spawns.Length; i++)
+        {
+            if (i != 0) //skip the first transform since it will be the parent object's
+            {
+                int randChoice = Random.Range(0, 2);
+
+                if (randChoice == 0)
+                    Instantiate(foodStands[Random.Range(0, foodStands.Length)], spawns[i].position, transform.rotation);
+                else
+                    Instantiate(atm, spawns[i].position, transform.rotation);
+            }
+            
         }
     }
 

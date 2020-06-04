@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        EventSystemGame.current.FadePlayer(1, 1.5f);
+        EventSystemGame.current.FadePlayer(2, 1.5f);//fade this start of the mainmenu loading
+
         gameSettings.usingControllers = false; //default to not using controllers
 
         bonusItemReward = 150; //start bonus amount at 150
@@ -119,7 +122,7 @@ public class GameManager : MonoBehaviour
         
         if (!GameIsPaused)
         {
-            gameTimer -= 30;//CHANGE WHEN DONE TESTING
+            gameTimer -= 1;
             EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
             EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
         }
