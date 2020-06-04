@@ -53,6 +53,9 @@ public class GameManager : MonoBehaviour
         gameSettings.usingControllers = false; //default to not using controllers
 
         bonusItemReward = 150; //start bonus amount at 150
+
+        //init leantween
+        LeanTween.init(800);
     }
 
     private void Update()
@@ -93,6 +96,8 @@ public class GameManager : MonoBehaviour
         canDropTimer = true;
         lightsAreOn = false;
 
+        LeanTween.resumeAll();
+
         gameTimer = 600;
         bonusItemReward = 150;
     }
@@ -114,6 +119,7 @@ public class GameManager : MonoBehaviour
         gameStarted = true;
     }
 
+
     private IEnumerator CountDown()
     {
         canDropTimer = false;
@@ -122,7 +128,7 @@ public class GameManager : MonoBehaviour
         
         if (!GameIsPaused)
         {
-            gameTimer -= 1;
+            gameTimer -= 30;
             EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
             EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
         }

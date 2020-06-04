@@ -56,9 +56,6 @@ public class PlayerInteracter : MonoBehaviour
 
 	public void OnUse() //called when player's use button is pressed
 	{
-        if (target == null && heldItem != null)
-            DropItem();
-
 		if (target == null)
 			return;
 

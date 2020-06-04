@@ -21,7 +21,7 @@ public class LightSwitch : MonoBehaviour
     {
         for (int i = 0; i < lightsInChildren.Length; i++)
         {
-            if (lightsInChildren[i].tag != "BreakLight") //ensures all the break lights dont come on
+            if (!lightsInChildren[i].CompareTag("BreakLight")) //ensures all the break lights dont come on
                 lightsInChildren[i].enabled = true;
         }
     }

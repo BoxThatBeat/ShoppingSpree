@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     private string verticalAxis;
     private string useButton;
     private string runButton;
+    private string dropButton;
 
     private float hAxis;
     private float vAxis;
@@ -29,6 +30,7 @@ public class PlayerInput : MonoBehaviour
         verticalAxis = type + "Vertical" + id;
         runButton = type + "Run" + id;
         useButton = type + "Use" + id;
+        dropButton = type + "Drop" + id;
     }
 
 
@@ -37,6 +39,8 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetButtonDown(useButton))
             playerInter.OnUse();
+        if (Input.GetButtonDown(dropButton))
+            playerInter.DropItem();
 
         if (Input.GetButtonDown(runButton))
             player.OnRunning();
