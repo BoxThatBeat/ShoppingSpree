@@ -12,15 +12,7 @@ public class MenuManager : MonoBehaviour
     public GameObject UIOptionsFirstSelected;
     public GameObject UICharacterFirstSelected;
 
-    public Toggle UsingControllersCheckBox;
-
     public EventSystem eventSystem;
-
-
-    public void SetUsingControllers(bool value)
-    {
-        GameManager.Instance.SetUsingControllers(value);
-    }
 
     public void QuitBtn()
     {
@@ -31,11 +23,6 @@ public class MenuManager : MonoBehaviour
     {
         MainMenu.SetActive(false);
         Options.SetActive(true);
-
-        if (GameManager.Instance.GetUsingControllers())
-        {
-            UsingControllersCheckBox.isOn = true;
-        }
 
         eventSystem.SetSelectedGameObject(UIOptionsFirstSelected);
     }
@@ -55,6 +42,11 @@ public class MenuManager : MonoBehaviour
         CharacterSelect.SetActive(true);
 
         eventSystem.SetSelectedGameObject(UICharacterFirstSelected);
+    }
+
+    public void SetFullScreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen; //toggle fullscreen
     }
 
     public void StartBtn()
