@@ -3,8 +3,8 @@ using TMPro;
 
 public class FoodStand : MonoBehaviour, IInteractable
 {
-    [SerializeField] private int addedStamina;
-    [SerializeField] private int price;
+    [SerializeField] private int addedStamina = 0;
+    [SerializeField] private int price = 0;
     private IconBox display;
     private TextMeshProUGUI priceText;
 

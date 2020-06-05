@@ -4,7 +4,7 @@ using TMPro;
 public class Atm : MonoBehaviour, IInteractable
 {
     private IconBox display;
-    [SerializeField] private TextMeshProUGUI moneyInBank;
+    [SerializeField] private TextMeshProUGUI moneyInBank = null;
 
     private void Start()
     {

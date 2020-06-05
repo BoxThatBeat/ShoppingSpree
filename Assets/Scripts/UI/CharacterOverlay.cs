@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class CharacterOverlay : MonoBehaviour
 {
-    [SerializeField] private Sprite AaronIcon;
-    [SerializeField] private Sprite JennaIcon;
-    [SerializeField] private Sprite PDannyIcon;
+    [SerializeField] private Sprite AaronIcon = null;
+    [SerializeField] private Sprite JennaIcon = null;
+    [SerializeField] private Sprite PDannyIcon = null;
     private Image[] overlays;
 
     void Start()

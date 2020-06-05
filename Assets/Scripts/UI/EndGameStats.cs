@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class EndGameStats : MonoBehaviour
 {
-    [SerializeField] private GameObject endGameGUI;
+    [SerializeField] private GameObject endGameGUI = null;
 
-    [SerializeField] private Canvas[] canvasesToBeTurnedOff;
-    [SerializeField] private TextMeshProUGUI timeIsUp;
-    [SerializeField] private TextMeshProUGUI playerWinner;
-    [SerializeField] private TextMeshProUGUI playerOneScore;
-    [SerializeField] private TextMeshProUGUI playerTwoScore;
-    [SerializeField] private TextMeshProUGUI playerOneNumItems;
-    [SerializeField] private TextMeshProUGUI playerTwoNumItems;
+    [SerializeField] private Canvas[] canvasesToBeTurnedOff = null;
+    [SerializeField] private TextMeshProUGUI timeIsUp = null;
+    [SerializeField] private TextMeshProUGUI playerWinner = null;
+    [SerializeField] private TextMeshProUGUI playerOneScore = null;
+    [SerializeField] private TextMeshProUGUI playerTwoScore = null;
+    [SerializeField] private TextMeshProUGUI playerOneNumItems = null;
+    [SerializeField] private TextMeshProUGUI playerTwoNumItems = null;
     [SerializeField] private float timeTillStatsShown = 1f;
 
     private int scoreOne;

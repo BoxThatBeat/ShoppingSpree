@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class SwitchSelectedButton : MonoBehaviour
 {
-    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject button = null;
     private EventSystem eventSystem;
 
     private void Start()

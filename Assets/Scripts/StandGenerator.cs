@@ -2,8 +2,8 @@
 
 public class StandGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject[] foodStands;
-    [SerializeField] private GameObject atm;
+    [SerializeField] private GameObject[] foodStands = null;
+    [SerializeField] private GameObject atm = null;
 
     private Transform[] spawns;
 

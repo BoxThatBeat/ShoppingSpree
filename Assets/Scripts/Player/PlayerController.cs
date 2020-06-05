@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour{
     [Header("Settings and Attribute scriptable objects:")]
     public CharacterAttributes attributes;
     public PlayerSettings settings;
-    [SerializeField] private GameObject HospitalSpawn;
+    [SerializeField] private GameObject HospitalSpawn = null;
 
     //these are attributes not to be set in the inspector
     [NonSerialized] public int playerId = 0;
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour{
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        EventSystemGame.current.onGameOver += OnGameOver;
 
         maxStamina = attributes.maxStamina;
         AddStamina(maxStamina);
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour{
         AddMoney(attributes.pocketSize);
         moneyInBank = attributes.maxMoneyInBank;
 
-        EventSystemGame.current.onGameOver += OnGameOver;
+        StartBlockMovement(3f); //block movement for the first 3 seconds for the camera zoom in;
     }
 
     private void OnGameOver()

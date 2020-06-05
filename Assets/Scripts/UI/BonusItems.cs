@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class BonusItems : MonoBehaviour
 {
-    [SerializeField] private Stores storeArray;
+    [SerializeField] private Stores storeArray = null;
 
     private Image[] images;
     private Item[] currentBonusItems;

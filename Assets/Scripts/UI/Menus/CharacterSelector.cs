@@ -4,12 +4,12 @@ using TMPro;
 
 public class CharacterSelector : MonoBehaviour
 {
-    [SerializeField] private CharacterAttributes[] characters;
-    [SerializeField] private int player;
-    [SerializeField] private TextMeshProUGUI characterName;
-    [SerializeField] private TextMeshProUGUI characterSpeed;
-    [SerializeField] private TextMeshProUGUI characterWealth;
-    [SerializeField] private TextMeshProUGUI characterSpecial;
+    [SerializeField] private CharacterAttributes[] characters = null;
+    [SerializeField] private int player = 0;
+    [SerializeField] private TextMeshProUGUI characterName = null;
+    [SerializeField] private TextMeshProUGUI characterSpeed = null;
+    [SerializeField] private TextMeshProUGUI characterWealth = null;
+    [SerializeField] private TextMeshProUGUI characterSpecial = null;
 
     private Image characterArt;
     public int selectedCharacter = 0;
