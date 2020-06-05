@@ -25,7 +25,10 @@ public class CarHitBox : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             if (GetComponent<CarController>().accelerating)
+            {
+                EventSystemGame.current.PlaySound("HitByCar");
                 other.gameObject.GetComponent<PlayerController>().GoToHospital();
+            }
         }
     }
 }

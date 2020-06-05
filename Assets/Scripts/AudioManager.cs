@@ -68,4 +68,6 @@ public class AudioManager : MonoBehaviour
     {
         //Play("Song");
     }
+
+    public void BtnClickSound() { Play("Click"); }
 }

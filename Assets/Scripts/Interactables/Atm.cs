@@ -17,6 +17,8 @@ public class Atm : MonoBehaviour, IInteractable
         
         if (playerController.money < playerController.attributes.pocketSize && playerController.moneyInBank > 0)
         {
+            EventSystemGame.current.PlaySound("AtmCollect");
+
             int exchange = playerController.attributes.pocketSize - playerController.money;
 
             if (exchange > playerController.moneyInBank)
@@ -29,9 +31,9 @@ public class Atm : MonoBehaviour, IInteractable
                 playerController.AddMoney(exchange);
                 playerController.moneyInBank -= exchange;
             }
-        }
 
-        SetMoneyInBank(playerController.moneyInBank);
+            SetMoneyInBank(playerController.moneyInBank);
+        }
     }
 
     private void SetMoneyInBank(int amount)
