@@ -23,4 +23,4 @@ MonoBehaviour:
   speedUI: 1
   moneyUI: 5
   specialUI: Buyout
-  menuArt: {fileID: 8694227240585872061, guid: bc9a38a951821674fba5288e507cba20, type: 3}
+  menuArt: {fileID: 21300000, guid: e34857f722df4774d995c7b1f82ebde9, type: 3}
