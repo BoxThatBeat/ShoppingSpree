@@ -2289,6 +2289,12 @@ MonoBehaviour:
     loop: 0
     volume: 0.3
     pitch: 1
+  - name: Pop
+    clip: {fileID: 8300000, guid: afe9ab359fe313b42b12f77394950b23, type: 3}
+    source: {fileID: 0}
+    loop: 0
+    volume: 0.3
+    pitch: 1
 --- !u!114 &620993636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5225,7 +5231,7 @@ VideoPlayer:
   m_RenderMode: 0
   m_AspectRatio: 4
   m_DataSource: 0
-  m_PlaybackSpeed: 1.1
+  m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
@@ -5236,9 +5242,9 @@ VideoPlayer:
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
+  m_SkipOnDrop: 0
   m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!4 &1592170753
 Transform:

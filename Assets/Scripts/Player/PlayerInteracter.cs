@@ -10,6 +10,7 @@ public class PlayerInteracter : MonoBehaviour
 	{
 		if (col.GetComponent<IInteractable>() != null)
 		{
+
 			if (target != col.gameObject && target != null)
 			{
 				Deselect();

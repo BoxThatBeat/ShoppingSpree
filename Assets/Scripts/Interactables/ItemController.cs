@@ -64,6 +64,7 @@ public class ItemController : MonoBehaviour, IInteractable
     {
         if (interactable)
         {
+            EventSystemGame.current.PlaySound("Pop");
             GetComponentInChildren<Canvas>().enabled = true;
             LeanTween.pause(gameObject);
         }

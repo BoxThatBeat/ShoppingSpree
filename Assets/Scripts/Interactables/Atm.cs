@@ -43,6 +43,7 @@ public class Atm : MonoBehaviour, IInteractable
 
     public void OpenDisplay(GameObject player)
     {
+        EventSystemGame.current.PlaySound("Pop");
         SetMoneyInBank(player.GetComponent<PlayerController>().moneyInBank);
         display.SetIcon(null);//open display
     }

@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
 
         if (!GameIsPaused)
         {
-            bonusItemReward += 10; //increase bonus item reward by $10 every 10 seconds
+            bonusItemReward += 5; //increase bonus item reward by $5 every 10 seconds
             EventSystemUI.current.ChangeBonusReward(bonusItemReward);
         }
 

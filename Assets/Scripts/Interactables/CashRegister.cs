@@ -81,6 +81,7 @@ public class CashRegister : MonoBehaviour, IInteractable
 
     public void OpenDisplay(GameObject player)
     {
+        EventSystemGame.current.PlaySound("Pop");
         SetSaying(withoutItemSaying);
         display.SetIcon(null); //open canvas with animation
     }
