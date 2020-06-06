@@ -3,5 +3,5 @@
 [CreateAssetMenu(menuName = "Settings/Settings")]
 public class Settings : ScriptableObject
 {
-    public bool usingControllers;
+    //use this for any sound settings and others
 }

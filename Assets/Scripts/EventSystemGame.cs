@@ -49,6 +49,12 @@ public class EventSystemGame : MonoBehaviour
         onGameOver?.Invoke();
     }
 
+    public event Action onAddBonusItem;
+    public void AddBonusItem()
+    {
+        onAddBonusItem?.Invoke();
+    }
+
     public event Action<int, int, int> onStatsSent;
     public void SendStats(int playerId, int score, int numItemsBought)
     {

@@ -22,15 +22,6 @@ public class GameManager : MonoBehaviour
 
     public Settings gameSettings;
 
-    public void SetUsingControllers(bool value) //swap value everytime this is called
-    {
-        gameSettings.usingControllers = value;
-    }
-
-    public bool GetUsingControllers()
-    {
-        return gameSettings.usingControllers;
-    }
 
     private void Awake() 
     {
@@ -49,8 +40,6 @@ public class GameManager : MonoBehaviour
     {
         EventSystemGame.current.FadePlayer(1, 1.5f);
         EventSystemGame.current.FadePlayer(2, 1.5f);//fade this start of the mainmenu loading
-
-        gameSettings.usingControllers = false; //default to not using controllers
 
         bonusItemReward = 150; //start bonus amount at 150
 
@@ -81,6 +70,8 @@ public class GameManager : MonoBehaviour
                 LeanTween.pauseAll();
                 gameStarted = false;
             }
+
+            
         }
     }
 
@@ -116,9 +107,16 @@ public class GameManager : MonoBehaviour
         EventSystemGame.current.FadePlayer(1, 0.8f);
         EventSystemGame.current.FadePlayer(2, 0.8f);
         SceneManager.LoadScene("City");
-        gameStarted = true;
+        StartCoroutine(WaitForStartOfGame());
     }
 
+
+    private IEnumerator WaitForStartOfGame()
+    {
+        yield return new WaitForSeconds(3f);
+        gameStarted = true;
+        EventSystemGame.current.AddBonusItem();
+    }
 
     private IEnumerator CountDown()
     {
@@ -131,6 +129,11 @@ public class GameManager : MonoBehaviour
             gameTimer -= 15;
             EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
             EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
+
+            if (gameTimer % 120 == 0)//every 2 minutes (called here to not call multiple times every frame at 60 seconds)
+            {
+                EventSystemGame.current.AddBonusItem();
+            }
         }
 
         canDropTimer = true;

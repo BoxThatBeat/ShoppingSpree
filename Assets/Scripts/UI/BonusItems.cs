@@ -8,11 +8,16 @@ public class BonusItems : MonoBehaviour
     private Image[] images;
     private Item[] currentBonusItems;
 
+    int storeIndex = 0;
+    int itemIndex = 0;
+    int numItemsInitiated = 0;
+
     private void Awake()
     {
-        currentBonusItems = new Item[9];
+        currentBonusItems = new Item[9]; //create array of Items to be bonus items
 
         EventSystemUI.current.onBonusItemBought += EliminateBonusItem;
+        EventSystemGame.current.onAddBonusItem += AddBonusItems;
 
         foreach (StoreType store in storeArray.stores)
         {
@@ -29,10 +34,10 @@ public class BonusItems : MonoBehaviour
     {
         images = GetComponentsInChildren<Image>();
 
+        /*
         int storeIndex = 0;
         for (int i = 0; i < storeArray.stores.Length*2; i += 2)
         {
-
             if (i*2 == images.Length)
             {
                 Debug.LogError("Too many stores to fit in bonus item UI");
@@ -47,13 +52,38 @@ public class BonusItems : MonoBehaviour
                 AddRandomItemToBonusList(items, i + 1);
             }
         }
+        */
     }
+
+    private void AddBonusItems()
+    {
+        if (storeIndex < storeArray.stores.Length)
+        {
+            Weighted[] items = storeArray.stores[storeIndex++].items; //get the list of items in each store
+
+            if (items.Length >= 2)
+            {
+                if (numItemsInitiated <= 9)
+                {
+                    AddRandomItemToBonusList(items, itemIndex++);
+                    ++numItemsInitiated;
+                }
+                if (numItemsInitiated <= 9)
+                {
+                    AddRandomItemToBonusList(items, itemIndex++);
+                    ++numItemsInitiated;
+                }
+            }
+        }
+    }
+
 
     private void AddRandomItemToBonusList(Weighted[] items, int index)
     {
         int randItemIndex = Random.Range(0, items.Length);
         Item item = (Item)items[randItemIndex];
 
+        images[index].enabled = true;
         images[index].sprite = item.sprite;
         item.bonusItemIndex = index;
 
@@ -69,5 +99,6 @@ public class BonusItems : MonoBehaviour
     private void OnDisable()
     {
         EventSystemUI.current.onBonusItemBought -= EliminateBonusItem;
+        EventSystemGame.current.onAddBonusItem -= AddBonusItems;
     }
 }
