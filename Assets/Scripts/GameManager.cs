@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         
         if (!GameIsPaused)
         {
-            gameTimer -= 15;
+            gameTimer -= 1;
             EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
             EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
 
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
 
         if (!GameIsPaused)
         {
-            bonusItemReward += 10; //increase bonus item reward by $10 every 10 seconds
+            bonusItemReward += 5; //increase bonus item reward by $5 every 10 seconds
             EventSystemUI.current.ChangeBonusReward(bonusItemReward);
         }
 

@@ -2251,7 +2251,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2d12df7d96929e0428f664cffb7c7815, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.905
+    volume: 1
     pitch: 1
   - name: KaChing
     clip: {fileID: 8300000, guid: e7029a529956e774a912c12ca08e67f6, type: 3}

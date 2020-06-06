@@ -13,15 +13,13 @@ GameObject:
   - component: {fileID: -1808520951172958466}
   - component: {fileID: 1178985943299358767}
   - component: {fileID: 307994800301599576}
-  - component: {fileID: 672873660209530380}
   - component: {fileID: 1508244948827179665}
   - component: {fileID: 8618055062069402033}
   - component: {fileID: 773200245149760139}
   - component: {fileID: 5657122725108152646}
-  - component: {fileID: 6665291206334391599}
-  - component: {fileID: 194546239332741584}
-  - component: {fileID: 6928058145697107175}
-  - component: {fileID: 629708467840736435}
+  - component: {fileID: 6079640708419699042}
+  - component: {fileID: 1412898112328023341}
+  - component: {fileID: 1739520152213006731}
   m_Layer: 0
   m_Name: P_Danny
   m_TagString: Player
@@ -135,22 +133,6 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 7ac80215102fb5c44894d590c820a13e, type: 2}
   HospitalSpawn: {fileID: 7951699453510569583, guid: 8b30d67f2bc5f2e4bbd9c2efae7c6128,
     type: 3}
---- !u!114 &672873660209530380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5635358888095784866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95faedce4e949fd459ebb43ab7950546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colUp: {fileID: 6665291206334391599}
-  colDown: {fileID: 194546239332741584}
-  colRight: {fileID: 6928058145697107175}
-  colLeft: {fileID: 629708467840736435}
 --- !u!114 &1508244948827179665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,8 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  iconBox: {fileID: 6036266032643699126}
   heldItem: {fileID: 0}
+  iconBox: {fileID: 6036266032643699126}
 --- !u!95 &8618055062069402033
 Animator:
   serializedVersion: 3
@@ -232,7 +214,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &6665291206334391599
+--- !u!61 &6079640708419699042
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,8 +226,8 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0015364885, y: 0.2240414}
+  m_UsedByComposite: 1
+  m_Offset: {x: 0.0015364885, y: -0.07861799}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -256,9 +238,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15077978, y: 0.4269172}
+  m_Size: {x: 0.02, y: 1.232236}
   m_EdgeRadius: 0
---- !u!61 &194546239332741584
+--- !u!61 &1412898112328023341
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,8 +252,8 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0015364885, y: -0.40927994}
+  m_UsedByComposite: 1
+  m_Offset: {x: 0.00828588, y: -0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -282,10 +264,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15077978, y: 0.47570932}
+  m_Size: {x: 1.2134283, y: 0.02}
   m_EdgeRadius: 0
---- !u!61 &6928058145697107175
-BoxCollider2D:
+--- !u!66 &1739520152213006731
+CompositeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -297,45 +279,67 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.30179936, y: -0.08}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.875}
-    newSize: {x: 0.12, y: 0.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.42640126, y: 0.15077981}
-  m_EdgeRadius: 0
---- !u!61 &629708467840736435
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5635358888095784866}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.29053968, y: -0.08}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 0.875}
-    newSize: {x: 0.12, y: 0.14}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.44892064, y: 0.15077981}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 1
+  m_EdgeRadius: 0.05
+  m_ColliderPaths:
+  - m_Collider: {fileID: 0}
+    m_ColliderPaths:
+    - - X: 115071
+        Y: -6947360
+      - X: 115071
+        Y: 5375000
+      - X: -84635
+        Y: 5374707
+      - X: -84342
+        Y: -6947360
+  - m_Collider: {fileID: 0}
+    m_ColliderPaths:
+    - - X: 6149707
+        Y: -899999
+      - X: 6149707
+        Y: -700000
+      - X: -5984282
+        Y: -700293
+      - X: -5983989
+        Y: -899999
+  - m_Collider: {fileID: 6079640708419699042}
+    m_ColliderPaths:
+    - - X: 115071
+        Y: -6947360
+      - X: 115071
+        Y: 5375000
+      - X: -84635
+        Y: 5374707
+      - X: -84342
+        Y: -6947360
+  - m_Collider: {fileID: 1412898112328023341}
+    m_ColliderPaths:
+    - - X: 6149707
+        Y: -899999
+      - X: 6149707
+        Y: -700000
+      - X: -5984282
+        Y: -700293
+      - X: -5983989
+        Y: -899999
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 0.0114778, y: -0.694736}
+      - {x: 0.0115365, y: -0.0899999}
+      - {x: 0.6149707, y: -0.0899706}
+      - {x: 0.6149414, y: -0.07}
+      - {x: 0.0115071, y: -0.0699852}
+      - {x: 0.0114778, y: 0.5374999}
+      - {x: -0.0084635, y: 0.5374415}
+      - {x: -0.0084785, y: -0.0700151}
+      - {x: -0.59842813, y: -0.0700586}
+      - {x: -0.5983697, y: -0.0899999}
+      - {x: -0.0084486, y: -0.0900293}
+      - {x: -0.0084049, y: -0.694736}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
 --- !u!1001 &3312966159966429235
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,8 +2,8 @@
 
 public class PlayerInteracter : MonoBehaviour
 {
-	public GameObject target;
-    public ItemController heldItem;
+    [HideInInspector] public GameObject target;
+    [HideInInspector] public ItemController heldItem;
     public IconBox iconBox;
 
     private void OnTriggerEnter2D(Collider2D col)
