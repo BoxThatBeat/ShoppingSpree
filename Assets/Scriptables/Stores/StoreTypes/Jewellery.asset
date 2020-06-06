@@ -13,6 +13,29 @@ MonoBehaviour:
   m_Name: Jewellery
   m_EditorClassIdentifier: 
   weight: 10
-  items: []
+  items:
+  - {fileID: 11400000, guid: e63c03a39645bf14ea5342236b78d365, type: 2}
+  - {fileID: 11400000, guid: 6a032607370fa08468f7fcdee890b981, type: 2}
+  - {fileID: 11400000, guid: 09b9bb67dfcb69e498d081b21de53187, type: 2}
+  - {fileID: 11400000, guid: dfae9e1bf4612454a8c843575f5c1d7b, type: 2}
+  - {fileID: 11400000, guid: 5c993b9c39f9df344aa576406dd4baa0, type: 2}
+  - {fileID: 11400000, guid: cdf6cb32514fb304689e1884a04492c1, type: 2}
+  - {fileID: 11400000, guid: 637b4c8b48c43614f8c69bbc6e27833c, type: 2}
+  - {fileID: 11400000, guid: bc8ce1e71286ab14f94d41570c038816, type: 2}
+  - {fileID: 11400000, guid: 92fb4456f1819194aa2186f9a5680776, type: 2}
+  - {fileID: 11400000, guid: 62d419201a4bfbc46ac879f40c83928a, type: 2}
+  - {fileID: 11400000, guid: e1001751bbd8b7548ac1d1f3795e580e, type: 2}
+  - {fileID: 11400000, guid: db657c3a924599444b293646252ae782, type: 2}
+  - {fileID: 11400000, guid: 88bcef40c71221c48866e7cbbc35e126, type: 2}
+  - {fileID: 11400000, guid: c549a8e2876de8e4b8200e5a7a374a5a, type: 2}
+  - {fileID: 11400000, guid: 6a61b7a0698b23449b6b0580cf909160, type: 2}
+  - {fileID: 11400000, guid: 4b1a2b57544a059469f0b999ac159eda, type: 2}
+  - {fileID: 11400000, guid: 06cf03b41915f3042ac3bdc14745b396, type: 2}
+  - {fileID: 11400000, guid: abb95818fdb0ae64a8b9680b38c05b37, type: 2}
+  - {fileID: 11400000, guid: cde62bf42c88ac34abea8fefc0a5ec10, type: 2}
+  - {fileID: 11400000, guid: af2cf8fa745a3a14cabdb72459d5e525, type: 2}
+  - {fileID: 11400000, guid: 4b502ccf65028144c84b67e6217703be, type: 2}
+  - {fileID: 11400000, guid: e73034de82d21f2428e87291ea6c62f0, type: 2}
+  - {fileID: 11400000, guid: 39a500cebde0cc9448f74ea1d02f7fa7, type: 2}
   logo: {fileID: 21300000, guid: c3934ffe0f2f7f44ca4bbb2b8fee2791, type: 3}
   storeName: 0
