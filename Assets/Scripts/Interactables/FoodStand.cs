@@ -28,6 +28,7 @@ public class FoodStand : MonoBehaviour, IInteractable
     }
     public void OpenDisplay(GameObject player)
     {
+        EventSystemGame.current.PlaySound("Pop");
         display.SetIcon(null);//open display
     }
 

@@ -2252,19 +2252,13 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     volume: 1
-    pitch: 1
+    pitch: 1.1
   - name: KaChing
     clip: {fileID: 8300000, guid: e7029a529956e774a912c12ca08e67f6, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.25
+    volume: 0.2
     pitch: 0.95
-  - name: Click
-    clip: {fileID: 8300000, guid: 40163b1631349cb47949828160295d17, type: 3}
-    source: {fileID: 0}
-    loop: 0
-    volume: 0.5
-    pitch: 1
   - name: AtmCollect
     clip: {fileID: 8300000, guid: d823aadbe9dd88b489b52a107c0c9d29, type: 3}
     source: {fileID: 0}
@@ -2293,7 +2287,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: afe9ab359fe313b42b12f77394950b23, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.3
+    volume: 0.2
     pitch: 1
 --- !u!114 &620993636
 MonoBehaviour:
