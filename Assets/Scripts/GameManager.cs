@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
                 EventSystemGame.current.AddBonusItem();
                 //play sound effect
             }
-            if (gameTimer <= 10) //last ten seconds
+            if (gameTimer <= 10 && gameTimer > 0) //last ten seconds
             {
                 EventSystemGame.current.PlaySound("CountDown");
             }

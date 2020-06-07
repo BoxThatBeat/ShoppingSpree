@@ -15,7 +15,7 @@ MonoBehaviour:
   walkSpeed: 4.5
   runSpeed: 6
   knockOutFadeSpeed: 0.15
-  maxStamina: 125
+  maxStamina: 200
   pocketSize: 1250
   maxMoneyInBank: 2000
   characterName: 2

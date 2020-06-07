@@ -15,9 +15,9 @@ MonoBehaviour:
   walkSpeed: 4
   runSpeed: 5
   knockOutFadeSpeed: 0.08
-  maxStamina: 100
+  maxStamina: 150
   pocketSize: 2000
-  maxMoneyInBank: 2000
+  maxMoneyInBank: 1500
   characterName: 1
   menuName: P-Danny
   speedUI: 1
