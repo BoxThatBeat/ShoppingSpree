@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
             if (gameTimer <= 0)
             {
                 EventSystemGame.current.GameOver(); //call the gameover event
+                EventSystemGame.current.PlaySound("GameOver");
                 LeanTween.pauseAll();
                 gameStarted = false;
             }
@@ -133,6 +134,11 @@ public class GameManager : MonoBehaviour
             if (gameTimer % 120 == 0)//every 2 minutes (called here to not call multiple times every frame at 60 seconds)
             {
                 EventSystemGame.current.AddBonusItem();
+                //play sound effect
+            }
+            if (gameTimer <= 10) //last ten seconds
+            {
+                EventSystemGame.current.PlaySound("CountDown");
             }
         }
 
