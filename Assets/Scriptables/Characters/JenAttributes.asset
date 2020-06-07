@@ -17,7 +17,7 @@ MonoBehaviour:
   knockOutFadeSpeed: 0.15
   maxStamina: 125
   pocketSize: 1250
-  maxMoneyInBank: 2500
+  maxMoneyInBank: 2000
   characterName: 2
   menuName: JJ
   speedUI: 3

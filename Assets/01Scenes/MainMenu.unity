@@ -2287,7 +2287,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: afe9ab359fe313b42b12f77394950b23, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.2
+    volume: 0.15
     pitch: 1
   - name: CountDown
     clip: {fileID: 8300000, guid: 5d3573dfa513b1e4ba5e4b4b02114392, type: 3}
