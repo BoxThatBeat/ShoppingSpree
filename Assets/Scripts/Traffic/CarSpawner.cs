@@ -32,6 +32,8 @@ public class CarSpawner : MonoBehaviour
 
     private void Start() //spawn a bunch of cars at the beginning to fill the city
     {
+        EventSystemGame.current.PlaySound("AmbiantCars");
+
         foreach (Transform spawn in northwardStartSpawns)
         {
             SpawnCar(spawn, direction.northward);

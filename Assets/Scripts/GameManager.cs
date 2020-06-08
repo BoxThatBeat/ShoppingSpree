@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
         EventSystemGame.current.FadePlayer(1, 0.8f);
         EventSystemGame.current.FadePlayer(2, 0.8f);
         SceneManager.LoadScene("City");
+        EventSystemGame.current.PlaySound("AmbiantCars");
         StartCoroutine(WaitForStartOfGame());
     }
 
