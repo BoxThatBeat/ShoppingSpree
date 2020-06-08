@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94288bcf94d8a48bf85f6b6bb1d9df, type: 3}
   m_Name: Floral
   m_EditorClassIdentifier: 
-  weight: 30
+  weight: 25
   items:
   - {fileID: 11400000, guid: b310cf3c2d4248141b6a2eb2d3546269, type: 2}
   - {fileID: 11400000, guid: 47bee695d28be9248a50de301b938055, type: 2}

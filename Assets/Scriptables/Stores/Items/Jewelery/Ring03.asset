@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa0db4796c31cd45a1d4a672be1f268, type: 3}
   m_Name: Ring03
   m_EditorClassIdentifier: 
-  weight: 10
+  weight: 20
   store: 0
   sprite: {fileID: 21300000, guid: 59e69ed56f8f446458d67fcc524d94f8, type: 3}
   price: 250

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AllStores
   m_EditorClassIdentifier: 
   stores:
-  - {fileID: 11400000, guid: 8219049a8b3693f49a75ba96ebf10abb, type: 2}
-  - {fileID: 11400000, guid: 424ee2dc004e9384badc6974750ba8da, type: 2}
-  - {fileID: 11400000, guid: 61671ac1b4812084997e9a0dd5548088, type: 2}
   - {fileID: 11400000, guid: 0ee70cb322c09bb41ac9ddec1c3a879a, type: 2}
+  - {fileID: 11400000, guid: 61671ac1b4812084997e9a0dd5548088, type: 2}
+  - {fileID: 11400000, guid: 424ee2dc004e9384badc6974750ba8da, type: 2}
+  - {fileID: 11400000, guid: 8219049a8b3693f49a75ba96ebf10abb, type: 2}

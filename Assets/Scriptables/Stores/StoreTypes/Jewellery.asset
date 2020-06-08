@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec94288bcf94d8a48bf85f6b6bb1d9df, type: 3}
   m_Name: Jewellery
   m_EditorClassIdentifier: 
-  weight: 10
+  weight: 15
   items:
   - {fileID: 11400000, guid: e63c03a39645bf14ea5342236b78d365, type: 2}
   - {fileID: 11400000, guid: 6a032607370fa08468f7fcdee890b981, type: 2}

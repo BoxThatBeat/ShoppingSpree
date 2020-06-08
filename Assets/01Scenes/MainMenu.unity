@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2293,13 +2293,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5d3573dfa513b1e4ba5e4b4b02114392, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.5
+    volume: 0.7
     pitch: 1
   - name: GameOver
     clip: {fileID: 8300000, guid: 315e97fe847d6cb4b9b42210b64403f3, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.5
+    volume: 0.7
     pitch: 1
   - name: AmbiantCars
     clip: {fileID: 8300000, guid: ede455add1d4a3d4f8c740a721227c38, type: 3}

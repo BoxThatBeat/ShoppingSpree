@@ -29,10 +29,14 @@ public class CarSpawner : MonoBehaviour
     private direction dir;
     private GameObject carSpawned;
    
-
+    private void StopCarSounds()
+    {
+        EventSystemGame.current.StopSound("AmbiantCars");
+    }
     private void Start() //spawn a bunch of cars at the beginning to fill the city
     {
         EventSystemGame.current.PlaySound("AmbiantCars");
+        EventSystemGame.current.onGameOver += StopCarSounds;
 
         foreach (Transform spawn in northwardStartSpawns)
         {
@@ -121,6 +125,11 @@ public class CarSpawner : MonoBehaviour
 
         carSpawned = pool.SpawnFromPool(color, new Vector2(spawn.position.x, spawn.position.y), Quaternion.identity);
         carSpawned.GetComponent<CarController>().SetDirection(dir);
+    }
+
+    private void OnDisable()
+    {
+        EventSystemGame.current.onGameOver -= StopCarSounds;
     }
 
 }
