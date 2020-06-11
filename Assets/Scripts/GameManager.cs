@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             EventSystemUI.current.ChangeTimeUI(gameTimer);//update the timer UI
             EventSystemGame.current.LowerSun(gameTimer);//send a percentage of the game time to change the sun color
 
-            if (gameTimer % 120 == 0)//every 2 minutes (called here to not call multiple times every frame at 60 seconds)
+            if (gameTimer % 60 == 0)//every 2 minutes (called here to not call multiple times every frame at 60 seconds)
             {
                 EventSystemGame.current.AddBonusItem();
                 //play sound effect

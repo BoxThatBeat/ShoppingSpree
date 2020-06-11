@@ -2307,6 +2307,12 @@ MonoBehaviour:
     loop: 1
     volume: 0.08
     pitch: 1
+  - name: Run
+    clip: {fileID: 8300000, guid: 1022693d41f81634281935f9728b129f, type: 3}
+    source: {fileID: 0}
+    loop: 1
+    volume: 0.5
+    pitch: 1
 --- !u!114 &620993636
 MonoBehaviour:
   m_ObjectHideFlags: 0

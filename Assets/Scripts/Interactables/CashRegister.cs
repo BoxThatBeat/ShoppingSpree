@@ -65,17 +65,19 @@ public class CashRegister : MonoBehaviour, IInteractable
 
     private IEnumerator GiveScoreToPlayer(PlayerController player,int scoreToAdd, int bonusIndex)
     {
-        yield return new WaitForSeconds(0.8f);
-        player.AddScore(scoreToAdd); //add score for buying item based on discount (ceilinged for int value)
+        yield return new WaitForSeconds(0.8f);//wait for the negative money ui animation
 
         //check if item is a bonus Item
         if (bonusIndex != -1)
         {
-            yield return new WaitForSeconds(1.5f);
-            player.AddScore(GameManager.Instance.bonusItemReward); //get the bonus from the game manager as it is constantly increasing throughout the match
+            player.AddScore(GameManager.Instance.bonusItemReward + scoreToAdd); //get the bonus from the game manager as it is constantly increasing throughout the match
 
             //send a event call to UI systsem with the bonus index to cover the item with the players face and  make the bonus item not a bonus item anymore
             EventSystemUI.current.BoughtBonusItem(player.playerId, bonusIndex);
+        }
+        else
+        {
+            player.AddScore(scoreToAdd); //add score for buying item based on discount (ceilinged for int value)
         }
     }
 

@@ -8,9 +8,11 @@ public class BonusItems : MonoBehaviour
     private Image[] images;
     private Item[] currentBonusItems;
 
-    int storeIndex = 0;
-    int itemIndex = 0;
-    int numItemsInitiated = 0;
+    private int storeIndex = 0;
+    private int itemIndex = 0;
+    private int numItemsInitiated = 0;
+
+    private bool switchStore = false;
 
     private void Awake()
     {
@@ -33,46 +35,29 @@ public class BonusItems : MonoBehaviour
     private void Start()
     {
         images = GetComponentsInChildren<Image>();
-
-        /*
-        int storeIndex = 0;
-        for (int i = 0; i < storeArray.stores.Length*2; i += 2)
-        {
-            if (i*2 == images.Length)
-            {
-                Debug.LogError("Too many stores to fit in bonus item UI");
-                return;//stop if there are more stores than bonus items slots (future proofing)
-            }
-
-            Weighted[] items = storeArray.stores[storeIndex++].items; //get the list of items in each store
-
-            if (items.Length >= 2)
-            {
-                AddRandomItemToBonusList(items, i);     //add two items from each shop
-                AddRandomItemToBonusList(items, i + 1);
-            }
-        }
-        */
     }
 
     private void AddBonusItems()
     {
-        if (storeIndex < storeArray.stores.Length)
+        if (storeIndex < storeArray.stores.Length && numItemsInitiated <= 9)
         {
-            Weighted[] items = storeArray.stores[storeIndex++].items; //get the list of items in each store
+            Weighted[] items = storeArray.stores[storeIndex].items; //get the list of items in each store
+
+            if (switchStore) //switch store every second bonus Item
+            {
+                ++storeIndex;
+                switchStore = false;
+            }
+            else
+            {
+                switchStore = true;
+            }
+                
 
             if (items.Length >= 2)
             {
-                if (numItemsInitiated <= 9)
-                {
-                    AddRandomItemToBonusList(items, itemIndex++);
-                    ++numItemsInitiated;
-                }
-                if (numItemsInitiated <= 9)
-                {
-                    AddRandomItemToBonusList(items, itemIndex++);
-                    ++numItemsInitiated;
-                }
+                AddRandomItemToBonusList(items, itemIndex++);
+                ++numItemsInitiated;
             }
         }
     }
