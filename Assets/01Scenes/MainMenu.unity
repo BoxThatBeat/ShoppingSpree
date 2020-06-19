@@ -2313,6 +2313,12 @@ MonoBehaviour:
     loop: 1
     volume: 0.5
     pitch: 1
+  - name: Music
+    clip: {fileID: 8300000, guid: 7d5b5993cdf084f4dab8804b61f66191, type: 3}
+    source: {fileID: 0}
+    loop: 0
+    volume: 0.5
+    pitch: 1
 --- !u!114 &620993636
 MonoBehaviour:
   m_ObjectHideFlags: 0

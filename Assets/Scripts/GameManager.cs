@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         gameStarted = true;
         EventSystemGame.current.AddBonusItem();
+        EventSystemGame.current.PlaySound("Music");
     }
 
     private IEnumerator CountDown()
