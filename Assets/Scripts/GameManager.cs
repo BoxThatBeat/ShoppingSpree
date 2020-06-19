@@ -38,10 +38,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        EventSystemGame.current.FadePlayer(1, 1.5f);
-        EventSystemGame.current.FadePlayer(2, 1.5f);//fade this start of the mainmenu loading
+        EventSystemGame.current.FadePlayer(1, 0.5f);//fade this start of the mainmenu loading
+        EventSystemGame.current.FadePlayer(2, 0.5f);
 
         bonusItemReward = 150; //start bonus amount at 150
+
+        EventSystemGame.current.PlaySound("Theme");
 
         //init leantween
         LeanTween.init(800);
@@ -102,11 +104,13 @@ public class GameManager : MonoBehaviour
         EventSystemGame.current.FadePlayer(2, 1.5f);
         SceneManager.LoadScene("MainMenu");
         gameStarted = false;
+        EventSystemGame.current.PlaySound("Theme");
     }
 
     public void LoadCity()
     {
         ResetGame();
+        EventSystemGame.current.StopSound("Theme");
         EventSystemGame.current.StopSound("Music");
         EventSystemGame.current.FadePlayer(1, 0.8f);
         EventSystemGame.current.FadePlayer(2, 0.8f);

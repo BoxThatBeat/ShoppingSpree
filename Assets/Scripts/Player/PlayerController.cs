@@ -116,15 +116,18 @@ public class PlayerController : MonoBehaviour{
     public void OnRunning() //only called once when running button is pressed down
     {
         running = true;
-        EventSystemGame.current.PlayerRunning(playerId, true);
-        EventSystemGame.current.PlaySound("Run");
+        if (stamina != 0)
+        {
+            EventSystemGame.current.PlayerRunning(playerId, true);
+            EventSystemGame.current.PlaySound("Run" + playerId);
+        }
     }
 
     public void OnWalking()//only called once when running button is unpressed
     {
         running = false;
         EventSystemGame.current.PlayerRunning(playerId, false);
-        EventSystemGame.current.StopSound("Run");
+        EventSystemGame.current.StopSound("Run" + playerId);
     }
 
    private void FixedUpdate()

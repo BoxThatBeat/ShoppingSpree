@@ -2293,7 +2293,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5d3573dfa513b1e4ba5e4b4b02114392, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.7
+    volume: 1
     pitch: 1
   - name: GameOver
     clip: {fileID: 8300000, guid: 315e97fe847d6cb4b9b42210b64403f3, type: 3}
@@ -2307,16 +2307,28 @@ MonoBehaviour:
     loop: 1
     volume: 0.08
     pitch: 1
-  - name: Run
+  - name: Run1
     clip: {fileID: 8300000, guid: 1022693d41f81634281935f9728b129f, type: 3}
     source: {fileID: 0}
     loop: 1
-    volume: 0.5
+    volume: 0.55
+    pitch: 1
+  - name: Run2
+    clip: {fileID: 8300000, guid: 1022693d41f81634281935f9728b129f, type: 3}
+    source: {fileID: 0}
+    loop: 1
+    volume: 0.55
     pitch: 1
   - name: Music
     clip: {fileID: 8300000, guid: 90bb98921b9a193409717ff6d7e35456, type: 3}
     source: {fileID: 0}
-    loop: 0
+    loop: 1
+    volume: 0.5
+    pitch: 1
+  - name: Theme
+    clip: {fileID: 8300000, guid: 797ecd5e157deea4ea1cbe5786e74781, type: 3}
+    source: {fileID: 0}
+    loop: 1
     volume: 0.5
     pitch: 1
 --- !u!114 &620993636
@@ -2670,6 +2682,8 @@ GameObject:
   - component: {fileID: 715657742}
   - component: {fileID: 715657741}
   - component: {fileID: 715657740}
+  - component: {fileID: 715657744}
+  - component: {fileID: 715657745}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -2760,6 +2774,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &715657744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715657739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e70cc12fafe4e409220a12898482d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 2800000, guid: 617b3be6a2f371d4785bca516bcf75d7, type: 3}
+  player: 1
+  fadeSpeed: 0.5
+  alpha: 1
+--- !u!114 &715657745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715657739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e70cc12fafe4e409220a12898482d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 2800000, guid: 617b3be6a2f371d4785bca516bcf75d7, type: 3}
+  player: 2
+  fadeSpeed: 0.5
+  alpha: 1
 --- !u!1 &741575999
 GameObject:
   m_ObjectHideFlags: 0

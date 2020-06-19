@@ -64,10 +64,6 @@ public class AudioManager : MonoBehaviour
             sound.source.loop = sound.loop;
         }
     }
-    private void Start()
-    {
-        //Play("Song");
-    }
 
     public void BtnClickSound() { Play("Click"); }
 }
