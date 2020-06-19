@@ -69,6 +69,8 @@ public class EndGameStats : MonoBehaviour
     {
         yield return new WaitForSeconds(timeTillStatsShown);
 
+        EventSystemGame.current.PlaySound("Music");
+
         timeIsUp.enabled = false;
         endGameGUI.SetActive(true);
 
