@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
     public void LoadMainMenu() //load city with the fade effect
     {
         EventSystemGame.current.StopSound("Music");
+        EventSystemGame.current.StopSound("AmbiantCars");
         EventSystemGame.current.FadePlayer(1, 0.5f);//fade this start of the mainmenu loading
         EventSystemGame.current.FadePlayer(2, 0.5f);
         SceneManager.LoadScene("MainMenu");

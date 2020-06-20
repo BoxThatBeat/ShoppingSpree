@@ -2294,12 +2294,12 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
     volume: 1
-    pitch: 1
+    pitch: 1.2
   - name: GameOver
     clip: {fileID: 8300000, guid: 315e97fe847d6cb4b9b42210b64403f3, type: 3}
     source: {fileID: 0}
     loop: 0
-    volume: 0.7
+    volume: 0.9
     pitch: 1
   - name: AmbiantCars
     clip: {fileID: 8300000, guid: 6cd88178210144842b14c68fb3f1bfc0, type: 3}
