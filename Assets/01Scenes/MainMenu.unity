@@ -2311,25 +2311,25 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1022693d41f81634281935f9728b129f, type: 3}
     source: {fileID: 0}
     loop: 1
-    volume: 0.55
+    volume: 0.65
     pitch: 1
   - name: Run2
     clip: {fileID: 8300000, guid: 1022693d41f81634281935f9728b129f, type: 3}
     source: {fileID: 0}
     loop: 1
-    volume: 0.55
+    volume: 0.65
     pitch: 1
   - name: Music
     clip: {fileID: 8300000, guid: 90bb98921b9a193409717ff6d7e35456, type: 3}
     source: {fileID: 0}
     loop: 1
-    volume: 0.5
+    volume: 0.45
     pitch: 1
   - name: Theme
     clip: {fileID: 8300000, guid: 797ecd5e157deea4ea1cbe5786e74781, type: 3}
     source: {fileID: 0}
     loop: 1
-    volume: 0.5
+    volume: 0.45
     pitch: 1
 --- !u!114 &620993636
 MonoBehaviour:
