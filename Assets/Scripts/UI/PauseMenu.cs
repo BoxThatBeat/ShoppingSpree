@@ -30,6 +30,12 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.GameIsPaused = true;
     }
 
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        GameManager.Instance.LoadCity();
+    }
+
     public void SwitchToMainMenu()
     {
         Time.timeScale = 1f;

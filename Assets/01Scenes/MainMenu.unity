@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2305,7 +2305,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6cd88178210144842b14c68fb3f1bfc0, type: 3}
     source: {fileID: 0}
     loop: 1
-    volume: 0.08
+    volume: 0.07
     pitch: 1
   - name: Run1
     clip: {fileID: 8300000, guid: 1022693d41f81634281935f9728b129f, type: 3}
@@ -2323,7 +2323,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 90bb98921b9a193409717ff6d7e35456, type: 3}
     source: {fileID: 0}
     loop: 1
-    volume: 0.45
+    volume: 0.36
     pitch: 1
   - name: Theme
     clip: {fileID: 8300000, guid: 797ecd5e157deea4ea1cbe5786e74781, type: 3}
