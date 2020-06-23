@@ -317,10 +317,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 9e1ac823132cdb84a950d6b97b0a70be, type: 2}
-  north: {fileID: -2335378401089854425, guid: 1d95e9ba57dbf8c4695f627068158e7a, type: 3}
-  east: {fileID: -9125986875717778164, guid: 1d95e9ba57dbf8c4695f627068158e7a, type: 3}
-  south: {fileID: -8430703346403794700, guid: 1d95e9ba57dbf8c4695f627068158e7a, type: 3}
-  west: {fileID: -5480891250767851430, guid: 1d95e9ba57dbf8c4695f627068158e7a, type: 3}
+  north: {fileID: -2043267113930598707, guid: a662acde23af8fd4ba4edcb0670d534a, type: 3}
+  east: {fileID: 6138427727227151321, guid: a662acde23af8fd4ba4edcb0670d534a, type: 3}
+  south: {fileID: -3068260426676399917, guid: a662acde23af8fd4ba4edcb0670d534a, type: 3}
+  west: {fileID: -990799762894338590, guid: a662acde23af8fd4ba4edcb0670d534a, type: 3}
   northBreakLight: {fileID: 7249829845279980593}
   eastBreakLight: {fileID: 4090289780244300268}
   southBreakLight: {fileID: 5946718709203210753}
@@ -361,7 +361,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.36, y: 0.24}
+    oldSize: {x: 2.25, y: 1.5}
     newSize: {x: 0.36, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -387,14 +387,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.36, y: 0.24}
+    oldSize: {x: 2.25, y: 1.5}
     newSize: {x: 0.36, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.2828938}
+  m_Size: {x: 0.13, y: 0.2828938}
   m_EdgeRadius: 0
 --- !u!50 &4733432049558042087
 Rigidbody2D:
@@ -456,7 +456,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9125986875717778164, guid: 1d95e9ba57dbf8c4695f627068158e7a,
+  m_Sprite: {fileID: 6138427727227151321, guid: a662acde23af8fd4ba4edcb0670d534a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

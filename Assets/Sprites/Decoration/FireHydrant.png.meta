@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: a5ecb3fe51c353b4d997941b9c680d0a
+guid: 326d8f592ed3e5540acfc4e83f5686bc
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7516914590029437155
-    second: Car_Green_0
-  - first:
-      213: 7333457689080303297
-    second: Car_Green_1
-  - first:
-      213: -2665093134641682050
-    second: Car_Green_2
-  - first:
-      213: 3273236467049712309
-    second: Car_Green_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,7 +57,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -109,95 +97,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Car_Green_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 61
-        width: 36
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d287d85667b329c4eaa71b66e4289de9
-      internalID: 7516914590029437155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Car_Green_1
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 29
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2614c8bf5fee41c4b914055766c65198
-      internalID: 7333457689080303297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Car_Green_2
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 29
-        width: 22
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77b3f7d656be97e45ac1e279614a93bb
-      internalID: -2665093134641682050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Car_Green_3
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 2
-        width: 36
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88004a857634ec9469a5f89c777a5332
-      internalID: 3273236467049712309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d9c8941edae4bb64ea1db47b5874972a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
