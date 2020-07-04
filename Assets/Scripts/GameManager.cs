@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private int gameTimer = 600; //10 minutes in seconds 
     private bool canDropTimer = true;
 
-    private bool gameStarted = false;
+    public bool gameStarted = false;
     private bool lightsAreOn = false;
 
     public characters playerOneCharacter;
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         EventSystemGame.current.PlaySound("Theme");
 
         //init leantween
-        LeanTween.init(800);
+        LeanTween.init(1600);
     }
 
     private void Update()

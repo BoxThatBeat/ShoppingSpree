@@ -6,6 +6,9 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+
+    private static AudioManager Instance;
+
     [System.Serializable]
     public class Sound
     {
@@ -51,6 +54,12 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
         EventSystemGame.current.onPlaySound += Play;
         EventSystemGame.current.onStopSound += Stop;
 
@@ -66,4 +75,10 @@ public class AudioManager : MonoBehaviour
     }
 
     public void BtnClickSound() { Play("Click"); }
+
+    private void OnDestroy()
+    {
+        EventSystemGame.current.onPlaySound -= Play;
+        EventSystemGame.current.onStopSound -= Stop;
+    }
 }

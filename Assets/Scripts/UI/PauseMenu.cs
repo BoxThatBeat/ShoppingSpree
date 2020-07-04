@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("JCancel1") || Input.GetButtonDown("JCancel2"))
+        if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("JCancel1") || Input.GetButtonDown("JCancel2")) && GameManager.Instance.gameStarted)
         {
             if (GameManager.Instance.GameIsPaused)
                 Resume();
