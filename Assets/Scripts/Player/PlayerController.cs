@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour{
     public void OnRunning() //only called once when running button is pressed down
     {
         running = true;
-        if (stamina != 0)
+        if (stamina != 0 && currentMovement.x != 0 || currentMovement.y != 0)
         {
             EventSystemGame.current.PlayerRunning(playerId, true);
             EventSystemGame.current.PlaySound("Run" + playerId);
