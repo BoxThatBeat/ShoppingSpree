@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 620993635}
+      - m_Target: {fileID: 1179933012}
         m_MethodName: ChangeSoundVolume
         m_Mode: 0
         m_Arguments:
@@ -2507,7 +2507,7 @@ MonoBehaviour:
     loop: 0
     volume: 0.2
     pitch: 0.95
-  - type: 0
+  - type: 1
     name: AtmCollect
     clip: {fileID: 8300000, guid: d823aadbe9dd88b489b52a107c0c9d29, type: 3}
     source: {fileID: 0}
@@ -2521,14 +2521,14 @@ MonoBehaviour:
     loop: 0
     volume: 0.6
     pitch: 1
-  - type: 0
+  - type: 1
     name: Swap
     clip: {fileID: 8300000, guid: 307de26d08c1f554c9befe9a043f4e4c, type: 3}
     source: {fileID: 0}
     loop: 0
     volume: 0.15
     pitch: 1
-  - type: 0
+  - type: 1
     name: HitByCar
     clip: {fileID: 8300000, guid: c301640d71d9da449991d66e89dfa7d2, type: 3}
     source: {fileID: 0}
@@ -4540,9 +4540,9 @@ MonoBehaviour:
   MainMenu: {fileID: 715657739}
   Options: {fileID: 2058291551}
   CharacterSelect: {fileID: 1944763085}
-  masterVolumeSlider: {fileID: 1243728543}
-  soundVolumeSlider: {fileID: 576356504}
-  musicVolumeSlider: {fileID: 2052319377}
+  masterVolumeSlider: {fileID: 1243728541}
+  soundVolumeSlider: {fileID: 576356502}
+  musicVolumeSlider: {fileID: 2052319375}
   UIMenuFirstSelected: {fileID: 1684798697}
   UIOptionsFirstSelected: {fileID: 1389006899}
   UICharacterFirstSelected: {fileID: 2002884623}
@@ -4651,7 +4651,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 620993635}
+      - m_Target: {fileID: 1179933012}
         m_MethodName: ChangeMasterVolume
         m_Mode: 0
         m_Arguments:
@@ -7958,7 +7958,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 620993635}
+      - m_Target: {fileID: 1179933012}
         m_MethodName: ChangeMusicVolume
         m_Mode: 0
         m_Arguments:

@@ -67,48 +67,49 @@ public class AudioManager : MonoBehaviour
 
         EventSystemGame.current.onPlaySound += Play;
         EventSystemGame.current.onStopSound += Stop;
+        EventSystemGame.current.onVolumeChange += ChangeVolume;
 
         foreach (Sound sound in sounds)
         {
             sound.source = gameObject.AddComponent<AudioSource>();
 
             sound.source.clip = sound.clip;
-            sound.source.volume = sound.volume * masterVolume;
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
 
+            if (sound.type == SoundType.music)
+                sound.source.volume = sound.volume * masterVolume * musicVolume;
+            else
+                sound.source.volume = sound.volume * masterVolume * soundVolume;
         }
     }
 
-    public void ChangeMasterVolume(float newVolume)
+    private void ChangeVolume(int type, float newVolume)
     {
-        masterVolume = newVolume;
-
-        foreach (Sound sound in sounds)
+        switch (type)
         {
-            sound.source.volume = sound.volume * masterVolume;
+            case 0:
+                masterVolume = newVolume;
+                break;
+            case 1:
+                soundVolume = newVolume;
+                break;
+            case 2:
+                musicVolume = newVolume;
+                break;
         }
+
+        UpdateVolumes();
     }
 
-    public void ChangeMusicVolume(float newVolume)
+    private void UpdateVolumes()
     {
-        musicVolume = newVolume;
-
         foreach (Sound sound in sounds)
         {
             if (sound.type == SoundType.music)
-                sound.source.volume = sound.volume * musicVolume;
-        }
-    }
-
-    public void ChangeSoundVolume(float newVolume)
-    {
-        soundVolume = newVolume;
-
-        foreach (Sound sound in sounds)
-        {
-            if (sound.type == SoundType.sound)
-                sound.source.volume = sound.volume * soundVolume;
+                sound.source.volume = sound.volume * masterVolume * musicVolume;
+            else
+                sound.source.volume = sound.volume * masterVolume * soundVolume;
         }
     }
 
@@ -118,5 +119,6 @@ public class AudioManager : MonoBehaviour
     {
         EventSystemGame.current.onPlaySound -= Play;
         EventSystemGame.current.onStopSound -= Stop;
+        EventSystemGame.current.onVolumeChange -= ChangeVolume;
     }
 }

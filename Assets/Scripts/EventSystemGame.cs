@@ -72,4 +72,10 @@ public class EventSystemGame : MonoBehaviour
     {
         onStopSound?.Invoke(name);
     }
+
+    public event Action<int,float> onVolumeChange;
+    public void ChangeVolume(int type, float newVolume)
+    {
+        onVolumeChange?.Invoke(type, newVolume);
+    }
 }
