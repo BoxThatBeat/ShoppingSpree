@@ -3,15 +3,20 @@ using System;
 using UnityEngine.Audio;
 
 
-
+public enum SoundType { music, sound}
 public class AudioManager : MonoBehaviour
 {
 
-    private static AudioManager Instance;
+    public static AudioManager Instance;
+
+    public float masterVolume = 0.5f;
+    public float musicVolume = 0.5f;
+    public float soundVolume = 0.5f;
 
     [System.Serializable]
     public class Sound
     {
+        public SoundType type;
         public string name;
         public AudioClip clip;
         [HideInInspector] public AudioSource source;
@@ -68,13 +73,46 @@ public class AudioManager : MonoBehaviour
             sound.source = gameObject.AddComponent<AudioSource>();
 
             sound.source.clip = sound.clip;
-            sound.source.volume = sound.volume;
+            sound.source.volume = sound.volume * masterVolume;
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
+
         }
     }
 
-    public void BtnClickSound() { Play("Click"); }
+    public void ChangeMasterVolume(float newVolume)
+    {
+        masterVolume = newVolume;
+
+        foreach (Sound sound in sounds)
+        {
+            sound.source.volume = sound.volume * masterVolume;
+        }
+    }
+
+    public void ChangeMusicVolume(float newVolume)
+    {
+        musicVolume = newVolume;
+
+        foreach (Sound sound in sounds)
+        {
+            if (sound.type == SoundType.music)
+                sound.source.volume = sound.volume * musicVolume;
+        }
+    }
+
+    public void ChangeSoundVolume(float newVolume)
+    {
+        soundVolume = newVolume;
+
+        foreach (Sound sound in sounds)
+        {
+            if (sound.type == SoundType.sound)
+                sound.source.volume = sound.volume * soundVolume;
+        }
+    }
+
+    public void BtnClickSound() { Play("Click"); } //called by button in menus
 
     private void OnDestroy()
     {
